@@ -51,7 +51,7 @@ var config_data = `
                 "r2": "Red-2",
                 "b2": "Blue-2<br>",
                 "r3": "Red-3",
-                "b3": "Blue-3"
+                "b3": "Blue-3<br>"
             },
             "defaultValue": "r1",
             "required": "true"
