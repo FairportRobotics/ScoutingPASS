@@ -1,38 +1,38 @@
 var config_data = `
 {
-    "dateFormat": "tsv",
-    "title": "Scouting PASS 2025", 
+    "dataFormat": "tsv",
+    "title": "Scouting PASS 2025",
     "page_title": "Reefscape",
     "checkboxAs": "10",
     "prematch": [
         {
-            "name": "Scouter Initials", 
+            "name": "Scouter Initials",
             "code": "s",
+            "type": "scouter",
             "size": 5,
-            "maxSize": 5, 
+            "maxSize": 5,
             "required": "true"
         },
         {
-            "name": "Event", 
+            "name": "Event",
             "code": "e",
             "type": "event",
-            "defaultValue": "",
+            "defaultValue": "2025nyro",
             "required": "true"
         },
         {
             "name": "Match Level",
             "code": "l",
             "type": "level",
-            "choices": 
-            {
+            "choices": {
                 "qm": "Quals<br>",
                 "sf": "Semifinals<br>",
                 "f": "Finals"
-            }
-            "defaultValue": "qm"
+            },
+            "defaultValue": "qm",
             "required": "true"
         },
-        { 
+        {
             "name": "Match #",
             "code": "m",
             "type": "match",
@@ -44,8 +44,7 @@ var config_data = `
             "name": "Robot",
             "code": "r",
             "type": "robot",
-            "choices": 
-            {
+            "choices": {
                 "r1": "Red-1",
                 "b1": "Blue-1<br>",
                 "r2": "Red-2",
@@ -53,7 +52,7 @@ var config_data = `
                 "r3": "Red-3",
                 "b3": "Blue-3"
             },
-            "required":"true"
+            "required": "true"
         },
         {
             "name": "Team #",
@@ -72,27 +71,31 @@ var config_data = `
         {
             "name": "Leave Starting Zone",
             "code": "al",
-            "type": bool"
+            "type": "bool"
         },
         {
             "name": "Coral L1 Scores",
             "code": "ac1",
-            "type": "counter"
+            "type": "counter",
+            "tooltip": "Maximum of 24"
         },
         {
             "name": "Coral L2 Scores",
             "code": "ac2",
-            "type": "counter"
+            "type": "counter",
+            "tooltip": "Maximum of 12"
         },
         {
             "name": "Coral L3 Scores",
             "code": "ac3",
-            "type": "counter"
+            "type": "counter",
+            "tooltip": "Maximum of 12"
         },
         {
             "name": "Coral L4 Scores",
             "code": "ac4",
-            "type": "counter"
+            "type": "counter",
+            "tooltip": "Maximum of 12"
         },
         {
             "name": "Algae Scores Processor",
@@ -109,22 +112,26 @@ var config_data = `
         {
             "name": "Coral L1 Scores",
             "code": "tc1",
-            "type": "counter"
+            "type": "counter",
+            "maxValue": 12
         },
         {
             "name": "Coral L2 Scores",
             "code": "tc2",
-            "type": "counter"
+            "type": "counter",
+            "maxValue": 12
         },
         {
             "name": "Coral L3 Scores",
             "code": "tc3",
-            "type": "counter"
+            "type": "counter",
+            "maxValue": 12
         },
         {
             "name": "Coral L4 Scores",
             "code": "tc4",
-            "type": "counter"
+            "type": "counter",
+            "maxValue": 12
         },
         {
             "name": "Algae Scores Processor",
@@ -140,7 +147,7 @@ var config_data = `
             "name": "Pickup Coral From",
             "code": "tcu",
             "type": "radio",
-            "choices" {
+            "choices": {
                 "s": "Source<br>",
                 "f": "Floor<br>",
                 "b": "Both<br>",
@@ -158,7 +165,7 @@ var config_data = `
                 "s": "Shallow<br>",
                 "d": "Deep<br>",
                 "x": "Not Attempted"
-            }
+            },
             "defaultValue": "x"
         }
     ],
@@ -170,7 +177,7 @@ var config_data = `
             "choices": {
                 "w": "Win<br>",
                 "l": "Lose<br>",
-                "t": "Tie<br>
+                "t": "Tie<br>"
             }
         },
         {
@@ -194,8 +201,8 @@ var config_data = `
             "type": "bool"
         },
         {
-            "name": "Dropped Game Pieces"
-            "code": "dgp"
+            "name": "Dropped Game Pieces",
+            "code": "dgp",
             "type": "bool"
         },
         {
