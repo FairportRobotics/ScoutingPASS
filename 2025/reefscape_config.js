@@ -1,6 +1,6 @@
 var config_data = `
 {
-    "dateFormat": "tsv",
+    "dataFormat": "tsv",
     "title": "Scouting PASS 2025",
     "page_title": "Reefscape",
     "checkboxAs": "10",
@@ -38,7 +38,6 @@ var config_data = `
             "type": "match",
             "min": 1,
             "max": 150,
-            "defaultValue": 1,
             "required": "true"
         },
         {
@@ -51,9 +50,8 @@ var config_data = `
                 "r2": "Red-2",
                 "b2": "Blue-2<br>",
                 "r3": "Red-3",
-                "b3": "Blue-3<br>"
+                "b3": "Blue-3"
             },
-            "defaultValue": "r1",
             "required": "true"
         },
         {
@@ -78,22 +76,26 @@ var config_data = `
         {
             "name": "Coral L1 Scores",
             "code": "ac1",
-            "type": "counter"
+            "type": "counter",
+            "tooltip": "Maximum of 24"
         },
         {
             "name": "Coral L2 Scores",
             "code": "ac2",
-            "type": "counter"
+            "type": "counter",
+            "tooltip": "Maximum of 12"
         },
         {
             "name": "Coral L3 Scores",
             "code": "ac3",
-            "type": "counter"
+            "type": "counter",
+            "tooltip": "Maximum of 12"
         },
         {
             "name": "Coral L4 Scores",
             "code": "ac4",
-            "type": "counter"
+            "type": "counter",
+            "tooltip": "Maximum of 12"
         },
         {
             "name": "Algae Scores Processor",
@@ -110,22 +112,26 @@ var config_data = `
         {
             "name": "Coral L1 Scores",
             "code": "tc1",
-            "type": "counter"
+            "type": "counter",
+            "maxValue": 12
         },
         {
             "name": "Coral L2 Scores",
             "code": "tc2",
-            "type": "counter"
+            "type": "counter",
+            "maxValue": 12
         },
         {
             "name": "Coral L3 Scores",
             "code": "tc3",
-            "type": "counter"
+            "type": "counter",
+            "maxValue": 12
         },
         {
             "name": "Coral L4 Scores",
             "code": "tc4",
-            "type": "counter"
+            "type": "counter",
+            "maxValue": 12
         },
         {
             "name": "Algae Scores Processor",
