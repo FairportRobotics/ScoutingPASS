@@ -786,8 +786,6 @@ function validateData() {
   var errStr = "";
   for (rf of requiredFields) {
     var thisRF = document.forms.scoutingForm[rf];
-    console.log(thisRF);
-    console.log(thisRF.value);
     if (thisRF.value == "[]" || thisRF.value.length == 0) {
       if (rf == "as") {
         rftitle = "Auto Start Position"
@@ -806,6 +804,7 @@ function validateData() {
 }
 
 function getData(dataFormat) {
+  console.log(dataFormat);
   var Form = document.forms.scoutingForm;
   var UniqueFieldNames = [];
   var fd = new FormData();
