@@ -74,7 +74,7 @@ His idea is to construct a list of all team members and assign each a unique,
 four-digit PIN. When they first start using the Scouting App, they would enter
 their PIN and we would look up their name or initials.
 
-- How do we construct this document (probably JSON)?
+- How do we construct this document (probably JSON or csv)?
 - How do we consume it from the source code?
 
 <!-- Fun Stuff -->
