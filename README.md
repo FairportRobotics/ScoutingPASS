@@ -12,9 +12,22 @@ information about how they developed the application.
 <details>
   <summary>Table of Contents</summary>
   <ol>
+    <li><a href="#tba">The Blue Alliance API</a></li>
     <li><a href="#todo">Todo</a></li>
   </ol>
 </details>
+
+<!-- The Blue Alliance -->
+<div id="tba"></div>
+
+## The Blue Alliance
+
+The Blue Alliance is an organization that consumes all the match data published
+by FIRST and makes this data available to developers via an API.
+
+The URL for this API is
+[The Blue Alliance API v3](https://www.thebluealliance.com/apidocs/v3). You will
+need an API key which can be copied from `./resources/js/TBAInterface.js`.
 
 <!-- Todo -->
 <div id="todo"></div>
@@ -77,3 +90,15 @@ QR Code scanners can be connected to computers and act as a keyboard. When we
 scan or playback stored scans, the scanner will emit keystrokes.
 
 We could use something like a spreadsheet to receive the results.
+
+### Add Support for Primitive Authentication
+
+Jacob Wyrozebski would like to limit the silliness that happens when we allow
+scouters to enter their own names or initials.
+
+His idea is to construct a list of all team members and assign each a unique,
+four-digit PIN. When they first start using the Scouting App, they would enter
+their PIN and we would look up their name or initials.
+
+- How do we construct this document (probably JSON)?
+- How do we consume it from the source code?
