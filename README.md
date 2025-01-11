@@ -8,6 +8,9 @@ forked from another team (their
 Their [original README](./PWNAGE_README.md) contains lots and lots of
 information about how they developed the application.
 
+Github allows us to host a
+[live version of the application](https://fairportrobotics.github.io/ScoutingPASS/)
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
