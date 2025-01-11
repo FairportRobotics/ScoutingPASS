@@ -38,36 +38,6 @@ need an API key which can be copied from `./resources/js/TBAInterface.js`.
 
 ## Todo
 
-### Improve Radio Buttons
-
-The current implementation emits radio buttons that are not associated with the
-text. Referring to the example below, if you click "Some Option", it does not
-trigger or toggle the radio button. This makes for a much smaller target.
-
-```html
-<input
-  id="input_r_r1"
-  type="radio"
-  name="r"
-  value="r1"
-  checked="" />
-Some Option
-```
-
-What we would like to do, is associate a label with the radio button like this:
-
-```html
-<input
-  id="input_r_r1"
-  type="radio"
-  name="r"
-  value="r1"
-  checked="" />
-<label for="inpout_r_r1">Some Option</label>
-```
-
-This needs ot happen in `scoutingPass.js` and the `addRadio()` function.
-
 ### Store Scouting Results
 
 When a scouting session is completed, the application displays a QR Code
