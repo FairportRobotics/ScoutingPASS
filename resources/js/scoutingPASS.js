@@ -808,7 +808,6 @@ function validateData() {
 }
 
 function getData(dataFormat) {
-  console.log(dataFormat);
   var Form = document.forms.scoutingForm;
   var UniqueFieldNames = [];
   var fd = new FormData();
@@ -890,6 +889,19 @@ function qr_regenerate() {
 
   // Get data
   data = getData(dataFormat)
+
+
+  key = document.getElementById("input_m").value + getRobot()
+  sessions = localStorage.getItem("sessions")
+  if(sessions){
+    const sessionsDictionary = JSON.parse(sessions);
+    sessionsDictionary[key] = data;
+    localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
+  }else{
+    const sessionsDictionary = {};
+    sessionsDictionary[key] = data;
+    localStorage.setItem("sessions", JSON.stringify(sessionsDictionary))
+  }
 
   // Regenerate QR Code
   qr.makeCode(data)
