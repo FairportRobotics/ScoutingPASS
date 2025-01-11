@@ -17,6 +17,7 @@ Github allows us to host a
   <ol>
     <li><a href="#tba">The Blue Alliance API</a></li>
     <li><a href="#todo">Todo</a></li>
+    <li><a href="#funstuff">Fun Stuff</a></li>
   </ol>
 </details>
 
@@ -105,3 +106,26 @@ their PIN and we would look up their name or initials.
 
 - How do we construct this document (probably JSON)?
 - How do we consume it from the source code?
+
+<!-- Fun Stuff -->
+<div id="funstuff"></div>
+
+## Fun Stuff
+
+### Coins
+
+We might want to make Scouting more fun by offering "Coins" or some other
+virtual collectible which can be redeemed later for snacks or prizes.
+
+### Awards
+
+We can also come up with awards for intreresting things that might happen during
+competitions. Some examples include:
+
+- Loser: This award goes to the student who achieved the lowest score.
+- Winner: This award goes to the student who scouted the robot who achieved the
+  highest score.
+- Breakdown: This award goes to the student who scouted the robot which stopped
+  working earliset in the match. Note that in order to figure this out, we'd
+  need to add capturing this to the app.
+- TBD
