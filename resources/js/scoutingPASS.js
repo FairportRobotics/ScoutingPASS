@@ -603,7 +603,7 @@ function addCheckbox(table, idx, name, data) {
   cell2.appendChild(inp);
 
   if (data.type == 'bool') {
-    cell2.innerHTML += "(checked = Yes)";
+    cell2.innerHTML += "";
   }
 
   if (data.hasOwnProperty('defaultValue')) {
