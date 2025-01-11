@@ -553,8 +553,12 @@ function addRadio(table, idx, name, data) {
       if (checked == c) {
         inp.setAttribute("checked", "");
       }
+      var label = document.createElement("label");
+      label.setAttribute("for", "input_" + data.code + "_" + c);
+      label.innerHTML = data.choices[c];
       cell2.appendChild(inp);
-      cell2.innerHTML += data.choices[c];
+      cell2.appendChild(label);
+      //cell2.innerHTML += data.choices[c];
     });
   }
   var inp = document.createElement("input");
