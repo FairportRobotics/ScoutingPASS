@@ -891,7 +891,6 @@ function qr_regenerate() {
   data = getData(dataFormat)
 
 
-  console.log(data)
   key = document.getElementById("input_m").value + "." + getRobot()
   sessions = localStorage.getItem("sessions")
   if(sessions){
