@@ -861,7 +861,7 @@ function getData(dataFormat) {
 }
 
 function updateQRHeader() {
-  let str = 'Event: !EVENT! Match: !MATCH! Robot: !ROBOT! Team: !TEAM!';
+  let str = 'Robot: !ROBOT! Event: !EVENT! Match: !MATCH! Team: !TEAM!';
 
   if (!pitScouting) {
     str = str
@@ -891,15 +891,20 @@ function qr_regenerate() {
   data = getData(dataFormat)
 
 
-  key = document.getElementById("input_m").value + getRobot()
+  console.log(data)
+  key = document.getElementById("input_m").value + "." + getRobot()
   sessions = localStorage.getItem("sessions")
   if(sessions){
     const sessionsDictionary = JSON.parse(sessions);
-    sessionsDictionary[key] = data;
+    sessionsDictionary[key] = key + "\t" + data;
+    sessionsDictionary[key].replace('r', "Red ", 'b', "Blue ")
+    console.log(sessionsDictionary[key])
     localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
   }else{
     const sessionsDictionary = {};
-    sessionsDictionary[key] = data;
+    sessionsDictionary[key] = key + "\t" + data;
+    sessionsDictionary[key].replace('r', "Red ", 'b', "Blue ")
+    console.log(sessionsDictionary[key])
     localStorage.setItem("sessions", JSON.stringify(sessionsDictionary))
   }
 
