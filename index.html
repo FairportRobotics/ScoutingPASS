@@ -73,20 +73,20 @@
 					<h1 id="qrHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting 2020</h1>
 					<h2 id="qrHeader2">Generate QR Code</h2>
 					<p class="match-label"><input type="button" value="Prev" id="prevButton9" onclick="swipePage(-1)"></p>
-					<p id="qr-info"><span id="display_qr-info" style="border: color(black);"></span></p>
-					<table id="qr-table"><tr><td width="5%">&nbsp;</td><td width="90%">
+					<p id="qr-info" class="qr-info"><span style="border: 4px solid black; padding: 10px; border-radius: 5px;" id="display_qr-info" ></span></p>
+					<table id="qr-table"><tr><td width="5%">;</td><td width="90%">
 						<div id="qrcode" style="text-align:center">
 							<script>
 						// Create QRCode Object
 								qr = new QRCode(document.getElementById("qrcode"), options)
-					</script>
-					</div>
-				</td><td width="5%">&nbsp;</td></tr>
-				<tr><td width="5%">&nbsp;</td><td width="90%">
+							</script>
+						</div>
+				</td><td width="5%">;</td></tr>
+				<tr><td width="5%">;</td><td width="90%">
 					<div>
 						<p id="data" style="text-align:center"></p>
 					</div>
-				</td><td width="5%">&nbsp;</td></tr>
+				</td><td width="5%">;</td></tr>
 			</table>
 					<p></p>
 					<p class="match-label"><input type="button" value="Display Data" id="displayButton" onclick="displayData()"><input type="button" value="Copy Data" id="copyButton" onclick="copyData()"></p>
@@ -101,4 +101,4 @@
 			</div>
 		</form>
 	</body>
-</html>
+</html>					

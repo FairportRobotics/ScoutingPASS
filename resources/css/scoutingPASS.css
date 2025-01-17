@@ -86,8 +86,9 @@ html, body{
 }
 
 #qr-code{
-  text-align: center;
-  color: rgb(255, 255, 255);
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(255, 255, 255);
 }
 
 h1{
@@ -137,7 +138,7 @@ h2{
     display: flex;
 }
 
-#nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm, #displayButton, #copyButton {
+#nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm, #displayButton, dontPress, #copyButton {
     font-family: Alexis;
     padding: 10px;
     background-color: rgb(0, 0, 0);
@@ -207,7 +208,7 @@ input {
     font-size: 16px;
     font: roboto;
     color: black;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
 }
 
 .title {
