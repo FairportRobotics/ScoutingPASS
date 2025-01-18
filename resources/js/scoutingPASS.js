@@ -224,7 +224,7 @@ function addClickableImage(table, idx, name, data) {
     cell1.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
   }
-  cell.innerHTML = name;
+  cell.innerHTML = name + '&nbsp;';
   if (data.hasOwnProperty('tooltip')) {
     cell.setAttribute("title", data.tooltip);
   }
