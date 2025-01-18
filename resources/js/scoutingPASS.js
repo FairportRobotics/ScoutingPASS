@@ -1467,3 +1467,17 @@ window.onload = function () {
     }
   }
 };
+
+function getSessions(){
+  sessions = localStorage.getItem("sessions")
+  if(sessions){
+    var resultDiv = document.getElementById("results")
+    for (const [key, value] of Object.entries(JSON.parse(sessions))) {
+      var result = document.createElement("div")
+      result.innerHTML = value
+      resultDiv.appendChild(result)
+    }
+  } else {
+    return "No sessions saved";
+  }
+}
