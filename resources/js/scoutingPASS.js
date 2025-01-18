@@ -157,7 +157,7 @@ function addCounter(table, idx, name, data) {
     return idx + 1;
   }
   var cell2 = row.insertCell(1);
-  cell1.innerHTML = name + '&nbsp;';
+  cell1.innerHTML = name + '& ;';
   if (data.hasOwnProperty('tooltip')) {
     cell1.setAttribute("title", data.tooltip);
   }
@@ -787,7 +787,7 @@ return document.forms.scoutingForm.l.value
 
 function validateData() {
   var ret = true;
-  var errStr = "";
+ /* var errStr = "";
   for (rf of requiredFields) {
     var thisRF = document.forms.scoutingForm[rf];
     if (thisRF.value == "[]" || thisRF.value.length == 0) {
@@ -803,7 +803,7 @@ function validateData() {
   }
   if (ret == false) {
     alert("Enter all required values\n" + errStr);
-  }
+  } */
   return ret
 }
 
