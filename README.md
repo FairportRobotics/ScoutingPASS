@@ -11,6 +11,12 @@ information about how they developed the application.
 Github allows us to host a
 [live version of the application](https://fairportrobotics.github.io/ScoutingPASS/)
 
+#### Match Scouting URL
+
+| Match Scouting URL                                                                | Pit Scouting URL                                                                      |
+| --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| <img src="resources/images/ScoutingPASS.png" alt="drawing" style="width:400px;"/> | <img src="resources/images/ScoutingPASS Pit.png" alt="drawing" style="width:400px;"/> |
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
