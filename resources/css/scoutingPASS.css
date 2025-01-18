@@ -1,9 +1,8 @@
 @font-face {
-    font-family: 'Alexis';
+    font-family: 'Bebas Neue';
     font-style: normal;
     font-weight: normal;
-    src: local('Alexis'), url('../fonts/alex.woff') format('woff');
-    src: url("../fonts/alexisv3.ttf") format('truetype');
+    src: url("../fonts/BebasNeue.ttf") format('truetype');
 }
 
 html, body{
@@ -76,7 +75,7 @@ html, body{
     left: 0;
     top: 0;
     color: white;
-    background-color: black;
+    background-color: rgb(27, 105, 79);
     font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     text-align: justify;
 }
@@ -212,12 +211,12 @@ input {
 }
 
 .title {
-    width: "50%";
+    width: 50%;
     text-align: right;
 }
 
 .field {
-    width: "50%";
+    width: 50%;
     text-align: left;
 }
 
@@ -253,10 +252,3 @@ input {
     font-weight: 400;
     font-style: normal;
   }
-  
-  .bebas-neue-regular {
-    font-family: "Bebas Neue", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
