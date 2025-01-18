@@ -157,7 +157,7 @@ function addCounter(table, idx, name, data) {
     return idx + 1;
   }
   var cell2 = row.insertCell(1);
-  cell1.innerHTML = name + '& ;';
+  cell1.innerHTML = name + '&nbsp;';
   if (data.hasOwnProperty('tooltip')) {
     cell1.setAttribute("title", data.tooltip);
   }
