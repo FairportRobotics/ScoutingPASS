@@ -31,6 +31,11 @@ var config_data = `
             "code": "nwa",
             "type": "bool"
         },
+        {
+            "Name": "Can you remove algae from the reef",
+            "code": "rva",
+            "type": "bool"
+        },
         { 
             "name": "Comments",
             "code": "co",
