@@ -18,7 +18,7 @@
 			<div id="main-panel-holder">
 				<div id="prematch" class="main-panel">
 					<h2 id="prematchHeader2">Pre-Game</h2>
-					<p class="match-label"><input type="button" value="Next" id="nextButton1" onclick="swipePage(1)"></p>
+					<!--p class="match-label"><input type="button" value="Next" id="nextButton1" onclick="swipePage(1)"></p-->
 					<table id="prematch_table" style="font: Roboto">
 					<!-- ###PRE-MATCH-COMPONENTS###-->
 					</table>
@@ -27,7 +27,7 @@
 
 				<div id="auton" class="main-panel">
 					<h2 id="autonHeader2">Auto</h2>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton1" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton3" onclick="swipePage(1)"></p>
+					<!--p class="match-label"><input type="button" value="Prev" id="prevButton1" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton3" onclick="swipePage(1)"></p-->
 					<table id="auton_table">
 					<!-- ###AUTON-COMPONENTS###-->
 					</table>
@@ -36,7 +36,7 @@
 
 				<div id="teleop" class="main-panel">
 					<h2 id="teleopHeader2" >Teleop</h2>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton3" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton5" onclick="swipePage(1)"></p>
+					<!--p class="match-label"><input type="button" value="Prev" id="prevButton3" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton5" onclick="swipePage(1)"></p-->
 					<table id="teleop_table">
 						<!-- ###TELEOP-COMPONENTS###-->
 					</table>
@@ -45,7 +45,7 @@
 
 				<div id="endgame" class="main-panel">
 					<h2 id="endgameHeader2">Endgame</h2>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton5" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton7" onclick="swipePage(1)"></p>
+					<!--p class="match-label"><input type="button" value="Prev" id="prevButton5" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton7" onclick="swipePage(1)"></p-->
 					<table id="endgame_table">
 						<!-- ###ENDGAME-COMPONENTS###-->
 					</table>
@@ -54,7 +54,7 @@
 
 				<div id="post-match" class="main-panel">
 					<h2>Postmatch</h2>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton7" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton9" onclick="swipePage(1)"></p>
+					<!--p class="match-label"><input type="button" value="Prev" id="prevButton7" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton9" onclick="swipePage(1)"></p-->
 					<table id="postmatch_table">
 						<!-- ###POST-MATCH-COMPONENTS###-->
 					</table>
@@ -63,10 +63,10 @@
 
 				<div id="qr-code" class="main-panel">
 					<h2 id="qrHeader2">Generate QR Code</h2>
-					<p class="match-label"><input type="button" value="Prev" id="prevButton9" onclick="swipePage(-1)"></p>
-					<p id="qr-info" class="qr-info"><span style="border: 4px solid black; padding: 10px; border-radius: 5px;" id="display_qr-info" ></span></p>
+					<!--p class="match-label"><input type="button" value="Prev" id="prevButton9" onclick="swipePage(-1)"></p-->
+					<p id="qr-info" class="qr-info"><span id="display_qr-info" ></span></p>
 					<table id="qr-table"><tr><td width="5%">;</td><td width="90%">
-						<div id="qrcode" style="text-align:center">
+						<div id="qrcode">
 							<script>
 						// Create QRCode Object
 								qr = new QRCode(document.getElementById("qrcode"), options)

@@ -5,68 +5,40 @@
     src: url("../fonts/BebasNeue.ttf") format('truetype');
 }
 
-html, body{
+html,
+body {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
     color: white;
-    background-color: black;
+    background-color: #669bbc;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
 
-#prematch_table, #postmatch_table {
-
-    font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+table {
     text-align: center;
-    color: white;
     font-size: 20px;
     font-style: bold;
     letter-spacing: 1px;
-    border-width: 4px;
-    border-color: rgb(0, 0, 0);
+    border: 0;
 }
 
-#auton_table, #endgame_table, #teleop_table {
-    font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    font-style: bold;
-    border-width: 4px;
-    border-color: black;
-    text-align: left;
+input {
+    border: 0;
+    border-radius: 8px;
+    padding: 14px;
+    margin-right: 2px;
+    margin-left:2px;
 }
 
-.button {
-    font-family: Alexis;
+.button,
+.undoButton,
+.flipButton {
     font-size: 16px;
 }
 
-#autonHeader, #endgameHeader, #teleopHeader1, #teleopHeader2{
-    font-family: 'Bebas Neue';    
-    color: rgb(255, 255, 255);
-    border-color: rgb(0, 0, 0);
-    border-width: 4px;
-}
-
-#postmatchHeader{
-    border-width: 4px;
-    border-color: rgb(0, 0, 0);
-}
-
-#prematchHeader1, #prematchHeader2{
-    font-family: 'Bebas Neue';
-    font-size: 40px;
-    color: rgb(255, 255, 255);
-    border-color: rgb(0, 0, 0);
-    border-width: 4px;
-}
-
-#qrHeader1, #qrHeader2 {
-    border-width: 4px;
-    color: rgb(255, 255, 255);
-}
-
-.main-panel{
+.main-panel {
     display: none;
     height: 100%;
     min-height: 100%;
@@ -74,128 +46,62 @@ html, body{
     position: absolute;
     left: 0;
     top: 0;
-    color: white;
-    background-color: rgb(27, 105, 79);
-    font-family : -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     text-align: justify;
 }
 
-#prematch{
+#prematch {
     display: table;
 }
 
-#qr-code{
+#qr-code {
     border-radius: 5px;
     text-align: center;
-    color: rgb(255, 255, 255);
 }
 
-h1{
-    font-family: 'Bebas Neue';
+h1 {
     text-align: center;
-    border-style: groove;
-    border-color: rgb(0, 0, 0);
-    border-width: 2px;
+    border-width: 0px;
     font-size: 40px;
     padding: 10px;
     font-weight: 350;
 }
 
-#page2, #page4 {
+#page2,
+#page4 {
     color: black;
 }
 
-h2{
+h2 {
     font-family: 'Bebas Neue';
     text-align: center;
     font-size: 30px;
     font-weight: 300;
     font-style: normal;
-    color: white
 }
 
-.match-label{
+.match-label {
     text-align: center;
 }
 
-.half-button-l{
+.half-button-l {
     width: 48%;
     margin: 1vw;
     height: 100%;
-    font: roboto;
 }
 
-.half-button-r{
+.half-button-r {
     flex-grow: 1;
     height: 100%;
     width: 48%;
     margin: 1vw;
-    font: roboto;
 }
 
-.half-button-container{
+.half-button-container {
     display: flex;
 }
 
-#nextButton1, #nextButton2, #nextButton9, #nextButton10, .clearForm, .submitForm, #displayButton, dontPress, #copyButton {
-    font-family: Alexis;
-    padding: 10px;
-    background-color: rgb(0, 0, 0);
-    text-decoration: none;
-    display: inline-block;
-    color:white;
-}
-
-#nextButton3, #nextButton4, #nextButton5, #nextButton6, #nextButton7, #nextButton8 {
-    font-family: Alexis;
-    background-color: black;
-    padding: 10px;
-    color: white;
-}
-
-.undoButton, .flipButton {
-    font-family: Alexis;
-    background-color: black;
-    padding: 10px;
-    color: white;
-    margin-left: 20px;
-}
-
-#prevButton7, #prevButton8, #prevButton9{
-    font-family: Alexis;
-    background-color: rgb(0, 0, 0);
-    padding: 10px;
-    color: white;
-}
-
-#prevButton1, #prevButton2, #prevButton3, #prevButton4, #prevButton5, #prevButton6{
-    font-family: Alexis;
-    background-color: black;
-    padding: 10px;
-    color: white;
-
-}
-
-#prematch_table{
-    font: Alexis;
-    text-align: center;
-}
-
-
-h1 .odd {
-    font-family: Alexis;
-    text-align: center;
-    color: #0AB4EC;
-}
-
-h1 .even {
-    font-family: 'Bebas Neue';
-    text-align: center;
-    color: #42B333;
-}
-
 table {
-    border: 1px solid black;
+    border: 0px;
     width: 100%;
 }
 
@@ -203,11 +109,10 @@ td {
     padding: 10px 4px;
 }
 
-input {
+input, .counter{
     font-size: 16px;
-    font: roboto;
-    color: black;
-    background-color: rgb(255, 255, 255);
+    color: #222222;
+    background-color: #efefef;
 }
 
 .title {
@@ -227,28 +132,6 @@ input {
 }
 
 #data {
-    font-family:'Lucida Console', 'monospace';
+    font-family: 'Lucida Console', 'monospace';
     text-align: justify;
 }
-
-.open-sans{
-  font-family: "Open Sans", serif;
-  font-optical-sizing: auto;
-  font-weight:800;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-
-.roboto-condensed {
-  font-family: "Roboto Condensed", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.bebas-neue-regular {
-    font-family: "Bebas Neue", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
