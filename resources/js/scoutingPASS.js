@@ -787,7 +787,7 @@ return document.forms.scoutingForm.l.value
 
 function validateData() {
   var ret = true;
- /* var errStr = "";
+  var errStr = "";
   for (rf of requiredFields) {
     var thisRF = document.forms.scoutingForm[rf];
     if (thisRF.value == "[]" || thisRF.value.length == 0) {
@@ -803,7 +803,7 @@ function validateData() {
   }
   if (ret == false) {
     alert("Enter all required values\n" + errStr);
-  } */
+  }
   return ret
 }
 
