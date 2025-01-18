@@ -2,7 +2,6 @@ var config_data = `
 {
     "dataFormat": "tsv",
     "title": "Scouting PASS 2025",
-    "page_title": "Reefscape",
     "checkboxAs": "10",
     "prematch": [
         {
@@ -74,14 +73,8 @@ var config_data = `
             "type": "bool"
         },
         {
-            "name": "Coral L1 Scores",
-            "code": "ac1",
-            "type": "counter",
-            "tooltip": "Maximum of 24"
-        },
-        {
-            "name": "Coral L2 Scores",
-            "code": "ac2",
+            "name": "Coral L4 Scores",
+            "code": "ac4",
             "type": "counter",
             "tooltip": "Maximum of 12"
         },
@@ -92,10 +85,16 @@ var config_data = `
             "tooltip": "Maximum of 12"
         },
         {
-            "name": "Coral L4 Scores",
-            "code": "ac4",
+            "name": "Coral L2 Scores",
+            "code": "ac2",
             "type": "counter",
             "tooltip": "Maximum of 12"
+        },
+        {
+            "name": "Coral L1 Scores",
+            "code": "ac1",
+            "type": "counter",
+            "tooltip": "Maximum of 24"
         },
         {
             "name": "Algae Scores Processor",
@@ -110,14 +109,8 @@ var config_data = `
     ],
     "teleop": [
         {
-            "name": "Coral L1 Scores",
-            "code": "tc1",
-            "type": "counter",
-            "maxValue": 12
-        },
-        {
-            "name": "Coral L2 Scores",
-            "code": "tc2",
+            "name": "Coral L4 Scores",
+            "code": "tc4",
             "type": "counter",
             "maxValue": 12
         },
@@ -128,10 +121,16 @@ var config_data = `
             "maxValue": 12
         },
         {
-            "name": "Coral L4 Scores",
-            "code": "tc4",
+            "name": "Coral L2 Scores",
+            "code": "tc2",
             "type": "counter",
             "maxValue": 12
+        },
+        {
+            "name": "Coral L1 Scores",
+            "code": "tc1",
+            "type": "counter",
+            "maxValue": 24
         },
         {
             "name": "Algae Scores Processor",
