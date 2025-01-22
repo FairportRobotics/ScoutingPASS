@@ -224,7 +224,7 @@ function addClickableImage(table, idx, name, data) {
     cell1.innerHTML = `Error: No code specified for ${name}`;
     return idx + 1;
   }
-  cell.innerHTML = name;
+  cell.innerHTML = name + '&nbsp;';
   if (data.hasOwnProperty('tooltip')) {
     cell.setAttribute("title", data.tooltip);
   }
@@ -908,6 +908,8 @@ function qr_regenerate() {
   }
   
   
+const sessionsDictionary = JSON.parse(sessions);
+
   clear = false
   if(clear){
     localStorage.clear()
@@ -915,7 +917,7 @@ function qr_regenerate() {
   
 
   // Regenerate QR Code
-  qr.makeCode(data)
+  qr.makeCode(sessionsDictionary[key])
   
 
   updateQRHeader()
