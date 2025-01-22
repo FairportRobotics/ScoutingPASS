@@ -908,6 +908,8 @@ function qr_regenerate() {
   }
   
   
+const sessionsDictionary = JSON.parse(sessions);
+
   clear = false
   if(clear){
     localStorage.clear()
@@ -915,7 +917,7 @@ function qr_regenerate() {
   
 
   // Regenerate QR Code
-  qr.makeCode(data)
+  qr.makeCode(sessionsDictionary[key])
   
 
   updateQRHeader()
