@@ -890,34 +890,54 @@ function qr_regenerate() {
   // Get data
   data = getData(dataFormat)
 
-
-  key = document.getElementById("input_m").value + "." + getRobot()
-  sessions = localStorage.getItem("sessions")
-  if(sessions){
-    const sessionsDictionary = JSON.parse(sessions);
-    sessionsDictionary[key] = key + "\t" + data;
-    sessionsDictionary[key].replace('r', "Red ", 'b', "Blue ")
-    localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
-    console.log(sessionsDictionary)
+  if(!pitScouting){
+    key = document.getElementById("input_m").value + "." + getRobot()
+    sessions = localStorage.getItem("sessions")
+    if(sessions){
+      const sessionsDictionary = JSON.parse(sessions);
+      sessionsDictionary[key] = key + "\t" + data;
+      sessionsDictionary[key].replace('r', "Red ", 'b', "Blue ")
+      localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
+      console.log(sessionsDictionary)
+    }else{
+      const sessionsDictionary = {};
+      sessionsDictionary[key] = key + "\t" + data;
+      sessionsDictionary[key].replace('r', "Red ", 'b', "Blue ")
+      localStorage.setItem("sessions", JSON.stringify(sessionsDictionary))
+    }
   }else{
-    const sessionsDictionary = {};
-    sessionsDictionary[key] = key + "\t" + data;
-    sessionsDictionary[key].replace('r', "Red ", 'b', "Blue ")
-    localStorage.setItem("sessions", JSON.stringify(sessionsDictionary))
-    console.log(sessionsDictionary)
+    key = document.getElementById("input_t").value
+    pitSessions = localStorage.getItem("pitSessions")
+    if(pitSessions){
+      const pitDictionary = JSON.parse(pitSessions);
+      pitDictionary[key] = data;
+      localStorage.setItem("pitSessions", JSON.stringify(pitDictionary))
+    }else{
+      const pitDictionary = {}
+      pitDictionary[key] = data
+      localStorage.setItem("pitSessions", JSON.stringify(pitDictionary))
+    }
   }
-  
-  
-const sessionsDictionary = JSON.parse(sessions);
 
   clear = false
   if(clear){
     localStorage.clear()
   }
-  
 
-  // Regenerate QR Code
-  qr.makeCode(sessionsDictionary[key])
+  if(!pitScouting){
+    sessions = localStorage.getItem("sessions")
+    key = document.getElementById("input_m").value + "." + getRobot()
+    const sessionsDictionary = JSON.parse(sessions)
+    qr.makeCode(sessionsDictionary[key])
+  }else{
+    pitSessions = localStorage.getItem("pitSessions")
+    key = document.getElementById("input_t").value
+    const pitDictionary = JSON.parse(pitSessions)
+    console.log(pitDictionary)
+    qr.makeCode(pitDictionary[key])
+  }
+
+
   
 
   updateQRHeader()
