@@ -938,45 +938,10 @@ function qr_regenerate() {
   }
 
 
-  
-
   updateQRHeader()
   return true
 }
 
-
-//Saved for future use - not currently in use
-function getQRCode() {
-  totalData = ""
-  const keysUsed = []
-  sessions = localStorage.getItem("sessions")
-  const sessionsDictionary = JSON.parse(sessions);
-  sessionsAdded = 0
-  for(key in sessionsDictionary){
-    totalData += sessionsDictionary[key] + "\n"
-    keysUsed[sessionsAdded] = key
-    sessionsAdded++
-    if(sessionsAdded > 4){
-      uploaded = localStorage.getItem("uploaded")
-      if(uploaded){
-        const uploadedDictionary = JSON.parse(uploaded)
-        for(key in keysUsed){
-          uploadedDictionary[key] = sessionsDictionary[key]
-        }
-        localStorage.setItem("uploaded", JSON.parse(uploadedDictionary))
-      }else{
-        const uploadedDictionary = {}
-        for(key in keysUsed){
-          uploadedDictionary[key] = sessionsDictionary[key]
-        }
-        localStorage.setItem("uploaded", JSON.parse(uploadedDictionary))
-      }
-      sessionsAdded = 0
-      qr.makeCode(totalData)
-      break
-    }
-  }
-}
 
 function qr_clear() {
   qr.clear()
