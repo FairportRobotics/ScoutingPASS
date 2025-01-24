@@ -933,7 +933,6 @@ function qr_regenerate() {
     pitSessions = localStorage.getItem("pitSessions")
     key = document.getElementById("input_t").value
     const pitDictionary = JSON.parse(pitSessions)
-    console.log(pitDictionary)
     qr.makeCode(pitDictionary[key])
   }
 
