@@ -863,13 +863,13 @@ function getData(dataFormat) {
 function updateQRHeader() {
   let str = 'Robot: !ROBOT! Event: !EVENT! Match: !MATCH! Team: !TEAM!';
 
-  if (!pitScouting) {
+  if(!pitScouting) {
     str = str
       .replace('!EVENT!', document.getElementById("input_e").value)
       .replace('!MATCH!', document.getElementById("input_m").value)
       .replace('!ROBOT!', document.getElementById("display_r").value)
       .replace('!TEAM!', document.getElementById("input_t").value);
-  } else {
+  }else {
     str = 'Pit Scouting - Team !TEAM!'
       .replace('!TEAM!', document.getElementById("input_t").value);
   }
@@ -890,73 +890,57 @@ function qr_regenerate() {
   // Get data
   data = getData(dataFormat)
 
-
-  key = document.getElementById("input_m").value + "." + getRobot()
-  sessions = localStorage.getItem("sessions")
-  if(sessions){
-    const sessionsDictionary = JSON.parse(sessions);
-    sessionsDictionary[key] = key + "\t" + data;
-    sessionsDictionary[key].replace('r', "Red ", 'b', "Blue ")
-    localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
-    console.log(sessionsDictionary)
+  if(!pitScouting){
+    key = document.getElementById("input_m").value + "." + getRobot()
+    sessions = localStorage.getItem("sessions")
+    if(sessions){
+      const sessionsDictionary = JSON.parse(sessions);
+      sessionsDictionary[key] = key + "\t" + data;
+      sessionsDictionary[key].replace('r', "Red ", 'b', "Blue ")
+      localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
+      console.log(sessionsDictionary)
+    }else{
+      const sessionsDictionary = {};
+      sessionsDictionary[key] = key + "\t" + data;
+      sessionsDictionary[key].replace('r', "Red ", 'b', "Blue ")
+      localStorage.setItem("sessions", JSON.stringify(sessionsDictionary))
+    }
   }else{
-    const sessionsDictionary = {};
-    sessionsDictionary[key] = key + "\t" + data;
-    sessionsDictionary[key].replace('r', "Red ", 'b', "Blue ")
-    localStorage.setItem("sessions", JSON.stringify(sessionsDictionary))
-    console.log(sessionsDictionary)
+    key = document.getElementById("input_t").value
+    pitSessions = localStorage.getItem("pitSessions")
+    if(pitSessions){
+      const pitDictionary = JSON.parse(pitSessions);
+      pitDictionary[key] = data;
+      localStorage.setItem("pitSessions", JSON.stringify(pitDictionary))
+    }else{
+      const pitDictionary = {}
+      pitDictionary[key] = data
+      localStorage.setItem("pitSessions", JSON.stringify(pitDictionary))
+    }
   }
-  
-  
-const sessionsDictionary = JSON.parse(sessions);
 
   clear = false
   if(clear){
     localStorage.clear()
   }
-  
 
-  // Regenerate QR Code
-  qr.makeCode(sessionsDictionary[key])
-  
+  if(!pitScouting){
+    sessions = localStorage.getItem("sessions")
+    key = document.getElementById("input_m").value + "." + getRobot()
+    const sessionsDictionary = JSON.parse(sessions)
+    qr.makeCode(sessionsDictionary[key])
+  }else{
+    pitSessions = localStorage.getItem("pitSessions")
+    key = document.getElementById("input_t").value
+    const pitDictionary = JSON.parse(pitSessions)
+    qr.makeCode(pitDictionary[key])
+  }
+
 
   updateQRHeader()
   return true
 }
 
-
-//Saved for future use - not currently in use
-function getQRCode() {
-  totalData = ""
-  const keysUsed = []
-  sessions = localStorage.getItem("sessions")
-  const sessionsDictionary = JSON.parse(sessions);
-  sessionsAdded = 0
-  for(key in sessionsDictionary){
-    totalData += sessionsDictionary[key] + "\n"
-    keysUsed[sessionsAdded] = key
-    sessionsAdded++
-    if(sessionsAdded > 4){
-      uploaded = localStorage.getItem("uploaded")
-      if(uploaded){
-        const uploadedDictionary = JSON.parse(uploaded)
-        for(key in keysUsed){
-          uploadedDictionary[key] = sessionsDictionary[key]
-        }
-        localStorage.setItem("uploaded", JSON.parse(uploadedDictionary))
-      }else{
-        const uploadedDictionary = {}
-        for(key in keysUsed){
-          uploadedDictionary[key] = sessionsDictionary[key]
-        }
-        localStorage.setItem("uploaded", JSON.parse(uploadedDictionary))
-      }
-      sessionsAdded = 0
-      qr.makeCode(totalData)
-      break
-    }
-  }
-}
 
 function qr_clear() {
   qr.clear()
