@@ -1467,3 +1467,34 @@ function getSessions(){
     return "No sessions saved";
   }
 }
+
+function QRShow() {
+  // QR Code documentation can be examined at https://github.com/ushelp/EasyQRCodeJS
+
+  // Retrieve scouting sessions from localStorage.
+  const sessions = JSON.parse(localStorage.getItem("sessions"));
+  for (const [key, value] of Object.entries(sessions)) {
+    // Create a div we can use to act as a container for the label and the QR code.
+    var qrContainer = document.createElement("div");
+    qrContainer.setAttribute("id", "qr-container-" + key);
+
+    // Create the label.
+    var label = document.createElement("label");
+    label.innerHTML = key;
+
+    // Create the div to receive the QR code.
+    const id = "qr-image-" + key;
+    var qrDiv = document.createElement("div");
+    qrDiv.setAttribute("id", id);
+    qrDiv.setAttribute("style", "width: 100%");
+
+    // Append to DOM.
+    qrContainer.appendChild(label);
+    qrContainer.appendChild(qrDiv);
+    document.body.appendChild(qrContainer);
+
+    // Add the QR Code.
+    var options = { text: value, width: 245 };
+    new QRCode(document.getElementById(id), options);
+  }
+}
