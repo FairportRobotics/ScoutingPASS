@@ -107,13 +107,13 @@ table {
     width: 100%;
 }
 
-results {
+.results {
     text-align: center;
     font-size: 20px;
     font-style: bold;
     letter-spacing: 1px;
     border: 0;
-    background-color: #743838;
+    background-color: #669bbc;
 }
 
 td {
