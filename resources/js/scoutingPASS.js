@@ -1470,6 +1470,7 @@ function getSessions(){
 
 function QRShow() {
   // QR Code documentation can be examined at https://github.com/ushelp/EasyQRCodeJS
+  const dest = document.getElementById("putHere");
 
   // Retrieve scouting sessions from localStorage.
   const sessions = JSON.parse(localStorage.getItem("sessions"));
@@ -1491,7 +1492,7 @@ function QRShow() {
     // Append to DOM.
     qrContainer.appendChild(label);
     qrContainer.appendChild(qrDiv);
-    document.body.appendChild(qrContainer);
+    dest.appendChild(qrContainer);
 
     // Add the QR Code.
     var options = { text: value, width: 245 };
