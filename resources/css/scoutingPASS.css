@@ -146,16 +146,3 @@ button, input, .counter{
     font-family: 'Lucida Console', 'monospace';
     text-align: justify;
 }
-#qr-image-1r1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-  
-#qr-container-1r1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;}
