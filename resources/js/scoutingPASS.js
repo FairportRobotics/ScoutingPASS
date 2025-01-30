@@ -6,8 +6,8 @@
 document.addEventListener("touchstart", startTouch, false);
 document.addEventListener("touchend", moveTouch, false);
 
+// Prevent the default action associated with the double-click
 document.addEventListener("dblclick", function (event) {
-  // Prevent the default action associated with the double-click
   event.preventDefault();
 });
 
