@@ -11,6 +11,46 @@ document.addEventListener("dblclick", function (event) {
   event.preventDefault();
 });
 
+const pins = {
+    "0446": "Abyss Mortimer",
+    "1665": "Alex Phillip",
+    "7789": "Amanah Obaji",
+    "1587": "Andrew McCadden",
+    "6938": "Ariana Toner",
+    "9792": "Asher Stuckey",
+    "1893": "Autumn Schoenfeld",
+    "5798": "Brandon Bates",
+    "2718": "Carter Silva",
+    "3741": "Celton Norter",
+    "0203": "Colby Jackson",
+    "4792": "Colden Stubbe",
+    "0722": "Connor Toper",
+    "9519": "Dean Blanchard",
+    "0686": "Domenic Giammusso",
+    "2033": "Greydon Jones-Dulisse",
+    "4370": "Hamza Keles",
+    "6563": "Jacob LeBlanc",
+    "1533": "Jacob Wyrozebski",
+    "4527": "Jesse White",
+    "8423": "Jonah Woika",
+    "4232": "Jonathan Brouillard",
+    "4621": "Jordan Fenton",
+    "1224": "Kai Hurrell",
+    "4930": "Kai Wilbur",
+    "4511": "Maddie DeCicca",
+    "1307": "Mason Silva",
+    "2106": "Matthew Mazzota",
+    "7144": "Nanson Chen",
+    "4205": "Nicholas Munier",
+    "2194": "Ruthie Christensen",
+    "5219": "Sam Clark",
+    "0910": "Shawn Estrich",
+    "5679": "Siena Reeve",
+    "9960": "Simon Stuckey",
+    "1033": "TJ Blake",
+    "8822": "Tyler Hignett"
+}
+
 // Swipe Up / Down / Left / Right
 var initialX = null;
 var xThreshold = 0.3;
@@ -909,6 +949,12 @@ function qr_regenerate() {
       // Don't allow a swipe until all required data is filled in
       return false;
     }
+    pin = document.getElementById("input_s").value
+    if(pins[pin] == undefined){
+      alert("Invalid Scouter Pin.");
+      return false;
+    }
+
   }
 
   // Get data
@@ -917,16 +963,17 @@ function qr_regenerate() {
   if (!pitScouting) {
     key = document.getElementById("input_m").value + "." + getRobot();
     sessions = localStorage.getItem("sessions");
+    pinNum = document.getElementById("input_s").value
     if (sessions) {
       const sessionsDictionary = JSON.parse(sessions);
       sessionsDictionary[key] = key + "\t" + data;
-      sessionsDictionary[key].replace("r", "Red ", "b", "Blue ");
+      sessionsDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue", pinNum, pins[pinNum]);
       localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
       console.log(sessionsDictionary);
     } else {
       const sessionsDictionary = {};
       sessionsDictionary[key] = key + "\t" + data;
-      sessionsDictionary[key].replace("r", "Red ", "b", "Blue ");
+      sessionsDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue", pinNum, pins[pinNum]);
       localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
     }
   } else {
