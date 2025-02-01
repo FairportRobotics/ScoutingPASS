@@ -48,7 +48,7 @@ const pins = {
     "5679": "Siena Reeve",
     "9960": "Simon Stuckey",
     "1033": "TJ Blake",
-    "8822": "Tyler Hignett",
+    "8822": "Tyler Hignett"
 }
 
 // Swipe Up / Down / Left / Right
