@@ -964,16 +964,19 @@ function qr_regenerate() {
     key = document.getElementById("input_m").value + "." + getRobot();
     sessions = localStorage.getItem("sessions");
     pinNum = document.getElementById("input_s").value
+    data.replace(pinNum, pins[pinNum])
     if (sessions) {
       const sessionsDictionary = JSON.parse(sessions);
       sessionsDictionary[key] = key + "\t" + data;
-      sessionsDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue", pinNum, pins[pinNum]);
+      sessionsDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
+      sessionsDictionary[key] += "/t" + pins[pinNum]
       localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
       console.log(sessionsDictionary);
     } else {
       const sessionsDictionary = {};
       sessionsDictionary[key] = key + "\t" + data;
-      sessionsDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue", pinNum, pins[pinNum]);
+      sessionsDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
+      sessionsDictionary[key] += "/t" + pins[pinNum]
       localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
     }
   } else {
