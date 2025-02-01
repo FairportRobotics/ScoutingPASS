@@ -5,7 +5,7 @@ var config_data = `
     "checkboxAs": "10",
     "prematch": [
         {
-            "name": "Scouter Name",
+            "name": "Scouter Pin",
             "code": "s",
             "type": "scouter",
             "size": 5,
