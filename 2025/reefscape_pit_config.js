@@ -11,37 +11,65 @@ var config_data = `
             "type": "number"
         },
         { 
-            "name": "Width",
+            "name": "How many auto methods do you have programmed?",
             "code": "wid",
             "type": "number",
             "defaultValue": "0"
         },
         { 
-            "name": "Floor Pickup Coral",
-            "code": "fpu",
-            "type": "bool"
+            "name": "How fast can your robot move? (MPH)",
+            "code": "wid",
+            "type": "number",
+            "defaultValue": "0"
         },
         { 
-            "name": "Autos",
-            "code": "aut",
-            "type": "bool"
+            "name": "Can score in -",
+            "code": "fpu",
+            "type": "radio",
+            "choices": 
+            {
+                "L1": "L1",
+                "L2": "L2",
+                "L3": "L3",
+                "L4": "L4",
+                "Processor": "Processor  ",
+                "Net": "Net  "
+            }
         },
-        {
-            "name": "Can you create new Auto's between matches",
-            "code": "nwa",
-            "type": "bool"
+        { 
+            "name": "Can on -",
+            "code": "fpu",
+            "type": "radio",
+            "choices": 
+            {
+                "Shallow": "Shallow Cage",
+                "Deep": "Deep Cage"
+            }
         },
-        {
-            "Name": "Can you remove algae from the reef",
-            "code": "rva",
-            "type": "bool"
+        { 
+            "name": "Can set auto speed to -",
+            "code": "fpu",
+            "type": "radio",
+            "choices": 
+            {
+                "Fast": "Fast",
+                "Mid": "Mid",
+                "Slow": "Slow"
+            }
         },
         { 
             "name": "Comments",
             "code": "co",
             "type": "text",
             "size": 20,
-            "maxSize": 250
+            "maxSize": 256
+        },
+        {
+            "name": "What is teams greatest strength",
+            "code": "sn",
+            "type": "text",
+            "size": 20,
+            "maxSize": 256 
         }
     ],
     "auton": [
