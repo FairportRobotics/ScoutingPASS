@@ -1058,6 +1058,31 @@ function clearForm() {
     resetRobot();
   }
 
+function qr_clear() {
+  qr.clear();
+}
+
+function clearForm() {
+  var match = 0;
+  var e = 0;
+
+  if (pitScouting) {
+    swipePage(-1);
+  } else {
+    swipePage(-5);
+
+    // Increment match
+    match = parseInt(document.getElementById("input_m").value);
+    if (match == NaN) {
+      document.getElementById("input_m").value = "";
+    } else {
+      document.getElementById("input_m").value = match + 1;
+    }
+
+    // Robot
+    resetRobot();
+  }
+
   // Clear XY coordinates
   inputs = document.querySelectorAll("[id*='XY_']");
   for (e of inputs) {
