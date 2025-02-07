@@ -14,5 +14,4 @@ Here's the process we'll follow:
 
 ## Sample
 
-"Adam wants to add a button to the second page of the match scouting app that, when clicked, randomly re-orders the inputs on the page."
-
+"Mr Hurrell has an idea to add a button to the Match Scouting home screen that, when clicked, will display a QR Code representing the URL to the Scouting App. Clicking another button will either dismiss the QR Code or return to the Match Scouting home screen."

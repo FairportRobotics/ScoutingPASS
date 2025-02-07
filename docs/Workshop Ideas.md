@@ -30,7 +30,7 @@ Let's walk through some practice match and pit scouting exercises from start to 
 
   Match Scouting
   1. Open the URL for Match Scouting (how will we make this efficient at the event?)
-  2. Be assigned a match and team (how will we communicate this to the scouters?)
+  2. Be assigned a match and team
   3. Collect match scouting data
   4. Repeat steps 2-3
   5. Scan data from scouters
@@ -38,9 +38,9 @@ Let's walk through some practice match and pit scouting exercises from start to 
   7. Scout more matches
   8. Flush data to Excel (how will we handle data for matches already scouted?)
 
-  Pit Scouting
+  Pit Scouting (optional)
   1. Open the URL for Pit Scouting (how will we make this efficient at the event?)
-  2. Be assigned a team (how will we communicate this to the scouters?)
+  2. Be assigned a team
   3. Collect pit scouting data
   4. Repeat steps 2-3
   5. Scan data from scouters
@@ -50,8 +50,9 @@ Let's walk through some practice match and pit scouting exercises from start to 
 
 Summary
 
+- Take time to think about your experience.
 - How was that workflow? 
-- Take time to think about your experience. Put yourself in the shoes of a scouter and not as a programmer.
+- What were the most difficult steps?
 - What can we can do to improve or optimize the experience?
 
 
