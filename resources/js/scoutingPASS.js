@@ -1627,7 +1627,7 @@ function QRShow() {
   const dest = document.getElementById("putHere");
 
   // Retrieve scouting sessions from localStorage.
-  const sessions = JSON.parse(localStorage.getItem("sessions"));
+  const sessions = JSON.parse(localStorage.getItem("matchSessions"));
   for (const [key, value] of Object.entries(sessions)) {
     // Create a div we can use to act as a container for the label and the QR code.
     var qrContainer = document.createElement("div");
