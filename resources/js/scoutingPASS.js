@@ -942,7 +942,6 @@ function updateQRHeader() {
   document.getElementById("display_qr-info").textContent = str;
 }
 
-
 function replaceValueInPosition(tabString, index, newValue) {
   // Split the string by tabs
   let parts = tabString.split("\t");
