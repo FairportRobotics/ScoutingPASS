@@ -1057,6 +1057,7 @@ function clearForm() {
     // Robot
     resetRobot();
   }
+}
 
 function qr_clear() {
   qr.clear();
