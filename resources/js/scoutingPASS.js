@@ -12,6 +12,7 @@ document.addEventListener("dblclick", function (event) {
 });
 
 const pins = {
+    "1234": "Test Scouter",
     "0446": "Abyss Mortimer",
     "1665": "Alex Phillip",
     "7789": "Amanah Obaji",
@@ -769,7 +770,6 @@ function configure() {
     // TF - T or F
     // 10 - 1 or 0
     if (["YN", "TF", "10"].includes(mydata.checkboxAs)) {
-      console.log("Setting checkboxAs to " + mydata.checkboxAs);
       checkboxAs = mydata.checkboxAs;
     } else {
       console.log("unrecognized checkboxAs setting.  Defaulting to YN.");
@@ -942,6 +942,20 @@ function updateQRHeader() {
   document.getElementById("display_qr-info").textContent = str;
 }
 
+
+function replaceValueInPosition(tabString, index, newValue) {
+  // Split the string by tabs
+  let parts = tabString.split("\t");
+
+  // Ensure there are at least index+1 parts
+  if (parts.length >= index + 1) {
+    parts[index] = newValue;
+  }
+
+  // Join the array back into a tab-delimited string
+  return parts.join("\t");
+}
+
 function qr_regenerate() {
   // Validate required pre-match date (event, match, level, robot, scouter)
   if (!pitScouting) {
@@ -949,7 +963,8 @@ function qr_regenerate() {
       // Don't allow a swipe until all required data is filled in
       return false;
     }
-    pin = document.getElementById("input_s").value
+
+    const pin = document.getElementById("input_s").value
     if(pins[pin] == undefined){
       alert("Invalid Scouter Pin.");
       return false;
@@ -959,26 +974,33 @@ function qr_regenerate() {
 
   // Get data
   data = getData(dataFormat);
-
   if (!pitScouting) {
-    key = document.getElementById("input_m").value + "." + getRobot();
-    sessions = localStorage.getItem("sessions");
-    pinNum = document.getElementById("input_s").value
-    if (sessions) {
-      const sessionsDictionary = JSON.parse(sessions);
-      sessionsDictionary[key] = key + "\t" + data;
-      sessionsDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue", pinNum, pins[pinNum]);
-      localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
-      console.log(sessionsDictionary);
-    } else {
-      const sessionsDictionary = {};
-      sessionsDictionary[key] = key + "\t" + data;
-      sessionsDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue", pinNum, pins[pinNum]);
-      localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
+    // We're operating on Match Scouting data.
+    const key = document.getElementById("input_m").value + "." + getRobot();
+    const pin = document.getElementById("input_s").value;
+    let sessionsDictionary = {};
+
+    // Retrieve the persisted Scouting Sessions if they exist.
+    const matchSessions = localStorage.getItem("matchSessions");
+    if (matchSessions) {
+      sessionsDictionary = JSON.parse(matchSessions);
     }
+
+    // Initialize the Scouting Session data.
+    let sessionData = key + "\t" + data;
+
+    // Perform replacements.
+    sessionData.replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
+    sessionData = replaceValueInPosition(sessionData, 2, pins[pin]);
+
+    // Persist the session data back into localStorage.
+    sessionsDictionary[key] = sessionData;
+    localStorage.setItem("matchSessions", JSON.stringify(sessionsDictionary));
+
   } else {
+    // We're operating on Pit Scouting data.
     key = document.getElementById("input_t").value;
-    pitSessions = localStorage.getItem("pitSessions");
+    const pitSessions = localStorage.getItem("pitSessions");
     if (pitSessions) {
       const pitDictionary = JSON.parse(pitSessions);
       pitDictionary[key] = data;
@@ -996,12 +1018,12 @@ function qr_regenerate() {
   }
 
   if (!pitScouting) {
-    sessions = localStorage.getItem("sessions");
+    sessions = localStorage.getItem("matchSessions");
     key = document.getElementById("input_m").value + "." + getRobot();
     const sessionsDictionary = JSON.parse(sessions);
     qr.makeCode(sessionsDictionary[key]);
   } else {
-    pitSessions = localStorage.getItem("pitSessions");
+    const pitSessions = localStorage.getItem("pitSessions");
     key = document.getElementById("input_t").value;
     const pitDictionary = JSON.parse(pitSessions);
     qr.makeCode(pitDictionary[key]);
