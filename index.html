@@ -12,24 +12,27 @@
 	<script src="resources/js/scoutingPASS.js"></script>
 	<script src="2025/reefscape_config.js"></script>
 	<link rel="stylesheet" href="resources/css/scoutingPASS.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
 	<form id="scoutingForm" onsubmit="return false" name="scoutingForm">
 		<div id="main-panel-holder">
 			<div id="prematch" class="main-panel">
+				<p class = "font">
 				<h2 id="prematchHeader2">Pre-Game</h2>
-				<!--p class="match-label"><input type="button" value="Next" id="nextButton1" onclick="swipePage(1)"></p-->
 				<table id="prematch_table">
 					<!-- ###PRE-MATCH-COMPONENTS###-->
 				</table>
 				<p class="match-label"><input type="button" value="Next" id="nextButton2" onclick="swipePage(1)"><input type="button" value="See All Results" id="displayButton"
 					onclick="document.location = 'results.html'"></p>
 			</div>
+			</p>
 
 			<div id="auton" class="main-panel">
 				<h2 id="autonHeader2">Auto</h2>
-				<!--p class="match-label"><input type="button" value="Prev" id="prevButton1" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton3" onclick="swipePage(1)"></p-->
 				<table id="auton_table">
 					<!-- ###AUTON-COMPONENTS###-->
 				</table>
@@ -39,7 +42,6 @@
 
 			<div id="teleop" class="main-panel">
 				<h2 id="teleopHeader2">Teleop</h2>
-				<!--p class="match-label"><input type="button" value="Prev" id="prevButton3" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton5" onclick="swipePage(1)"></p-->
 				<table id="teleop_table">
 					<!-- ###TELEOP-COMPONENTS###-->
 				</table>
@@ -49,7 +51,6 @@
 
 			<div id="endgame" class="main-panel">
 				<h2 id="endgameHeader2">Endgame</h2>
-				<!--p class="match-label"><input type="button" value="Prev" id="prevButton5" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton7" onclick="swipePage(1)"></p-->
 				<table id="endgame_table">
 					<!-- ###ENDGAME-COMPONENTS###-->
 				</table>
@@ -59,7 +60,6 @@
 
 			<div id="post-match" class="main-panel">
 				<h2>Postmatch</h2>
-				<!--p class="match-label"><input type="button" value="Prev" id="prevButton7" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton9" onclick="swipePage(1)"></p-->
 				<table id="postmatch_table">
 					<!-- ###POST-MATCH-COMPONENTS###-->
 				</table>
@@ -69,7 +69,6 @@
 
 			<div id="qr-code" class="main-panel">
 				<h2 id="qrHeader2">Generate QR Code</h2>
-				<!--p class="match-label"><input type="button" value="Prev" id="prevButton9" onclick="swipePage(-1)"></p-->
 				<p id="qr-info" class="qr-info"><span id="display_qr-info"></span></p>
 				<table id="qr-table">
 					<tr>

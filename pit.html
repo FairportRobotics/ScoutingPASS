@@ -12,21 +12,20 @@
 	<script src="resources/js/scoutingPASS.js"></script>
 	<script src="2025/reefscape_pit_config.js"></script>
 	<link rel="stylesheet" href="resources/css/scoutingPASS.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
 	<form id="scoutingForm" onsubmit="return false">
 		<div id="main-panel-holder">
 			<div id="prematch" class="main-panel">
-				<!--h1 id="prematchHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span
-						class="odd">N</span><span class="even">A</span><span class="odd">G</span><span
-						class="even">E</span><br>Scouting 2020</h1-->
 				<h2 id="prematchHeader2">Pit Scouting</h2>
-				<!--p class="match-label"><input type="button" value="Next" id="nextButton1" onclick="swipePage(1)"></p-->
 				<table id="prematch_table">
-					<!-- ###PRE-MATCH-COMPONENTS###-->
+					
 				</table>
-				<p class="match-label"><input type="button" value="Next" id="nextButton2" onclick="swipePage(1)"></p>
+				<p class="match-label"><input type="button" value="Qr Code" id="nextButton2" onclick="swipePage(1)"></p>
 			</div>
 			<div id="qr-code" class="main-panel">
 			<h1 id="qrHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span
@@ -41,7 +40,6 @@
 					<td width="90%">
 						<div id="qrcode">
 							<script>
-								// Create QRCode Object
 								qr = new QRCode(document.getElementById("qrcode"), options)
 							</script>
 						</div>
@@ -58,19 +56,8 @@
 					<td width="5%">&nbsp;</td>
 				</tr>
 			</table>
-			<p></p>
-			<p class="match-label"><input type="button" value="Display Data" id="displayButton"
-					onclick="displayData()"><input type="button" value="Copy Data" id="copyButton" onclick="copyData()">
-			</p>
-			<div id="submitButton">
-				<button id="submit" type="submit" class="submitForm">Send to Google Sheets</button>
-			</div>
-			<div id="clearButton">
-				<button type="button" class="clearForm" onclick="clearForm()">Clear Form</button>
-			</div>
 			<br>
 		</div>
-
 
 </form>
 </body>

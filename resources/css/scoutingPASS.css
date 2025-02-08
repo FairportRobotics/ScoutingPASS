@@ -146,3 +146,20 @@ button, input, .counter{
     font-family: 'Lucida Console', 'monospace';
     text-align: justify;
 }
+.bebas-neue-regular {
+  font-family: "Bebas Neue", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto1fr;
+    align-items: center;
+}
+
+font {
+    font-family: 'Bebas Neue';
+    font-size: 32px;
+}
+
