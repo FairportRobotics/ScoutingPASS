@@ -32,7 +32,7 @@ var config_data = `
             "type": "bool"
         },
         {
-            "Name": "Can you remove algae from the reef",
+            "name": "Can you remove algae from the reef",
             "code": "rva",
             "type": "bool"
         },
