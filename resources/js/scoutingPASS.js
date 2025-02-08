@@ -12,45 +12,44 @@ document.addEventListener("dblclick", function (event) {
 });
 
 const pins = {
-    "1234": "Test Scouter",
-    "0446": "Abyss Mortimer",
-    "1665": "Alex Phillip",
-    "7789": "Amanah Obaji",
-    "1587": "Andrew McCadden",
-    "6938": "Ariana Toner",
-    "9792": "Asher Stuckey",
-    "1893": "Autumn Schoenfeld",
-    "5798": "Brandon Bates",
-    "2718": "Carter Silva",
-    "3741": "Celton Norter",
-    "0203": "Colby Jackson",
-    "4792": "Colden Stubbe",
-    "0722": "Connor Toper",
-    "9519": "Dean Blanchard",
-    "0686": "Domenic Giammusso",
-    "2033": "Greydon Jones-Dulisse",
-    "4370": "Hamza Keles",
-    "6563": "Jacob LeBlanc",
-    "1533": "Jacob Wyrozebski",
-    "4527": "Jesse White",
-    "8423": "Jonah Woika",
-    "4232": "Jonathan Brouillard",
-    "4621": "Jordan Fenton",
-    "1224": "Kai Hurrell",
-    "4930": "Kai Wilbur",
-    "4511": "Maddie DeCicca",
-    "1307": "Mason Silva",
-    "2106": "Matthew Mazzota",
-    "7144": "Nanson Chen",
-    "4205": "Nicholas Munier",
-    "2194": "Ruthie Christensen",
-    "5219": "Sam Clark",
-    "0910": "Shawn Estrich",
-    "5679": "Siena Reeve",
-    "9960": "Simon Stuckey",
-    "1033": "TJ Blake",
-    "8822": "Tyler Hignett"
-}
+  "0446": "Abyss Mortimer",
+  1665: "Alex Phillip",
+  7789: "Amanah Obaji",
+  1587: "Andrew McCadden",
+  6938: "Ariana Toner",
+  9792: "Asher Stuckey",
+  1893: "Autumn Schoenfeld",
+  5798: "Brandon Bates",
+  2718: "Carter Silva",
+  3741: "Celton Norter",
+  "0203": "Colby Jackson",
+  4792: "Colden Stubbe",
+  "0722": "Connor Toper",
+  9519: "Dean Blanchard",
+  "0686": "Domenic Giammusso",
+  2033: "Greydon Jones-Dulisse",
+  4370: "Hamza Keles",
+  6563: "Jacob LeBlanc",
+  1533: "Jacob Wyrozebski",
+  4527: "Jesse White",
+  8423: "Jonah Woika",
+  4232: "Jonathan Brouillard",
+  4621: "Jordan Fenton",
+  1224: "Kai Hurrell",
+  4930: "Kai Wilbur",
+  4511: "Maddie DeCicca",
+  1307: "Mason Silva",
+  2106: "Matthew Mazzota",
+  7144: "Nanson Chen",
+  4205: "Nicholas Munier",
+  2194: "Ruthie Christensen",
+  5219: "Sam Clark",
+  "0910": "Shawn Estrich",
+  5679: "Siena Reeve",
+  9960: "Simon Stuckey",
+  1033: "TJ Blake",
+  8822: "Tyler Hignett",
+};
 
 // Swipe Up / Down / Left / Right
 var initialX = null;
@@ -770,6 +769,7 @@ function configure() {
     // TF - T or F
     // 10 - 1 or 0
     if (["YN", "TF", "10"].includes(mydata.checkboxAs)) {
+      console.log("Setting checkboxAs to " + mydata.checkboxAs);
       checkboxAs = mydata.checkboxAs;
     } else {
       console.log("unrecognized checkboxAs setting.  Defaulting to YN.");
@@ -942,20 +942,6 @@ function updateQRHeader() {
   document.getElementById("display_qr-info").textContent = str;
 }
 
-
-function replaceValueInPosition(tabString, index, newValue) {
-  // Split the string by tabs
-  let parts = tabString.split("\t");
-
-  // Ensure there are at least index+1 parts
-  if (parts.length >= index + 1) {
-    parts[index] = newValue;
-  }
-
-  // Join the array back into a tab-delimited string
-  return parts.join("\t");
-}
-
 function qr_regenerate() {
   // Validate required pre-match date (event, match, level, robot, scouter)
   if (!pitScouting) {
@@ -963,44 +949,64 @@ function qr_regenerate() {
       // Don't allow a swipe until all required data is filled in
       return false;
     }
-
-    const pin = document.getElementById("input_s").value
-    if(pins[pin] == undefined){
+    pin = document.getElementById("input_s").value;
+    if (pins[pin] == undefined) {
       alert("Invalid Scouter Pin.");
       return false;
     }
-
   }
 
   // Get data
   data = getData(dataFormat);
+
   if (!pitScouting) {
-    // We're operating on Match Scouting data.
-    const key = document.getElementById("input_m").value + "." + getRobot();
-    const pin = document.getElementById("input_s").value;
-    let sessionsDictionary = {};
-
-    // Retrieve the persisted Scouting Sessions if they exist.
-    const matchSessions = localStorage.getItem("matchSessions");
-    if (matchSessions) {
-      sessionsDictionary = JSON.parse(matchSessions);
+    key = document.getElementById("input_m").value + "." + getRobot();
+    sessions = localStorage.getItem("sessions");
+    pinNum = document.getElementById("input_s").value;
+    data.replace(pinNum, pins[pinNum]);
+    if (sessions) {
+      const sessionsDictionary = JSON.parse(sessions);
+      sessionsDictionary[key] = key + "\t" + data;
+      sessionsDictionary[key].replace(
+        "r1",
+        "Red",
+        "r2",
+        "Red",
+        "r3",
+        "Red",
+        "b1",
+        "Blue",
+        "b2",
+        "Blue",
+        "b3",
+        "Blue"
+      );
+      sessionsDictionary[key] += "/t" + pins[pinNum];
+      localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
+      console.log(sessionsDictionary);
+    } else {
+      const sessionsDictionary = {};
+      sessionsDictionary[key] = key + "\t" + data;
+      sessionsDictionary[key].replace(
+        "r1",
+        "Red",
+        "r2",
+        "Red",
+        "r3",
+        "Red",
+        "b1",
+        "Blue",
+        "b2",
+        "Blue",
+        "b3",
+        "Blue"
+      );
+      sessionsDictionary[key] += "/t" + pins[pinNum];
+      localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
     }
-
-    // Initialize the Scouting Session data.
-    let sessionData = key + "\t" + data;
-
-    // Perform replacements.
-    sessionData.replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
-    sessionData = replaceValueInPosition(sessionData, 2, pins[pin]);
-
-    // Persist the session data back into localStorage.
-    sessionsDictionary[key] = sessionData;
-    localStorage.setItem("matchSessions", JSON.stringify(sessionsDictionary));
-
   } else {
-    // We're operating on Pit Scouting data.
     key = document.getElementById("input_t").value;
-    const pitSessions = localStorage.getItem("pitSessions");
+    pitSessions = localStorage.getItem("pitSessions");
     if (pitSessions) {
       const pitDictionary = JSON.parse(pitSessions);
       pitDictionary[key] = data;
@@ -1018,12 +1024,12 @@ function qr_regenerate() {
   }
 
   if (!pitScouting) {
-    sessions = localStorage.getItem("matchSessions");
+    sessions = localStorage.getItem("sessions");
     key = document.getElementById("input_m").value + "." + getRobot();
     const sessionsDictionary = JSON.parse(sessions);
     qr.makeCode(sessionsDictionary[key]);
   } else {
-    const pitSessions = localStorage.getItem("pitSessions");
+    pitSessions = localStorage.getItem("pitSessions");
     key = document.getElementById("input_t").value;
     const pitDictionary = JSON.parse(pitSessions);
     qr.makeCode(pitDictionary[key]);
@@ -1031,32 +1037,6 @@ function qr_regenerate() {
 
   updateQRHeader();
   return true;
-}
-
-function qr_clear() {
-  qr.clear();
-}
-
-function clearForm() {
-  var match = 0;
-  var e = 0;
-
-  if (pitScouting) {
-    swipePage(-1);
-  } else {
-    swipePage(-5);
-
-    // Increment match
-    match = parseInt(document.getElementById("input_m").value);
-    if (match == NaN) {
-      document.getElementById("input_m").value = "";
-    } else {
-      document.getElementById("input_m").value = match + 1;
-    }
-
-    // Robot
-    resetRobot();
-  }
 }
 
 function qr_clear() {
@@ -1627,7 +1607,7 @@ function QRShow() {
   const dest = document.getElementById("putHere");
 
   // Retrieve scouting sessions from localStorage.
-  const sessions = JSON.parse(localStorage.getItem("matchSessions"));
+  const sessions = JSON.parse(localStorage.getItem("sessions"));
   for (const [key, value] of Object.entries(sessions)) {
     // Create a div we can use to act as a container for the label and the QR code.
     var qrContainer = document.createElement("div");
