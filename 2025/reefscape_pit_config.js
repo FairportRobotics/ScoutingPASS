@@ -11,7 +11,7 @@ var config_data = `
             "type": "number"
         },
         { 
-            "name": "Width",
+            "name": "Width(Ft)",
             "code": "wid",
             "type": "number",
             "defaultValue": "0"
