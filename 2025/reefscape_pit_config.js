@@ -88,6 +88,7 @@ var config_data = `
         },
         {
             "Name": "Can you remove algae from the reef",
+            "name": "Can you remove algae from the reef",
             "code": "rva",
             "type": "bool"
         },
