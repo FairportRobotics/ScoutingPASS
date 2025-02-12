@@ -68,11 +68,6 @@ var config_data = `
     ],
     "auton": [
         {
-            "name": "Leave Starting Zone",
-            "code": "al",
-            "type": "bool"
-        },
-        {
             "name": "Coral L4 Scores",
             "code": "ac4",
             "type": "counter",
@@ -105,6 +100,11 @@ var config_data = `
             "name": "Algae Scores Net",
             "code": "aan",
             "type": "counter"
+        },
+        {
+            "name": "Leave Starting Zone",
+            "code": "al",
+            "type": "bool"
         }
     ],
     "teleop": [
