@@ -20,18 +20,6 @@ var config_data = `
             "required": "true"
         },
         {
-            "name": "Match Level",
-            "code": "l",
-            "type": "level",
-            "choices": {
-                "qm": "Quals<br>",
-                "sf": "Semifinals<br>",
-                "f": "Finals"
-            },
-            "defaultValue": "qm",
-            "required": "true"
-        },
-        {
             "name": "Match #",
             "code": "m",
             "type": "match",
@@ -44,14 +32,15 @@ var config_data = `
             "code": "r",
             "type": "robot",
             "choices": {
-                "Red 1": "Red-1",
-                "Blue 1": "Blue-1<br>",
-                "Red 2": "Red-2",
-                "Blue 2": "Blue-2<br>",
-                "Red 3": "Red-3",
-                "Blue 3": "Blue-3"
+                "Red-1": "Red-1",
+                "Blue-1": "Blue-1<br>",
+                "Red-2": "Red-2",
+                "Blue-2": "Blue-2<br>",
+                "Red-3": "Red-3",
+                "Blue-3": "Blue-3"
             },
-            "required": "true"
+            "required": "true",
+            "defaultValue": "Red-1"
         },
         {
             "name": "Team #",
@@ -63,14 +52,14 @@ var config_data = `
         {
             "name": "Started With Coral",
             "code": "sc",
-            "type": "bool"
+            "type": "checkbox"
         }
     ],
     "auton": [
         {
             "name": "Leave Starting Zone",
             "code": "al",
-            "type": "bool"
+            "type": "checkbox"
         },
         {
             "name": "Coral L4 Scores",
@@ -150,8 +139,9 @@ var config_data = `
                 "s": "Source<br>",
                 "f": "Floor<br>",
                 "b": "Both<br>",
-                "x": "Not Attempted"
-            }
+                "x": "Not-Attempted"
+            },
+            "defaultValue": "x"
         }
     ],
     "endgame": [
@@ -163,7 +153,7 @@ var config_data = `
                 "p": "Parked<br>",
                 "s": "Shallow<br>",
                 "d": "Deep<br>",
-                "x": "Not Attempted"
+                "x": "Not-Attempted"
             },
             "defaultValue": "x"
         }
@@ -177,38 +167,39 @@ var config_data = `
                 "w": "Win<br>",
                 "l": "Lose<br>",
                 "t": "Tie<br>"
-            }
+            },
+            "defaultValue": "w"
         },
         {
             "name": "Auto Ranking Point",
             "code": "arp",
-            "type": "bool"
+            "type": "checkbox"
         },
         {
             "name": "Coral Ranking Point",
             "code": "crp",
-            "type": "bool"
+            "type": "checkbox"
         },
         {
             "name": "Barge Ranking Point",
             "code": "brp",
-            "type": "bool"
+            "type": "checkbox"
         },
         {
             "name": "Immobilized",
             "code": "i",
-            "type": "bool"
+            "type": "checkbox"
         },
         {
             "name": "Dropped Game Pieces",
             "code": "dgp",
-            "type": "bool"
+            "type": "checkbox"
         },
         {
             "name": "Make a good<br>alliance partner?",
             "tooltip": "Would you want this robot on your alliance in playoffs?",
             "code": "all",
-            "type": "bool"
+            "type": "checkbox"
         },
         {
             "name": "Comments",

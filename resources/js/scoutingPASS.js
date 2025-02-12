@@ -63,7 +63,7 @@ const pins = {
 
 // Must be filled in: e=event, m=match#, l=level(q,qf,sf,f), t=team#, r=robot(r1,r2,b1..), s=scouter
 //var requiredFields = ["e", "m", "l", "t", "r", "s", "as"];
-var requiredFields = ["e", "m", "l", "r", "s"];
+var requiredFields = ["e", "m", "r", "s"];
 
 function addTimer(table, idx, name, data) {
   var row = table.insertRow(idx);
@@ -820,11 +820,6 @@ for ( rb of document.getElementsByName('r')) { rb.checked = false };
 }
 
 
-function getLevel(){
-return document.forms.scoutingForm.l.value
-}
-
-
 function validateData() {
   var ret = true;
   var errStr = "";
@@ -1035,7 +1030,6 @@ function clearForm() {
     // Don't clear key fields
     if (code == "m") continue
     if (code.substring(0, 2) == "r_") continue
-    if (code.substring(0, 2) == "l_") continue
     if (code == "e") continue
 
     if (e.className == "clickableImage") {
@@ -1084,9 +1078,7 @@ function clearForm() {
           e.value = ""
         }
       } else if (e.type == "checkbox") {
-        if (e.checked == true) {
-          e.checked = false
-        }
+        e.checked = false
       } else {
         console.log("unsupported input type")
       }
@@ -1306,7 +1298,7 @@ function getCurrentTeamNumberFromRobot() {
 }
 
 function getCurrentMatchKey() {
-  return document.getElementById("input_e").value + "_" + getLevel() + document.getElementById("input_m").value;
+  return document.getElementById("input_e").value + "_" + document.getElementById("input_m").value;
 }
 
 function getCurrentMatch() {
