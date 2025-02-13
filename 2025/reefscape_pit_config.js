@@ -100,12 +100,20 @@ var config_data = `
             "maxSize": 250
         }
     ],
-    "auton": [
+    "auton": 
+    [
+
     ],
-    "teleop": [
+    "teleop": 
+    [
+
     ],
-    "endgame": [
+    "endgame": 
+    [
+
     ],
-    "postmatch": [
+    "postmatch": 
+    [
+
     ]
 }`;
