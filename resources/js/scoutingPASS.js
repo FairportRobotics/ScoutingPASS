@@ -1079,6 +1079,8 @@ function clearForm() {
         }
       } else if (e.type == "checkbox") {
         e.checked = false
+      } else if (e.type == "scouter") {
+        e.value = ""
       } else {
         console.log("unsupported input type")
       }
