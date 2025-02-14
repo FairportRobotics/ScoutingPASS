@@ -91,6 +91,11 @@ var config_data = `
             "type": "counter"
         },
         {
+            "name": "Dropped Game Pieces",
+            "code": "adp",
+            "type": "counter"
+        },
+        {
             "name": "Leave Starting Zone",
             "code": "al",
             "type": "bool"
@@ -129,6 +134,11 @@ var config_data = `
         {
             "name": "Algae Scores Net",
             "code": "tan",
+            "type": "counter"
+        },
+        {
+            "name": "Dropped Game Pieces",
+            "code": "tdp",
             "type": "counter"
         },
         {
@@ -188,11 +198,6 @@ var config_data = `
         {
             "name": "Immobilized",
             "code": "i",
-            "type": "checkbox"
-        },
-        {
-            "name": "Dropped Game Pieces",
-            "code": "dgp",
             "type": "checkbox"
         },
         {
