@@ -61,6 +61,8 @@ const pins = {
     "8822": "Tyler Hignett"
 }
 
+const eventMatches = []
+
 // Must be filled in: e=event, m=match#, l=level(q,qf,sf,f), t=team#, r=robot(r1,r2,b1..), s=scouter
 //var requiredFields = ["e", "m", "l", "t", "r", "s", "as"];
 var requiredFields = ["e", "m", "r", "s"];
@@ -1079,6 +1081,8 @@ function clearForm() {
         }
       } else if (e.type == "checkbox") {
         e.checked = false
+      } else if (e.type == "scouter") {
+        e.value = ""
       } else {
         console.log("unsupported input type")
       }
@@ -1306,6 +1310,22 @@ function getCurrentMatch() {
 }
 
 function updateMatchStart(event) {
+  if(document.getElementById("input_m").value != null && getRobot() != null){
+    alliancePos = getRobot()
+    alliance = ""
+    pos = 0
+    if(alliancePos.substring(0,1) == "R"){
+      alliance = "red"
+      pos = alliancePos.substring(4)
+    }else if(alliancePos.substring(0,1) == "B"){
+      alliance = "blue"
+      pos = alliancePos.substring(5)
+    }
+    teamNumber = eventMatches[document.getElementById("input_m").value]["alliances"][alliance]["team_keys"][pos-1].substring(4)
+    document.getElementById("input_t").value = teamNumber
+  }
+  
+  
   if ((getCurrentMatch() == "") ||
     (!teams)) {
     console.log("No match or team data.");
