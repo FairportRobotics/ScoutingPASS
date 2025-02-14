@@ -146,3 +146,8 @@ button, input, .counter{
     font-family: 'Lucida Console', 'monospace';
     text-align: justify;
 }
+
+textarea {
+    resize: none;
+  }
+  

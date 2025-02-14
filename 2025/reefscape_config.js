@@ -204,9 +204,10 @@ var config_data = `
         {
             "name": "Comments",
             "code": "co",
-            "type": "text",
-            "size": 15,
-            "maxSize": 55
+            "type": "textarea",
+            "size": 30,
+            "maxSize": 578,
+            "rows": 5
         }
     ]
 }`;

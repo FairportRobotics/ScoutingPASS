@@ -53,7 +53,7 @@ const pins = {
     "7144": "Nanson Chen",
     "4205": "Nicholas Munier",
     "2194": "Ruthie Christensen",
-    "5219": "Sam Clark",
+    "1": "Sam Clark",
     "0910": "Shawn Estrich",
     "5679": "Siena Reeve",
     "9960": "Simon Stuckey",
@@ -492,6 +492,61 @@ function addText(table, idx, name, data) {
   return idx + 1
 }
 
+function addTextArea(table, idx, name, data) {
+  var row = table.insertRow(idx);
+  var cell1 = row.insertCell(0);
+  cell1.classList.add("title");
+  if (!data.hasOwnProperty('code')) {
+    cell1.innerHTML = `Error: No code specified for ${name}`;
+    return idx + 1;
+  }
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = name + '&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
+  cell2.classList.add("field");
+  var inp = document.createElement("textarea");
+  inp.setAttribute("id", "textarea_" + data.code);
+  if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
+    inp.setAttribute("name", data.gsCol);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
+  if (data.hasOwnProperty('size')) {
+    inp.setAttribute("size", data.size);
+  }
+  if (data.hasOwnProperty('maxSize')) {
+    inp.setAttribute("maxLength", data.maxSize);
+  }
+  if (data.hasOwnProperty('defaultValue')) {
+    if (data.type == 'event') {
+      data.defaultValue = data.defaultValue.toLowerCase();
+    }
+    inp.setAttribute("value", data.defaultValue);
+  }
+  if (data.hasOwnProperty('required')) {
+    inp.setAttribute("required", "");
+  }
+  if (data.hasOwnProperty('disabled')) {
+    inp.setAttribute("disabled", "");
+  }
+  if (data.hasOwnProperty('rows')) {
+    inp.setAttribute('rows', data.rows)
+  }
+  cell2.appendChild(inp);
+
+  if (data.hasOwnProperty('defaultValue')) {
+    var def = document.createElement("textarea");
+    def.setAttribute("id", "default_" + data.code)
+    def.setAttribute("type", "hidden");
+    def.setAttribute("value", data.defaultValue);
+    cell2.appendChild(def);
+  }
+
+  return idx + 1
+}
+
 function addNumber(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
@@ -703,6 +758,8 @@ function addElement(table, idx, data) {
   } else if ((data.type == 'timer') ||
     (data.type == 'cycle')) {
     idx = addTimer(table, idx, name, data);
+  } else if (data.type == 'textarea') {
+    idx = addTextArea(table, idx, name, data);
   } else {
     console.log(`Unrecognized type: ${data.type}`);
   }
