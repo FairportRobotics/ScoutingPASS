@@ -19,56 +19,38 @@ var config_data = `
         {
             "name": "Can score on - L1",
             "code":"ch",
-            "type":"checkbox",
-            "choices":
-            {
-                "L1": "L1"
-            }
+            "type":"checkbox"
+            
         },
         {
             "name": "L2",
             "code":"ch",
-            "type":"checkbox",
-            "choices":
-            {
-                "L2": "L2"
-            }
+            "type":"checkbox"
+
+            
         },
         {
             "name": "L3",
             "code":"ch",
-            "type":"checkbox",
-            "choices":
-            {
-                "L3": "L3"
-            }
+            "type":"checkbox"
+
+            
         },
         {
             "name": "L4",
             "code":"ch",
-            "type":"checkbox",
-            "choices":
-            {
-                "L4": "L4"
-            }
+            "type":"checkbox"
+            
         },
         {
             "name": "Processor",
             "code":"ch",
-            "type":"checkbox",
-            "choices":
-            {
-                "Processor": "Processor"
-            }
+            "type":"checkbox"
         },
         {
             "name": "Net",
             "code":"ch",
-            "type":"checkbox",
-            "choices":
-            {
-                "Net": "Net"
-            }
+            "type":"checkbox"
         },
         { 
             "name": "How fast can your robot move? (MPH)",
@@ -84,17 +66,17 @@ var config_data = `
             {
                 "Shallow": "Shallow Cage",
                 "Deep": "Deep Cage"
-            }
+            },
+            "defaultValue": "Shallow Cage"
         },
         {
-            "Name": "Can you remove algae from the reef",
             "name": "Can you remove algae from the reef",
             "code": "rva",
-            "type": "bool"
+            "type": "checkbox"
         },
         { 
             "name": "Comments",
-            "code": "co",
+            "code": "pco",
             "type": "text",
             "size": 20,
             "maxSize": 250
