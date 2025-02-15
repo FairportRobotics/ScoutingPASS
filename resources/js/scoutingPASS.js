@@ -1535,7 +1535,7 @@ function getSessions(){
   }
 };
 
-function QRShow() {
+function showQRCodes() {
   // QR Code documentation can be examined at https://github.com/ushelp/EasyQRCodeJS
   const dest = document.getElementById("putHere");
 
