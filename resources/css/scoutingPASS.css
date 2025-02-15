@@ -146,3 +146,131 @@ button, input, .counter{
     font-family: 'Lucida Console', 'monospace';
     text-align: justify;
 }
+
+/*Radio Button Styles*/
+
+:root {
+    --form-control-color: rebeccapurple;
+  }
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.form-control {
+    font-family: system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: .1;
+    display: grid;
+    grid-template-columns: .5em;
+    gap: .5em;
+  }
+
+  input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ffffff;
+    margin: 0;
+    color: #000000;
+    width: 1em;
+    height:1em;
+    border: 0.2em solid currentColor;
+    border-radius: 100%;
+  }
+
+.form-control + .form-control {
+  margin-top: 1em;
+}
+
+input[type="radio"] {  
+    display: grid;
+    place-content: center;
+  }
+
+  input[type="radio"]::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+  }
+
+  input[type="radio"] {
+    display: grid;
+  }
+  
+  input[type="radio"]:checked::before {
+    transform: scale(1.25);
+  }
+
+/* Checkbox Styles */
+:root {
+    --form-control-color: rebeccapurple;
+  }
+
+.form-control {
+    font-family: system-ui, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+  }
+
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: #ffffff;
+    margin: 0;
+    font: inherit;
+    color: #000000;
+    width: 1em;
+    height: 1em;
+    border: 0.15em solid #000000;
+    border-radius: .15*em;
+  }
+
+  .form-control + .form-control {
+    margin-top: 1em;
+  }
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+  input[type="checkbox"] {
+    /* ...existing styles */
+  
+    display: grid;
+    place-content: center;
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65m;
+    transform: scale(1);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+  }
+
+  input[type="checkbox"]::before {
+    background-color: CanvasText;
+  }
+
+/*Button*/
+
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 40px;
+  cursor: pointer;
+  display: inline-block;
+  color: #ffffff;
+  
+}

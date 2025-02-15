@@ -11,7 +11,7 @@ var config_data = `
             "type": "number"
         },
         { 
-            "name": "Width(Ft)",
+            "name": "Width(In)",
             "code": "wid",
             "type": "number",
             "defaultValue": "0"
@@ -82,8 +82,10 @@ var config_data = `
             "type": "radio",
             "choices": 
             {
+                "None": "Neither",
                 "Shallow": "Shallow Cage",
-                "Deep": "Deep Cage"
+                "Deep": "Deep Cage",
+                "Both": "Both"
             }
         },
         {
