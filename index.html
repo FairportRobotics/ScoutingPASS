@@ -1,111 +1,27 @@
 <!DOCTYPE html>
 <html>
+	<head class = "home">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0">
+		<title>Scouting PASS</title>
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico">
+		<script src="resources/js/easy.qrcode.min.js"></script>
+		<script src="resources/js/TBAInterface.js"></script>
+		<script src="resources/js/googleSheets.js"></script>
+		<script src="resources/js/scoutingPASS.js"></script>
+		<script src="2025/reefscape_config.js"></script>
+		<link rel="stylesheet" href="resources/css/scoutingPASS.css">
+	</head>
 
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
-	<title>Scouting PASS</title>
-	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico">
-	<script src="resources/js/easy.qrcode.min.js"></script>
-	<script src="resources/js/TBAInterface.js"></script>
-	<script src="resources/js/googleSheets.js"></script>
-	<script src="resources/js/scoutingPASS.js"></script>
-	<script src="2025/reefscape_config.js"></script>
-	<link rel="stylesheet" href="resources/css/scoutingPASS.css">
-</head>
-
-<body>
-	<form id="scoutingForm" onsubmit="return false" name="scoutingForm">
-		<div id="main-panel-holder">
-			<div id="prematch" class="main-panel">
-				<h2 id="prematchHeader2">Pre-Game</h2>
-				<!--p class="match-label"><input type="button" value="Next" id="nextButton1" onclick="swipePage(1)"></p-->
-				<table id="prematch_table">
-					<!-- ###PRE-MATCH-COMPONENTS###-->
-				</table>
-				<p class="match-label"><input type="button" value="Next" id="nextButton2" onclick="swipePage(1)"></p>
-			</div>
-
-			<div id="auton" class="main-panel">
-				<h2 id="autonHeader2">Auto</h2>
-				<!--p class="match-label"><input type="button" value="Prev" id="prevButton1" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton3" onclick="swipePage(1)"></p-->
-				<table id="auton_table">
-					<!-- ###AUTON-COMPONENTS###-->
-				</table>
-				<p class="match-label"><input type="button" value="Prev" id="prevButton2" onclick="swipePage(-1)">
-					<input type="button" value="Next" id="nextButton4" onclick="swipePage(1)"></p>
-			</div>
-
-			<div id="teleop" class="main-panel">
-				<h2 id="teleopHeader2">Teleop</h2>
-				<table id="teleop_table">
-					<!-- ###TELEOP-COMPONENTS###-->
-				</table>
-				<p class="match-label"><input type="button" value="Prev" id="prevButton4" onclick="swipePage(-1)">
-					<input type="button" value="Next" id="nextButton6" onclick="swipePage(1)"></p>
-			</div>
-
-			<div id="endgame" class="main-panel">
-				<h2 id="endgameHeader2">Endgame</h2>
-				<!--p class="match-label"><input type="button" value="Prev" id="prevButton5" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton7" onclick="swipePage(1)"></p-->
-				<table id="endgame_table">
-					<!-- ###ENDGAME-COMPONENTS###-->
-				</table>
-				<p class="match-label"><input type="button" value="Prev" id="prevButton6" onclick="swipePage(-1)">
-					<input type="button" value="Next" id="nextButton8" onclick="swipePage(1)"></p>
-			</div>
-
-			<div id="post-match" class="main-panel">
-				<h2>Postmatch</h2>
-				<!--p class="match-label"><input type="button" value="Prev" id="prevButton7" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton9" onclick="swipePage(1)"></p-->
-				<table id="postmatch_table">
-					<!-- ###POST-MATCH-COMPONENTS###-->
-				</table>
-				<p class="match-label"><input type="button" value="Prev" id="prevButton8" onclick="swipePage(-1)">
-					<input type="button" value="Next" id="nextButton10" onclick="swipePage(1)"></p>
-			</div>
-
-			<div id="qr-code" class="main-panel">
-				<h2 id="qrHeader2">Generate QR Code</h2>
-				<p id="qr-info" class="qr-info"><span id="display_qr-info"></span></p>
-				<table id="qr-table">
-					<tr>
-						<td width="5%"></td>
-						<td width="90%">
-							<div id="qrcode">
-								<script>
-									// Create QRCode Object
-									qr = new QRCode(document.getElementById("qrcode"), options)
-								</script>
-							</div>
-						</td>
-						<td width="5%"></td>
-					</tr>
-					<tr>
-						<td width="5%"></td>
-						<td width="90%">
-							<div>
-								<p id="data"></p>
-							</div>
-						</td>
-						<td width="5%"></td>
-					</tr>
-				</table>
-				<p></p>
-				<p class="match-label"><input type="button" value="Display Data" id="displayButton"
-						onclick="displayData()"><input type="button" value="Copy Data" id="copyButton"
-						onclick="copyData()"><input type="button" value="See All Results" id="displayButton"
-						onclick="document.location = 'results.html'"></p>
-				<div id="submitButton">
-					<button id="submit" type="submit" class="submitForm">Send to Google Sheets</button>
-				</div>
-				<div id="clearButton">
-					<button type="button" class="clearForm" onclick="clearForm()">Next Match</button>
-				</div>
-				<br>
-			</div>
-		</div>
-	</form>
-</body>
+    <body>
+        <div id = "home" class = "home">
+            <h1>Home</h1>
+			<p class="match-label"><input type="button" value="Pit" id="nextButton1" onclick="document.location = 'pit.html'"><input type="button" value="Scouting" id="displayButton"
+				onclick="document.location = 'matchscouting.html'"><input type="button" value="Results" id="displayButton"
+				onclick="document.location = 'results.html'"></p>
+				<div id = "putHere" class = "whatever"></div>
+        </div>
+        <img src="resources/images/afdd8a580fe65bbec2bdd3ad55cde5e0.png" alt="Logo" style="width: 100%; height: auto;">
+    </body>
 
 </html>
