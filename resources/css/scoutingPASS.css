@@ -104,7 +104,7 @@ h2 {
 
 table {
     border: 0px;
-    width: 100%;
+    width: 65%;
 }
 
 .results {
@@ -132,14 +132,14 @@ button, input, .counter{
 }
 
 .field {
-    width: 50%;
-    text-align: left;
+    width: 20%;
+    text-align: middle;
 }
 
 #qr-table {
-    text-align: center;
+    text-align: right;
     color: black;
-    background-color: white;
+    background-color: #669bbc;
 }
 
 #data {
