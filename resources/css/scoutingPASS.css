@@ -63,7 +63,8 @@ button,
 h1 {
     text-align: center;
     border-width: 0px;
-    font-size: 40px;
+    font-size: 30px;
+    font-family: 'Bebas Neue';
     padding: 10px;
     font-weight: 350;
 }
@@ -149,5 +150,10 @@ button, input, .counter{
 
 textarea {
     resize: none;
-  }
-  
+}
+
+.containter {
+    width: 100%;
+    margin: 0 auto;
+    overflow: auto;
+}
