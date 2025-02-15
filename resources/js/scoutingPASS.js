@@ -1058,9 +1058,7 @@ function clearForm() {
   var match = 0;
   var e = 0;
 
-  if (pitScouting) {
-    swipePage(-1);
-  } else {
+  if (!pitScouting) {
     swipePage(-5);
 
     // Increment match
@@ -1622,4 +1620,19 @@ function showQRCodes() {
     var options = { text: value, width: 245 };
     new QRCode(document.getElementById(id), options);
   }
+}
+
+function saveAndClear(){
+  key = document.getElementById("input_sc").value;
+    pitSessions = localStorage.getItem("pitSessions");
+    if (pitSessions) {
+      const pitDictionary = JSON.parse(pitSessions);
+      pitDictionary[key] = data;
+      localStorage.setItem("pitSessions", JSON.stringify(pitDictionary));
+    } else {
+      const pitDictionary = {};
+      pitDictionary[key] = data;
+      localStorage.setItem("pitSessions", JSON.stringify(pitDictionary));
+    }
+    clearForm()
 }
