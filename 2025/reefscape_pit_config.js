@@ -7,7 +7,7 @@ var config_data = `
     "prematch": [   
         { 
             "name": "Team Number",
-            "code": "sc",
+            "code": "t",
             "type": "number"
         },
         { 
@@ -18,38 +18,38 @@ var config_data = `
         },
         {
             "name": "Can score on - L1",
-            "code":"ch",
+            "code":"L1",
             "type":"checkbox"
             
         },
         {
             "name": "L2",
-            "code":"ch",
+            "code":"L2",
             "type":"checkbox"
 
             
         },
         {
             "name": "L3",
-            "code":"ch",
+            "code":"L3",
             "type":"checkbox"
 
             
         },
         {
             "name": "L4",
-            "code":"ch",
+            "code":"L4",
             "type":"checkbox"
             
         },
         {
             "name": "Processor",
-            "code":"ch",
+            "code":"Pr",
             "type":"checkbox"
         },
         {
             "name": "Net",
-            "code":"ch",
+            "code":"Net",
             "type":"checkbox"
         },
         { 
@@ -58,10 +58,12 @@ var config_data = `
             "type": "radio",
             "choices": 
             {
-                "Shallow": "Shallow Cage",
-                "Deep": "Deep Cage"
+                "Shallow": "Shallow",
+                "Deep": "Deep",  
+                "Both": "Both",
+                "None": "None"
             },
-            "defaultValue": "Shallow Cage"
+            "defaultValue": "None"
         },
         {
             "name": "Can you remove algae from the reef",
