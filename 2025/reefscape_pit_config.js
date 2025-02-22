@@ -11,7 +11,7 @@ var config_data = `
             "type": "number"
         },
         { 
-            "name": "Width(Ft)",
+            "name": "Width(inch)",
             "code": "wid",
             "type": "number",
             "defaultValue": "0"
@@ -51,12 +51,6 @@ var config_data = `
             "name": "Net",
             "code":"ch",
             "type":"checkbox"
-        },
-        { 
-            "name": "How fast can your robot move? (MPH)",
-            "code": "wid",
-            "type": "number",
-            "defaultValue": "0"
         },
         { 
             "name": "Can climb on -",
