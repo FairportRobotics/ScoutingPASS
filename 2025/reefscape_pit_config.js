@@ -58,10 +58,10 @@ var config_data = `
             "type": "radio",
             "choices": 
             {
-                "Shallow": "Shallow",
-                "Deep": "Deep",  
-                "Both": "Both",
-                "None": "None"
+                "Shallow": "  Shallow  ",
+                "Deep": "  Deep  ",  
+                "Both": "  Both  ",
+                "None": "  None  "
             },
             "defaultValue": "None"
         },

@@ -1073,6 +1073,10 @@ function clearForm() {
     resetRobot()
   }
 
+  if(pitScouting) {
+    swipePage(-1);
+  }
+
   // Clear XY coordinates
   inputs = document.querySelectorAll("[id*='XY_']");
   for (e of inputs) {
