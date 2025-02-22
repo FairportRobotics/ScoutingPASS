@@ -227,13 +227,13 @@ input[type="radio2"] {
 input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
-  background-color: #efefef;
+  background-color: #ffffff;
   margin: 0;
   font: inherit;
-  color: #666;
-  width: 1.15em;
-  height: 1.15em;
-  border: 0;/*.15em solid currentColor;*/
+  color: #000000;
+  width: 1em;
+  height: 1em;
+  border: 0;
   border-radius: 0.15em;
   transform: translateY(-0.075em);
 }
