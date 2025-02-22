@@ -7,7 +7,7 @@ var config_data = `
     "prematch": [   
         { 
             "name": "Team Number",
-            "code": "sc",
+            "code": "t",
             "type": "number"
         },
         { 
@@ -24,21 +24,21 @@ var config_data = `
         },
         {
             "name": "L2",
-            "code":"ch",
+            "code":"l2",
             "type":"checkbox"
 
             
         },
         {
             "name": "L3",
-            "code":"ch",
+            "code":"l3",
             "type":"checkbox"
 
             
         },
         {
             "name": "L4",
-            "code":"ch",
+            "code":"l4",
             "type":"checkbox"
             
         },
