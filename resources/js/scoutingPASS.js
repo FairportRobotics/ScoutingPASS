@@ -1057,8 +1057,9 @@ function qr_clear() {
 function clearForm() {
   var match = 0;
   var e = 0;
-
-  if (!pitScouting) {
+  if (pitScouting){
+    swipePage(-1);
+  } else {
     swipePage(-5);
 
     // Increment match
