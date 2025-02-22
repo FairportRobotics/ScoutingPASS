@@ -63,8 +63,6 @@ button,
 h1 {
     text-align: center;
     border-width: 0px;
-    font-size: 30px;
-    font-family: 'Bebas Neue';
     font-size: 40px;
     padding: 10px;
     font-weight: 350;
@@ -149,8 +147,6 @@ button, input, .counter{
     text-align: justify;
 }
 
-textarea {
-    resize: none;
 /*Radio Button Styles*/
 
 :root {
@@ -163,10 +159,6 @@ textarea {
   box-sizing: border-box;
 }
 
-.containter {
-    width: 100%;
-    margin: 0 auto;
-    overflow: auto;
 .form-control {
     font-family: system-ui, sans-serif;
     font-size: 2rem;
