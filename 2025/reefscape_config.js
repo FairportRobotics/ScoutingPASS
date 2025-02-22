@@ -91,6 +91,11 @@ var config_data = `
             "type": "counter"
         },
         {
+            "name": "Dropped Game Pieces",
+            "code": "adp",
+            "type": "counter"
+        },
+        {
             "name": "Leave Starting Zone",
             "code": "al",
             "type": "bool"
@@ -129,6 +134,11 @@ var config_data = `
         {
             "name": "Algae Scores Net",
             "code": "tan",
+            "type": "counter"
+        },
+        {
+            "name": "Dropped Game Pieces",
+            "code": "tdp",
             "type": "counter"
         },
         {
@@ -191,11 +201,6 @@ var config_data = `
             "type": "checkbox"
         },
         {
-            "name": "Dropped Game Pieces",
-            "code": "dgp",
-            "type": "checkbox"
-        },
-        {
             "name": "Make a good<br>alliance partner?",
             "tooltip": "Would you want this robot on your alliance in playoffs?",
             "code": "all",
@@ -204,9 +209,10 @@ var config_data = `
         {
             "name": "Comments",
             "code": "co",
-            "type": "text",
-            "size": 15,
-            "maxSize": 55
+            "type": "textarea",
+            "size": 30,
+            "maxSize": 578,
+            "rows": 5
         }
     ]
 }`;

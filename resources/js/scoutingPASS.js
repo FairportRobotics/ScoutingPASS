@@ -53,13 +53,15 @@ const pins = {
     "7144": "Nanson Chen",
     "4205": "Nicholas Munier",
     "2194": "Ruthie Christensen",
-    "5219": "Sam Clark",
+    "1": "Sam Clark",
     "0910": "Shawn Estrich",
     "5679": "Siena Reeve",
     "9960": "Simon Stuckey",
     "1033": "TJ Blake",
     "8822": "Tyler Hignett"
 }
+
+const eventMatches = []
 
 // Must be filled in: e=event, m=match#, l=level(q,qf,sf,f), t=team#, r=robot(r1,r2,b1..), s=scouter
 //var requiredFields = ["e", "m", "l", "t", "r", "s", "as"];
@@ -492,6 +494,61 @@ function addText(table, idx, name, data) {
   return idx + 1
 }
 
+function addTextArea(table, idx, name, data) {
+  var row = table.insertRow(idx);
+  var cell1 = row.insertCell(0);
+  cell1.classList.add("title");
+  if (!data.hasOwnProperty('code')) {
+    cell1.innerHTML = `Error: No code specified for ${name}`;
+    return idx + 1;
+  }
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = name + '&nbsp;';
+  if (data.hasOwnProperty('tooltip')) {
+    cell1.setAttribute("title", data.tooltip);
+  }
+  cell2.classList.add("field");
+  var inp = document.createElement("textarea");
+  inp.setAttribute("id", "textarea_" + data.code);
+  if (enableGoogleSheets && data.hasOwnProperty('gsCol')) {
+    inp.setAttribute("name", data.gsCol);
+  } else {
+    inp.setAttribute("name", data.code);
+  }
+  if (data.hasOwnProperty('size')) {
+    inp.setAttribute("size", data.size);
+  }
+  if (data.hasOwnProperty('maxSize')) {
+    inp.setAttribute("maxLength", data.maxSize);
+  }
+  if (data.hasOwnProperty('defaultValue')) {
+    if (data.type == 'event') {
+      data.defaultValue = data.defaultValue.toLowerCase();
+    }
+    inp.setAttribute("value", data.defaultValue);
+  }
+  if (data.hasOwnProperty('required')) {
+    inp.setAttribute("required", "");
+  }
+  if (data.hasOwnProperty('disabled')) {
+    inp.setAttribute("disabled", "");
+  }
+  if (data.hasOwnProperty('rows')) {
+    inp.setAttribute('rows', data.rows)
+  }
+  cell2.appendChild(inp);
+
+  if (data.hasOwnProperty('defaultValue')) {
+    var def = document.createElement("textarea");
+    def.setAttribute("id", "default_" + data.code)
+    def.setAttribute("type", "hidden");
+    def.setAttribute("value", data.defaultValue);
+    cell2.appendChild(def);
+  }
+
+  return idx + 1
+}
+
 function addNumber(table, idx, name, data) {
   var row = table.insertRow(idx);
   var cell1 = row.insertCell(0);
@@ -703,6 +760,8 @@ function addElement(table, idx, data) {
   } else if ((data.type == 'timer') ||
     (data.type == 'cycle')) {
     idx = addTimer(table, idx, name, data);
+  } else if (data.type == 'textarea') {
+    idx = addTextArea(table, idx, name, data);
   } else {
     console.log(`Unrecognized type: ${data.type}`);
   }
@@ -713,13 +772,13 @@ function configure() {
   try {
     var mydata = JSON.parse(config_data);
   } catch (err) {
-    console.log(`Error parsing configuration file`)
-    console.log(err.message)
-    console.log('Use a tool like http://jsonlint.com/ to help you debug your config file')
-    var table = document.getElementById("prematch_table")
-    var row = table.insertRow(0);
-    var cell1 = row.insertCell(0);
-    cell1.innerHTML = `Error parsing configuration file: ${err.message}<br><br>Use a tool like <a href="http://jsonlint.com/">http://jsonlint.com/</a> to help you debug your config file`
+    //console.log(`Error parsing configuration file`)
+    //console.log(err.message)
+    //console.log('Use a tool like http://jsonlint.com/ to help you debug your config file')
+    //var table = document.getElementById("prematch_table")
+    //var row = table.insertRow(0);
+    //var cell1 = row.insertCell(0);
+    //cell1.innerHTML = `Error parsing configuration file: ${err.message}<br><br>Use a tool like <a href="http://jsonlint.com/">http://jsonlint.com/</a> to help you debug your config file`
     return -1
   }
 
@@ -999,9 +1058,7 @@ function clearForm() {
   var match = 0;
   var e = 0;
 
-  if (pitScouting) {
-    swipePage(-1);
-  } else {
+  if (!pitScouting) {
     swipePage(-5);
 
     // Increment match
@@ -1079,6 +1136,8 @@ function clearForm() {
         }
       } else if (e.type == "checkbox") {
         e.checked = false
+      } else if (e.type == "scouter") {
+        e.value = ""
       } else {
         console.log("unsupported input type")
       }
@@ -1306,6 +1365,22 @@ function getCurrentMatch() {
 }
 
 function updateMatchStart(event) {
+  if(document.getElementById("input_m").value != null && getRobot() != null){
+    alliancePos = getRobot()
+    alliance = ""
+    pos = 0
+    if(alliancePos.substring(0,1) == "R"){
+      alliance = "red"
+      pos = alliancePos.substring(4)
+    }else if(alliancePos.substring(0,1) == "B"){
+      alliance = "blue"
+      pos = alliancePos.substring(5)
+    }
+    teamNumber = eventMatches[document.getElementById("input_m").value]["alliances"][alliance]["team_keys"][pos-1].substring(4)
+    document.getElementById("input_t").value = teamNumber
+  }
+  
+  
   if ((getCurrentMatch() == "") ||
     (!teams)) {
     console.log("No match or team data.");
@@ -1513,4 +1588,51 @@ function getSessions(){
   } else {
     return "No sessions saved";
   }
-};  
+};
+
+function showQRCodes() {
+  // QR Code documentation can be examined at https://github.com/ushelp/EasyQRCodeJS
+  const dest = document.getElementById("putHere");
+
+  // Retrieve scouting sessions from localStorage.
+  const sessions = JSON.parse(localStorage.getItem("sessions"));
+  for (const [key, value] of Object.entries(sessions)) {
+    // Create a div we can use to act as a container for the label and the QR code.
+    var qrContainer = document.createElement("div");
+    qrContainer.setAttribute("id", "qr-container-" + key);
+
+    // Create the label.
+    var label = document.createElement("label");
+    label.innerHTML = key;
+
+    // Create the div to receive the QR code.
+    const id = "qr-image-" + key;
+    var qrDiv = document.createElement("div");
+    qrDiv.setAttribute("id", id);
+    qrDiv.setAttribute("style", "width: 100%");
+
+    // Append to DOM.
+    qrContainer.appendChild(label);
+    qrContainer.appendChild(qrDiv);
+    dest.appendChild(qrContainer);
+
+    // Add the QR Code.
+    var options = { text: value, width: 245 };
+    new QRCode(document.getElementById(id), options);
+  }
+}
+
+function saveAndClear(){
+  key = document.getElementById("input_sc").value;
+    pitSessions = localStorage.getItem("pitSessions");
+    if (pitSessions) {
+      const pitDictionary = JSON.parse(pitSessions);
+      pitDictionary[key] = data;
+      localStorage.setItem("pitSessions", JSON.stringify(pitDictionary));
+    } else {
+      const pitDictionary = {};
+      pitDictionary[key] = data;
+      localStorage.setItem("pitSessions", JSON.stringify(pitDictionary));
+    }
+    clearForm()
+}
