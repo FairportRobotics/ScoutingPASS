@@ -53,12 +53,6 @@ var config_data = `
             "type":"checkbox"
         },
         { 
-            "name": "How fast can your robot move? (MPH)",
-            "code": "wid",
-            "type": "number",
-            "defaultValue": "0"
-        },
-        { 
             "name": "Can climb on -",
             "code": "fpu",
             "type": "radio",
