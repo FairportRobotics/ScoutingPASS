@@ -152,6 +152,11 @@ button, input, .counter{
     text-align: justify;
 }
 
+td.field label {
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
 /*Radio Button Styles*/
 
 :root {
