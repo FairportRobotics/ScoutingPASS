@@ -1597,9 +1597,17 @@ function getSessions(){
   }
 };
 
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+  }
+}
+
 function showQRCodes() {
   // QR Code documentation can be examined at https://github.com/ushelp/EasyQRCodeJS
   const dest = document.getElementById("putHere");
+  // Clear out all the QR Codes
+  removeAllChildNodes(dest);
 
   // Retrieve scouting sessions from localStorage.
   const sessions = JSON.parse(localStorage.getItem("sessions"));
