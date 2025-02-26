@@ -267,7 +267,7 @@ input[type="radio"] {
 }
 
 /* BUTTTTTTTTTON */
-.Mmmm-Yes-People {
+.Text-Button {
   background:none;
   border:none;
   font-family: 'Bebas Neue';
@@ -279,4 +279,5 @@ input[type="radio"] {
   margin:0;
   padding:0;
   cursor: pointer;
+  element.addEventListener(handler, { once: true });
 }
