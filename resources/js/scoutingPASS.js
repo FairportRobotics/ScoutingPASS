@@ -4,12 +4,22 @@
 // Written by Team 2451 - PWNAGE
 
 document.addEventListener("touchstart", startTouch, false);
-document.addEventListener("touchend", moveTouch, false);
+//document.addEventListener("touchend", moveTouch, false);
 
 // Prevent the default action associated with the double-click
-document.addEventListener("dblclick", function (event) {
-  event.preventDefault();
-});
+let lastTouchEnd = 0;
+document.addEventListener(
+  "touchend",
+  function (event) {
+    let now = new Date().getTime();
+    if (now - lastTouchEnd <= 300) {
+      // 300ms threshold for double-tap
+      event.preventDefault(); // Prevent zoom
+    }
+    lastTouchEnd = now;
+  },
+  false
+);
 
 
 // Swipe Up / Down / Left / Right
