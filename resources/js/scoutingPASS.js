@@ -6,6 +6,12 @@
 document.addEventListener("touchstart", startTouch, false);
 document.addEventListener("touchend", moveTouch, false);
 
+// Prevent the default action associated with the double-click
+document.addEventListener("dblclick", function (event) {
+  event.preventDefault();
+});
+
+
 // Swipe Up / Down / Left / Right
 var initialX = null;
 var xThreshold = 0.3;
