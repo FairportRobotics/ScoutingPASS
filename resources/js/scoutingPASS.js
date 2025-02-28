@@ -1003,43 +1003,43 @@ function qr_regenerate() {
     
   }
 
-  // Get data
+  // Get matchDatasessionsdata
   data = getData(dataFormat)
 
   if (!pitScouting) {
     key = document.getElementById("input_m").value + "." + getRobot();
-    sessions = localStorage.getItem("sessions");
+    matchData = localStorage.getItem("matchData");
     pinNum = document.getElementById("input_s").value
     data.replace(pinNum, pins[pinNum])
-    if (sessions) {
-      const sessionsDictionary = JSON.parse(sessions);
-      sessionsDictionary[key] = key + "\t" + data;
-      sessionsDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
-      temp = sessionsDictionary[key].split("\t")
+    if (matchData) {
+      const matchDataDictionary = JSON.parse(matchData);
+      matchDataDictionary[key] = key + "\t" + data;
+      matchDataDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
+      temp = matchDataDictionary[key].split("\t")
       temp[1] = pins[pinNum]
-      sessionsDictionary[key] = temp.join("\t")
-      localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
-      console.log(sessionsDictionary);
+      matchDataDictionary[key] = temp.join("\t")
+      localStorage.setItem("matchData", JSON.stringify(matchDataDictionary));
+      console.log(matchDataDictionary);
     } else {
-      const sessionsDictionary = {};
-      sessionsDictionary[key] = key + "\t" + data;
-      sessionsDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
-      temp = sessionsDictionary[key].split("\t")
+      const matchDataDictionary = {};
+      matchDataDictionary[key] = key + "\t" + data;
+      matchDataDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
+      temp = matchDataDictionary[key].split("\t")
       temp[1] = pins[pinNum]
-      sessionsDictionary[key] = temp.join("\t")
-      localStorage.setItem("sessions", JSON.stringify(sessionsDictionary));
+      matchDataDictionary[key] = temp.join("\t")
+      localStorage.setItem("matchData", JSON.stringify(matchDataDictionary));
     }
   } else {
     key = document.getElementById("input_t").value;
-    pitSessions = localStorage.getItem("pitSessions");
-    if (pitSessions) {
-      const pitDictionary = JSON.parse(pitSessions);
+    pitData = localStorage.getItem("pitData");
+    if (pitData) {
+      const pitDictionary = JSON.parse(pitData);
       pitDictionary[key] = data;
-      localStorage.setItem("pitSessions", JSON.stringify(pitDictionary));
+      localStorage.setItem("pitData", JSON.stringify(pitDictionary));
     } else {
       const pitDictionary = {};
       pitDictionary[key] = data;
-      localStorage.setItem("pitSessions", JSON.stringify(pitDictionary));
+      localStorage.setItem("pitData", JSON.stringify(pitDictionary));
     }
   }
 
@@ -1049,14 +1049,14 @@ function qr_regenerate() {
   }
 
   if(!pitScouting){
-    sessions = localStorage.getItem("sessions")
+    matchData = localStorage.getItem("matchData")
     key = document.getElementById("input_m").value + "." + getRobot()
-    const sessionsDictionary = JSON.parse(sessions)
-    qr.makeCode(sessionsDictionary[key])
+    const matchDataDictionary = JSON.parse(matchData)
+    qr.makeCode(matchDataDictionary[key])
   }else{
-    pitSessions = localStorage.getItem("pitSessions")
+    pitData = localStorage.getItem("pitData")
     key = document.getElementById("input_t").value
-    const pitDictionary = JSON.parse(pitSessions)
+    const pitDictionary = JSON.parse(pitData)
     qr.makeCode(pitDictionary[key])
   }
 
@@ -1591,21 +1591,7 @@ window.onload = function () {
   }
 };
 
-function getSessions(){
-  sessions = localStorage.getItem("sessions")
-  if(sessions){
-    var resultDiv = document.getElementById("results")
-    for (const [key, value] of Object.entries(JSON.parse(sessions))) {
-      var result = document.createElement("div")
-      result.innerHTML = key
-      resultDiv.appendChild(result)
-      var options = { text: "data-to-embed-in-the-code" };
-      new QRCode(document.getElementById("results"), options);
-    }
-  } else {
-    return "No sessions saved";
-  }
-};
+
 
 function removeAllChildNodes(parent) {
   while (parent.firstChild) {
@@ -1613,51 +1599,80 @@ function removeAllChildNodes(parent) {
   }
 }
 
-function showQRCodes() {
+function showQRCodes(type) {
   // QR Code documentation can be examined at https://github.com/ushelp/EasyQRCodeJS
   const dest = document.getElementById("putHere");
   // Clear out all the QR Codes
   removeAllChildNodes(dest);
 
-  // Retrieve scouting sessions from localStorage.
-  const sessions = JSON.parse(localStorage.getItem("sessions"));
-  for (const [key, value] of Object.entries(sessions)) {
-    // Create a div we can use to act as a container for the label and the QR code.
-    var qrContainer = document.createElement("div");
-    qrContainer.setAttribute("id", "qr-container-" + key);
+  if(type == 'match'){
+    // Retrieve scouting matchData from localStorage.
+    const matchData = JSON.parse(localStorage.getItem("matchData"));
+    for (const [key, value] of Object.entries(matchData)) {
+      // Create a div we can use to act as a container for the label and the QR code.
+      var qrContainer = document.createElement("div");
+      qrContainer.setAttribute("id", "qr-container-" + key);
 
-    // Create the label.
-    var label = document.createElement("label");
-    label.innerHTML = key;
+      // Create the label.
+      var label = document.createElement("label");
+      label.innerHTML = key;
 
-    // Create the div to receive the QR code.
-    const id = "qr-image-" + key;
-    var qrDiv = document.createElement("div");
-    qrDiv.setAttribute("id", id);
-    qrDiv.setAttribute("style", "width: 100%");
+      // Create the div to receive the QR code.
+      const id = "qr-image-" + key;
+      var qrDiv = document.createElement("div");
+      qrDiv.setAttribute("id", id);
+      qrDiv.setAttribute("style", "width: 100%");
 
-    // Append to DOM.
-    qrContainer.appendChild(label);
-    qrContainer.appendChild(qrDiv);
-    dest.appendChild(qrContainer);
+      // Append to DOM.
+      qrContainer.appendChild(label);
+      qrContainer.appendChild(qrDiv);
+      dest.appendChild(qrContainer);
 
-    // Add the QR Code.
-    var options = { text: value, width: 245 };
-    new QRCode(document.getElementById(id), options);
+      // Add the QR Code.
+      var options = { text: value, width: 245 };
+      new QRCode(document.getElementById(id), options);
+    }
+  }else if(type == 'pit'){
+    // Retrieve scouting pitData from localStorage.
+    const pitData = JSON.parse(localStorage.getItem("pitData"));
+    for (const [key, value] of Object.entries(pitData)) {
+      // Create a div we can use to act as a container for the label and the QR code.
+      var qrContainer = document.createElement("div");
+      qrContainer.setAttribute("id", "qr-container-" + key);
+
+      // Create the label.
+      var label = document.createElement("label");
+      label.innerHTML = key;
+
+      // Create the div to receive the QR code.
+      const id = "qr-image-" + key;
+      var qrDiv = document.createElement("div");
+      qrDiv.setAttribute("id", id);
+      qrDiv.setAttribute("style", "width: 100%");
+
+      // Append to DOM.
+      qrContainer.appendChild(label);
+      qrContainer.appendChild(qrDiv);
+      dest.appendChild(qrContainer);
+
+      // Add the QR Code.
+      var options = { text: value, width: 245 };
+      new QRCode(document.getElementById(id), options);
+    }
   }
 }
 
 function saveAndClear(){
   key = document.getElementById("input_sc").value;
-    pitSessions = localStorage.getItem("pitSessions");
-    if (pitSessions) {
-      const pitDictionary = JSON.parse(pitSessions);
+    pitData = localStorage.getItem("pitData");
+    if (pitData) {
+      const pitDictionary = JSON.parse(pitData);
       pitDictionary[key] = data;
-      localStorage.setItem("pitSessions", JSON.stringify(pitDictionary));
+      localStorage.setItem("pitData", JSON.stringify(pitDictionary));
     } else {
       const pitDictionary = {};
       pitDictionary[key] = data;
-      localStorage.setItem("pitSessions", JSON.stringify(pitDictionary));
+      localStorage.setItem("pitData", JSON.stringify(pitDictionary));
     }
     clearForm()
 }
