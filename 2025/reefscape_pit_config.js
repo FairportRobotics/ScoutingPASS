@@ -70,6 +70,24 @@ var config_data = `
             "code": "rva",
             "type": "checkbox"
         },
+        {
+            "name": "Does robot function?",
+            "code": "func",
+            "type": "checkbox"
+        },
+        {
+            "name": "If not, when will it?",
+            "code": "feta",
+            "type":"radio",
+            "choices":
+            {
+                "cur":"Currently",
+                "nm":"Next Match",
+                "soon":"1-2 Hours",
+                "um":"Unknown/More"
+            },
+            "defaultValue":"Currently"
+        },
         { 
             "name": "Comments",
             "code": "pco",
