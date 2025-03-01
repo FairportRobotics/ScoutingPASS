@@ -11,7 +11,7 @@ var config_data = `
             "type": "number"
         },
         { 
-            "name": "Width (bananas for scale)",
+            "name": "Width (Inch)",
             "code": "wid",
             "type": "number"
         },
