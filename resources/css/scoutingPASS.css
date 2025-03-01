@@ -87,6 +87,14 @@ h2 {
     font-style: normal;
 }
 
+h3 {
+  font-family: 'Bebas Neue';
+  text-align: center;
+  font-size: 50px;
+  font-weight: 300;
+  font-style: normal;
+}
+
 .match-label {
     text-align: center;
 }
@@ -279,6 +287,20 @@ input[type="radio"] {
   font-family: 'Bebas Neue';
   text-align: center;
   font-size: 30px;
+  font-weight: 300;
+  font-style: normal;
+  color:#ffffff;
+  margin:0;
+  padding:0;
+  cursor: pointer;
+}
+
+.Text-Button-Big {
+  background:none;
+  border:none;
+  font-family: 'Bebas Neue';
+  text-align: center;
+  font-size: 50px;
   font-weight: 300;
   font-style: normal;
   color:#ffffff;
