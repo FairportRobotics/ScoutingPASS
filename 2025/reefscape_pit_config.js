@@ -11,10 +11,9 @@ var config_data = `
             "type": "number"
         },
         { 
-            "name": "Width(inch)",
+            "name": "Width (bananas for scale)",
             "code": "wid",
-            "type": "number",
-            "defaultValue": "0"
+            "type": "number"
         },
         {
             "name": "Can score on - L1",
