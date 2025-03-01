@@ -69,7 +69,6 @@ const pins = {
     "7144": "Nanson Chen",
     "4205": "Nicholas Munier",
     "2194": "Ruthie Christensen",
-    "1": "Sam Clark",
     "0910": "Shawn Estrich",
     "5679": "Siena Reeve",
     "9960": "Simon Stuckey",
@@ -1000,7 +999,10 @@ function qr_regenerate() {
       return false
     }
     pinNum = document.getElementById("input_s").value
-    
+    if(pins[pinNum] == undefined){
+      alert("Invalid Scouter Pin.");
+      return false;
+    }
   }
 
   // Get matchDatasessionsdata
