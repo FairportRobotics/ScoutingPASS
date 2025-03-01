@@ -56,7 +56,7 @@ const pins = {
     "2033": "Greydon Jones-Dulisse",
     "4370": "Hamza Keles",
     "6563": "Jacob LeBlanc",
-    "1533": "Jacob Wyrozebski",
+    "1853": "Jacob Wyrozebski",
     "4527": "Jesse White",
     "8423": "Jonah Woika",
     "4232": "Jonathan Brouillard",
