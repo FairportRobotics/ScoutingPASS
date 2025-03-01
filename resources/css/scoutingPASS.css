@@ -95,6 +95,13 @@ h3 {
   font-style: normal;
 }
 
+h4 {
+  font-family: 'Bebas Neue';
+  font-size: 30px;
+  font-weight: 300;
+  font-style: normal;
+}
+
 .match-label {
     text-align: center;
 }
