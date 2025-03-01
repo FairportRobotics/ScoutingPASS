@@ -1003,6 +1003,10 @@ function qr_regenerate() {
       alert("Invalid Scouter Pin.");
       return false;
     }
+  }else if(pitScouting){
+    if(document.getElementById("input_t").value == null || document.getElementById("input_t").value == ""){
+      alert("Enter all required values:\nTeam Number")
+    }
   }
 
   // Get matchDatasessionsdata
