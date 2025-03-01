@@ -1,3 +1,9 @@
+# Scouting
+
+Get to the Scouting App
+
+<img src="../../resources/images/ScoutingPASS.png" width="320" />
+
 # Scanner Instructions
 
 Prior to capturing data for a competition, we must prepare the scanner(s) for
