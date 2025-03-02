@@ -5,9 +5,10 @@
 		<title>Scouting PASS</title>
 		<link rel="shortcut icon" href="favicon.ico">
 		<link rel="icon" sizes="16x16 32x32 64x64" href="favicon.ico">
+		<script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
 		<script src="resources/js/easy.qrcode.min.js"></script>
 		<script src="resources/js/TBAInterface.js"></script>
-		<script src="resources/js/googleSheets.js"></script>k
+		<script src="resources/js/googleSheets.js"></script>
 		<script src="resources/js/scoutingPASS.js"></script>
 		<link rel="stylesheet" href="resources/css/scoutingPASS.css">
 	</head>
@@ -19,8 +20,8 @@
 				<h2 <button><img src = "resources/images/578.png" onclick="document.location = 'index.html'"></button></h2>
 			</p>
 			<p class="match-label">
-				<input type="button" value="Click for Match QR codes" id="nextButton1" onclick="showQRCodes('match')">
-				<input type="button" value="Click for Pit QR Codes" id="nextButton2" onclick="showQRCodes('pit')">
+				<input type="button" value="Click for Match Barcodes" id="nextButton1" onclick="showBarcodes('match')">
+				<input type="button" value="Click for Pit Barcodes" id="nextButton2" onclick="showBarcodes('pit')">
 				<input type="button" value="Go Back" id="displayButton"	onclick="document.location = 'index.html'">
 			</p>
 				<div id = "putHere" class = "whatever"></div>

@@ -1605,68 +1605,55 @@ function removeAllChildNodes(parent) {
   }
 }
 
-function showQRCodes(type) {
-  // QR Code documentation can be examined at https://github.com/ushelp/EasyQRCodeJS
+function showBarcodes(type) {
+  // Get the destination div
   const dest = document.getElementById("putHere");
-  // Clear out all the QR Codes
+
+  // Clear out all previous barcodes
   removeAllChildNodes(dest);
 
-  if(type == 'match'){
-    // Retrieve scouting matchData from localStorage.
-    const matchData = JSON.parse(localStorage.getItem("matchData"));
-    for (const [key, value] of Object.entries(matchData)) {
-      // Create a div we can use to act as a container for the label and the QR code.
-      var qrContainer = document.createElement("div");
-      qrContainer.setAttribute("id", "qr-container-" + key);
+  let data;
+  if (type === 'match') {
+    data = JSON.parse(localStorage.getItem("matchData"));
+  } else if (type === 'pit') {
+    data = JSON.parse(localStorage.getItem("pitData"));
+  } else {
+    console.error("Invalid barcode type requested.");
+    return;
+  }
 
-      // Create the label.
-      var label = document.createElement("label");
-      label.innerHTML = key;
+  // Generate barcodes
+  for (const [key, value] of Object.entries(data)) {
+    // Create a container for the label and barcode
+    var barcodeContainer = document.createElement("div");
+    barcodeContainer.setAttribute("id", "barcode-container-" + key);
 
-      // Create the div to receive the QR code.
-      const id = "qr-image-" + key;
-      var qrDiv = document.createElement("div");
-      qrDiv.setAttribute("id", id);
-      qrDiv.setAttribute("style", "width: 100%");
+    // Create the label
+    var label = document.createElement("label");
+    label.innerHTML = key;
 
-      // Append to DOM.
-      qrContainer.appendChild(label);
-      qrContainer.appendChild(qrDiv);
-      dest.appendChild(qrContainer);
+    // Create an SVG element for the barcode
+    const id = "barcode-" + key;
+    var barcodeSVG = document.createElement("svg");
+    barcodeSVG.setAttribute("id", id);
+    barcodeSVG.setAttribute("style", "width: 100%");
 
-      // Add the QR Code.
-      var options = { text: value, width: 245 };
-      new QRCode(document.getElementById(id), options);
-    }
-  }else if(type == 'pit'){
-    // Retrieve scouting pitData from localStorage.
-    const pitData = JSON.parse(localStorage.getItem("pitData"));
-    for (const [key, value] of Object.entries(pitData)) {
-      // Create a div we can use to act as a container for the label and the QR code.
-      var qrContainer = document.createElement("div");
-      qrContainer.setAttribute("id", "qr-container-" + key);
+    // Append elements to the container
+    barcodeContainer.appendChild(label);
+    barcodeContainer.appendChild(barcodeSVG);
+    dest.appendChild(barcodeContainer);
 
-      // Create the label.
-      var label = document.createElement("label");
-      label.innerHTML = key;
-
-      // Create the div to receive the QR code.
-      const id = "qr-image-" + key;
-      var qrDiv = document.createElement("div");
-      qrDiv.setAttribute("id", id);
-      qrDiv.setAttribute("style", "width: 100%");
-
-      // Append to DOM.
-      qrContainer.appendChild(label);
-      qrContainer.appendChild(qrDiv);
-      dest.appendChild(qrContainer);
-
-      // Add the QR Code.
-      var options = { text: value, width: 245 };
-      new QRCode(document.getElementById(id), options);
-    }
+    // Generate the barcode
+    JsBarcode("#" + id, value, {
+      format: "CODE128",  // Use CODE128 for broad compatibility
+      lineColor: "#000",
+      width: 2,
+      height: 50,
+      displayValue: true
+    });
   }
 }
+
 
 function saveAndClear(){
   key = document.getElementById("input_sc").value;
