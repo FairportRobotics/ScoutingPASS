@@ -4308,8 +4308,16 @@ function getCurrentMatch() {
 function updateMatchStart(event) {
   if(document.getElementById("input_m").value != null && getRobot() != null){
     alliancePos = getRobot()
+    match = document.getElementById("input_m").value
     alliance = ""
     pos = 0
+    index = 0
+    for(let i = 0; i < eventMatches.length; i++){
+      if (eventMatches[i]['match_number'] == match){
+        index = i
+        break
+      }
+    }
     if(alliancePos.substring(0,1) == "R"){
       alliance = "red"
       pos = alliancePos.substring(4)
@@ -4317,7 +4325,7 @@ function updateMatchStart(event) {
       alliance = "blue"
       pos = alliancePos.substring(5)
     }
-    teamNumber = eventMatches[document.getElementById("input_m").value-1]["alliances"][alliance]["team_keys"][pos-1].substring(3)
+    teamNumber = eventMatches[index]["alliances"][alliance]["team_keys"][pos-1].substring(3)
     document.getElementById("input_t").value = teamNumber
   }
   
