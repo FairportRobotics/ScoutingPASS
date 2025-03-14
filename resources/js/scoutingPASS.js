@@ -4317,7 +4317,7 @@ function updateMatchStart(event) {
       alliance = "blue"
       pos = alliancePos.substring(5)
     }
-    teamNumber = eventMatches[document.getElementById("input_m").value]["alliances"][alliance]["team_keys"][pos-1].substring(4)
+    teamNumber = eventMatches[document.getElementById("input_m").value-1]["alliances"][alliance]["team_keys"][pos-1].substring(3)
     document.getElementById("input_t").value = teamNumber
   }
   
