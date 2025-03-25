@@ -10,6 +10,28 @@ var config_data = `
             "code": "t",
             "type": "number"
         },
+        {
+            "name": "What is your robot's<br>Drag coefficient?",
+            "code": "Drag",
+            "type": "text"
+        },
+        {
+            "name": "Does robot function?",
+            "code": "func",
+            "type": "checkbox"
+        },
+        {
+            "name": "If not, when will it?",
+            "code": "feta",
+            "type":"radio",
+            "choices":
+            {
+                "nm":"Next Match",
+                "soon":"1-2 Hours<br>",
+                "No":"Never"
+            },
+            "defaultValue":"Currently"
+        },
         { 
             "name": "Width(inch)",
             "code": "wid",
@@ -59,7 +81,7 @@ var config_data = `
             "choices": 
             {
                 "Shallow": "Shallow",
-                "Deep": "Deep",  
+                "Deep": "Deep<br>",  
                 "Both": "Both",
                 "None": "None"
             },
@@ -69,24 +91,6 @@ var config_data = `
             "name": "Can you remove algae from the reef",
             "code": "rva",
             "type": "checkbox"
-        },
-        {
-            "name": "Does robot function?",
-            "code": "func",
-            "type": "checkbox"
-        },
-        {
-            "name": "If not, when will it?",
-            "code": "feta",
-            "type":"radio",
-            "choices":
-            {
-                "cur":"Currently",
-                "nm":"Next Match",
-                "soon":"1-2 Hours",
-                "No":"Never ╥﹏╥"
-            },
-            "defaultValue":"Currently"
         },
         { 
             "name": "Comments",
