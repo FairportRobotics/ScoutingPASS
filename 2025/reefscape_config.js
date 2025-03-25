@@ -57,6 +57,11 @@ var config_data = `
     ],
     "auton": [
         {
+            "name": "Left the Starting Zone",
+            "code": "al",
+            "type": "bool"
+        },
+        {
             "name": "Coral L4 Scores",
             "code": "ac4",
             "type": "counter",
@@ -94,11 +99,6 @@ var config_data = `
             "name": "Dropped Game Pieces",
             "code": "adp",
             "type": "counter"
-        },
-        {
-            "name": "Leave Starting Zone",
-            "code": "al",
-            "type": "bool"
         }
     ],
     "teleop": [
