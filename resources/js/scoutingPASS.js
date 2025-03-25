@@ -37,46 +37,9 @@ var options = {
   quietZoneColor: "#FFFFFF",
 };
 
-const pins = {
-    "0446": "Abyss Mortimer",
-    "1665": "Alex Phillip",
-    "7789": "Amanah Obaji",
-    "1587": "Andrew McCadden",
-    "6938": "Ariana Toner",
-    "9792": "Asher Stuckey",
-    "1893": "Autumn Schoenfeld",
-    "5798": "Brandon Bates",
-    "2718": "Carter Silva",
-    "3741": "Celton Norter",
-    "0203": "Colby Jackson",
-    "4792": "Colden Stubbe",
-    "0722": "Connor Toper",
-    "9519": "Dean Blanchard",
-    "0686": "Domenic Giammusso",
-    "2033": "Greydon Jones-Dulisse",
-    "4370": "Hamza Keles",
-    "6563": "Jacob LeBlanc",
-    "1533": "Jacob Wyrozebski",
-    "4527": "Jesse White",
-    "8423": "Jonah Woika",
-    "4232": "Jonathan Brouillard",
-    "4621": "Jordan Fenton",
-    "1224": "Kai Hurrell",
-    "4930": "Kai Wilbur",
-    "4511": "Maddie DeCicca",
-    "1307": "Mason Silva",
-    "2106": "Matthew Mazzota",
-    "7144": "Nanson Chen",
-    "4205": "Nicholas Munier",
-    "2194": "Ruthie Christensen",
-    "0910": "Shawn Estrich",
-    "5679": "Siena Reeve",
-    "9960": "Simon Stuckey",
-    "1033": "TJ Blake",
-    "8822": "Tyler Hignett"
-}
+const pins = []
 
-const eventMatches = []
+
 
 // Must be filled in: e=event, m=match#, l=level(q,qf,sf,f), t=team#, r=robot(r1,r2,b1..), s=scouter
 //var requiredFields = ["e", "m", "l", "t", "r", "s", "as"];
@@ -1003,45 +966,49 @@ function qr_regenerate() {
       alert("Invalid Scouter Pin.");
       return false;
     }
+  }else if(pitScouting){
+    if(document.getElementById("input_t").value == null || document.getElementById("input_t").value == ""){
+      alert("Enter all required values:\nTeam Number")
+    }
   }
 
-  // Get matchDatasessionsdata
+  // Get preTVMsessionsdata
   data = getData(dataFormat)
 
   if (!pitScouting) {
     key = document.getElementById("input_m").value + "." + getRobot();
-    matchData = localStorage.getItem("matchData");
+    preTVM = localStorage.getItem("preTVM");
     pinNum = document.getElementById("input_s").value
     data.replace(pinNum, pins[pinNum])
-    if (matchData) {
-      const matchDataDictionary = JSON.parse(matchData);
-      matchDataDictionary[key] = key + "\t" + data;
-      matchDataDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
-      temp = matchDataDictionary[key].split("\t")
+    if (preTVM) {
+      const preTVMDictionary = JSON.parse(preTVM);
+      preTVMDictionary[key] = key + "\t" + data;
+      preTVMDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
+      temp = preTVMDictionary[key].split("\t")
       temp[1] = pins[pinNum]
-      matchDataDictionary[key] = temp.join("\t")
-      localStorage.setItem("matchData", JSON.stringify(matchDataDictionary));
-      console.log(matchDataDictionary);
+      preTVMDictionary[key] = temp.join("\t")
+      localStorage.setItem("preTVM", JSON.stringify(preTVMDictionary));
+      console.log(preTVMDictionary);
     } else {
-      const matchDataDictionary = {};
-      matchDataDictionary[key] = key + "\t" + data;
-      matchDataDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
-      temp = matchDataDictionary[key].split("\t")
+      const preTVMDictionary = {};
+      preTVMDictionary[key] = key + "\t" + data;
+      preTVMDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
+      temp = preTVMDictionary[key].split("\t")
       temp[1] = pins[pinNum]
-      matchDataDictionary[key] = temp.join("\t")
-      localStorage.setItem("matchData", JSON.stringify(matchDataDictionary));
+      preTVMDictionary[key] = temp.join("\t")
+      localStorage.setItem("preTVM", JSON.stringify(preTVMDictionary));
     }
   } else {
     key = document.getElementById("input_t").value;
-    pitData = localStorage.getItem("pitData");
-    if (pitData) {
-      const pitDictionary = JSON.parse(pitData);
+    preTVP = localStorage.getItem("preTVP");
+    if (preTVP) {
+      const pitDictionary = JSON.parse(preTVP);
       pitDictionary[key] = data;
-      localStorage.setItem("pitData", JSON.stringify(pitDictionary));
+      localStorage.setItem("preTVP", JSON.stringify(pitDictionary));
     } else {
       const pitDictionary = {};
       pitDictionary[key] = data;
-      localStorage.setItem("pitData", JSON.stringify(pitDictionary));
+      localStorage.setItem("preTVP", JSON.stringify(pitDictionary));
     }
   }
 
@@ -1051,14 +1018,14 @@ function qr_regenerate() {
   }
 
   if(!pitScouting){
-    matchData = localStorage.getItem("matchData")
+    preTVM = localStorage.getItem("preTVM")
     key = document.getElementById("input_m").value + "." + getRobot()
-    const matchDataDictionary = JSON.parse(matchData)
-    qr.makeCode(matchDataDictionary[key])
+    const preTVMDictionary = JSON.parse(preTVM)
+    qr.makeCode(preTVMDictionary[key])
   }else{
-    pitData = localStorage.getItem("pitData")
+    preTVP = localStorage.getItem("preTVP")
     key = document.getElementById("input_t").value
-    const pitDictionary = JSON.parse(pitData)
+    const pitDictionary = JSON.parse(preTVP)
     qr.makeCode(pitDictionary[key])
   }
 
@@ -1386,8 +1353,16 @@ function getCurrentMatch() {
 function updateMatchStart(event) {
   if(document.getElementById("input_m").value != null && getRobot() != null){
     alliancePos = getRobot()
+    match = document.getElementById("input_m").value
     alliance = ""
     pos = 0
+    index = 0
+    for(let i = 0; i < eventMatches.length; i++){
+      if (eventMatches[i]['match_number'] == match){
+        index = i
+        break
+      }
+    }
     if(alliancePos.substring(0,1) == "R"){
       alliance = "red"
       pos = alliancePos.substring(4)
@@ -1395,7 +1370,7 @@ function updateMatchStart(event) {
       alliance = "blue"
       pos = alliancePos.substring(5)
     }
-    teamNumber = eventMatches[document.getElementById("input_m").value]["alliances"][alliance]["team_keys"][pos-1].substring(4)
+    teamNumber = eventMatches[index]["alliances"][alliance]["team_keys"][pos-1].substring(3)
     document.getElementById("input_t").value = teamNumber
   }
   
@@ -1608,9 +1583,9 @@ function showQRCodes(type) {
   removeAllChildNodes(dest);
 
   if(type == 'match'){
-    // Retrieve scouting matchData from localStorage.
-    const matchData = JSON.parse(localStorage.getItem("matchData"));
-    for (const [key, value] of Object.entries(matchData)) {
+    // Retrieve scouting preTVM from localStorage.
+    const preTVM = JSON.parse(localStorage.getItem("preTVM"));
+    for (const [key, value] of Object.entries(preTVM)) {
       // Create a div we can use to act as a container for the label and the QR code.
       var qrContainer = document.createElement("div");
       qrContainer.setAttribute("id", "qr-container-" + key);
@@ -1635,9 +1610,9 @@ function showQRCodes(type) {
       new QRCode(document.getElementById(id), options);
     }
   }else if(type == 'pit'){
-    // Retrieve scouting pitData from localStorage.
-    const pitData = JSON.parse(localStorage.getItem("pitData"));
-    for (const [key, value] of Object.entries(pitData)) {
+    // Retrieve scouting preTVP from localStorage.
+    const preTVP = JSON.parse(localStorage.getItem("preTVP"));
+    for (const [key, value] of Object.entries(preTVP)) {
       // Create a div we can use to act as a container for the label and the QR code.
       var qrContainer = document.createElement("div");
       qrContainer.setAttribute("id", "qr-container-" + key);
@@ -1666,15 +1641,15 @@ function showQRCodes(type) {
 
 function saveAndClear(){
   key = document.getElementById("input_sc").value;
-    pitData = localStorage.getItem("pitData");
-    if (pitData) {
-      const pitDictionary = JSON.parse(pitData);
+    preTVP = localStorage.getItem("preTVP");
+    if (preTVP) {
+      const pitDictionary = JSON.parse(preTVP);
       pitDictionary[key] = data;
-      localStorage.setItem("pitData", JSON.stringify(pitDictionary));
+      localStorage.setItem("preTVP", JSON.stringify(pitDictionary));
     } else {
       const pitDictionary = {};
       pitDictionary[key] = data;
-      localStorage.setItem("pitData", JSON.stringify(pitDictionary));
+      localStorage.setItem("preTVP", JSON.stringify(pitDictionary));
     }
     clearForm()
 }

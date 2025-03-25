@@ -33,10 +33,9 @@ var config_data = `
             "defaultValue":"Currently"
         },
         { 
-            "name": "Width(inch)",
+            "name": "Width (Inch)",
             "code": "wid",
-            "type": "number",
-            "defaultValue": "0"
+            "type": "number"
         },
         {
             "name": "Can score on - L1",
