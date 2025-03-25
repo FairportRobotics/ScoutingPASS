@@ -84,7 +84,7 @@ var config_data = `
                 "cur":"Currently",
                 "nm":"Next Match",
                 "soon":"1-2 Hours",
-                "um":"Unknown/More"
+                "No":"Never ╥﹏╥"
             },
             "defaultValue":"Currently"
         },
