@@ -972,43 +972,43 @@ function qr_regenerate() {
     }
   }
 
-  // Get preTVMsessionsdata
+  // Get nytrMatchsessionsdata
   data = getData(dataFormat)
 
   if (!pitScouting) {
     key = document.getElementById("input_m").value + "." + getRobot();
-    preTVM = localStorage.getItem("preTVM");
+    nytrMatch = localStorage.getItem("nytrMatch");
     pinNum = document.getElementById("input_s").value
     data.replace(pinNum, pins[pinNum])
-    if (preTVM) {
-      const preTVMDictionary = JSON.parse(preTVM);
-      preTVMDictionary[key] = key + "\t" + data;
-      preTVMDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
-      temp = preTVMDictionary[key].split("\t")
+    if (nytrMatch) {
+      const nytrMatchDictionary = JSON.parse(nytrMatch);
+      nytrMatchDictionary[key] = key + "\t" + data;
+      nytrMatchDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
+      temp = nytrMatchDictionary[key].split("\t")
       temp[1] = pins[pinNum]
-      preTVMDictionary[key] = temp.join("\t")
-      localStorage.setItem("preTVM", JSON.stringify(preTVMDictionary));
-      console.log(preTVMDictionary);
+      nytrMatchDictionary[key] = temp.join("\t")
+      localStorage.setItem("nytrMatch", JSON.stringify(nytrMatchDictionary));
+      console.log(nytrMatchDictionary);
     } else {
-      const preTVMDictionary = {};
-      preTVMDictionary[key] = key + "\t" + data;
-      preTVMDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
-      temp = preTVMDictionary[key].split("\t")
+      const nytrMatchDictionary = {};
+      nytrMatchDictionary[key] = key + "\t" + data;
+      nytrMatchDictionary[key].replace("r1", "Red", "r2", "Red", "r3", "Red", "b1", "Blue", "b2", "Blue", "b3", "Blue");
+      temp = nytrMatchDictionary[key].split("\t")
       temp[1] = pins[pinNum]
-      preTVMDictionary[key] = temp.join("\t")
-      localStorage.setItem("preTVM", JSON.stringify(preTVMDictionary));
+      nytrMatchDictionary[key] = temp.join("\t")
+      localStorage.setItem("nytrMatch", JSON.stringify(nytrMatchDictionary));
     }
   } else {
     key = document.getElementById("input_t").value;
-    preTVP = localStorage.getItem("preTVP");
-    if (preTVP) {
-      const pitDictionary = JSON.parse(preTVP);
+    nytrPit = localStorage.getItem("nytrPit");
+    if (nytrPit) {
+      const pitDictionary = JSON.parse(nytrPit);
       pitDictionary[key] = data;
-      localStorage.setItem("preTVP", JSON.stringify(pitDictionary));
+      localStorage.setItem("nytrPit", JSON.stringify(pitDictionary));
     } else {
       const pitDictionary = {};
       pitDictionary[key] = data;
-      localStorage.setItem("preTVP", JSON.stringify(pitDictionary));
+      localStorage.setItem("nytrPit", JSON.stringify(pitDictionary));
     }
   }
 
@@ -1018,14 +1018,14 @@ function qr_regenerate() {
   }
 
   if(!pitScouting){
-    preTVM = localStorage.getItem("preTVM")
+    nytrMatch = localStorage.getItem("nytrMatch")
     key = document.getElementById("input_m").value + "." + getRobot()
-    const preTVMDictionary = JSON.parse(preTVM)
-    qr.makeCode(preTVMDictionary[key])
+    const nytrMatchDictionary = JSON.parse(nytrMatch)
+    qr.makeCode(nytrMatchDictionary[key])
   }else{
-    preTVP = localStorage.getItem("preTVP")
+    nytrPit = localStorage.getItem("nytrPit")
     key = document.getElementById("input_t").value
-    const pitDictionary = JSON.parse(preTVP)
+    const pitDictionary = JSON.parse(nytrPit)
     qr.makeCode(pitDictionary[key])
   }
 
@@ -1583,9 +1583,9 @@ function showQRCodes(type) {
   removeAllChildNodes(dest);
 
   if(type == 'match'){
-    // Retrieve scouting preTVM from localStorage.
-    const preTVM = JSON.parse(localStorage.getItem("preTVM"));
-    for (const [key, value] of Object.entries(preTVM)) {
+    // Retrieve scouting nytrMatch from localStorage.
+    const nytrMatch = JSON.parse(localStorage.getItem("nytrMatch"));
+    for (const [key, value] of Object.entries(nytrMatch)) {
       // Create a div we can use to act as a container for the label and the QR code.
       var qrContainer = document.createElement("div");
       qrContainer.setAttribute("id", "qr-container-" + key);
@@ -1610,9 +1610,9 @@ function showQRCodes(type) {
       new QRCode(document.getElementById(id), options);
     }
   }else if(type == 'pit'){
-    // Retrieve scouting preTVP from localStorage.
-    const preTVP = JSON.parse(localStorage.getItem("preTVP"));
-    for (const [key, value] of Object.entries(preTVP)) {
+    // Retrieve scouting nytrPit from localStorage.
+    const nytrPit = JSON.parse(localStorage.getItem("nytrPit"));
+    for (const [key, value] of Object.entries(nytrPit)) {
       // Create a div we can use to act as a container for the label and the QR code.
       var qrContainer = document.createElement("div");
       qrContainer.setAttribute("id", "qr-container-" + key);
@@ -1641,15 +1641,15 @@ function showQRCodes(type) {
 
 function saveAndClear(){
   key = document.getElementById("input_sc").value;
-    preTVP = localStorage.getItem("preTVP");
-    if (preTVP) {
-      const pitDictionary = JSON.parse(preTVP);
+    nytrPit = localStorage.getItem("nytrPit");
+    if (nytrPit) {
+      const pitDictionary = JSON.parse(nytrPit);
       pitDictionary[key] = data;
-      localStorage.setItem("preTVP", JSON.stringify(pitDictionary));
+      localStorage.setItem("nytrPit", JSON.stringify(pitDictionary));
     } else {
       const pitDictionary = {};
       pitDictionary[key] = data;
-      localStorage.setItem("preTVP", JSON.stringify(pitDictionary));
+      localStorage.setItem("nytrPit", JSON.stringify(pitDictionary));
     }
     clearForm()
 }
