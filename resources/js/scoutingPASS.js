@@ -37,6 +37,7 @@ var options = {
   quietZoneColor: "#FFFFFF",
 };
 
+
 const pins = {
     "0446": "Abyss Mortimer",
     "1665": "Alex Phillip",
@@ -3358,6 +3359,22 @@ function qr_regenerate() {
       alert("Invalid Scouter Pin.");
       return false;
     }
+    t = document.getElementById("input_e").value
+    for(let c = 0; c < t.length; c++){
+      if(t[c] == "=" || t[c] == "$" || t[c] == "+" || t[c] == "-" || t[c] == "*" || t[c] == "/" || t[c] == "%" || t[c] == "#" || t[c] == "@" || t[c] == "_" ||t[c] == ","){
+        alert("Banned Character Detected")
+        return false;
+      }
+    }
+    r = document.getElementById("input_co").value
+    for(let x = 0; x < r.length; x++){
+      if(r[x] == "=" || r[x] == "$" || r[x] == "+" || r[x] == "-" || r[x] == "*" || r[x] == "/" || r[x] == "%" || r[x] == "#" || r[x] == "@" || r[x] == "_" ||r[x] == ","){
+        alert("Banned Character Detected")
+        return false;
+      }
+    }
+    
+
   }else if(pitScouting){
     if(document.getElementById("input_t").value == null || document.getElementById("input_t").value == ""){
       alert("Enter all required values:\nTeam Number")
@@ -3372,6 +3389,8 @@ function qr_regenerate() {
     matchNYRO = localStorage.getItem("matchNYRO");
     pinNum = document.getElementById("input_s").value
     data.replace(pinNum, pins[pinNum])
+    data.replace("=", "", "$", "", "+", "", "-", "", "*", "", "/", "", "@", "", "%", "", "#", "", ",", "")
+    console.log(data)
     if (matchNYRO) {
       const matchNYRODictionary = JSON.parse(matchNYRO);
       matchNYRODictionary[key] = key + "\t" + data;
@@ -3550,7 +3569,7 @@ function moveTouch(e) {
 function swipePage(increment) {
   if (qr_regenerate() == true) {
     slides = document.getElementById("main-panel-holder").children
-    if (slide + increment < slides.length && slide + increment >= 0) {
+    if (slide + increment < slides.length || slide + increment >= 0) {
       slides[slide].style.display = "none";
       slide += increment;
       window.scrollTo(0, 0);
