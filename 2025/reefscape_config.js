@@ -1,7 +1,7 @@
 var config_data = `
 {
     "dataFormat": "tsv",
-    "title": "Scouting PASS 2025",
+    "title": "Ra Cha Cha Ruckus",
     "checkboxAs": "10",
     "prematch": [
         {
@@ -16,7 +16,7 @@ var config_data = `
             "name": "Event",
             "code": "e",
             "type": "event",
-            "defaultValue": "2025nyrt",
+            "defaultValue": "2025nyrr",
             "required": "true"
         },
         {
