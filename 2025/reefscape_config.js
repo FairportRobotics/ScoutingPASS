@@ -5,18 +5,18 @@ var config_data = `
     "checkboxAs": "10",
     "prematch": [
         {
+            "name": "Event",
+            "code": "e",
+            "type": "event",
+            "defaultValue": "2025nyrr",
+            "required": "true"
+        },
+        {
             "name": "Scouter Pin",
             "code": "s",
             "type": "scouter",
             "size": 5,
             "maxSize": 5,
-            "required": "true"
-        },
-        {
-            "name": "Event",
-            "code": "e",
-            "type": "event",
-            "defaultValue": "2025nyrr",
             "required": "true"
         },
         {
