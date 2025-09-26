@@ -205,14 +205,6 @@ var config_data = `
             "tooltip": "Would you want this robot on your alliance in playoffs?",
             "code": "all",
             "type": "checkbox"
-        },
-        {
-            "name": "Comments",
-            "code": "co",
-            "type": "textarea",
-            "size": 30,
-            "maxSize": 578,
-            "rows": 5
         }
     ]
 }`;
