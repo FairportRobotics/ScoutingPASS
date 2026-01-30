@@ -38,7 +38,7 @@ var options = {
 
 const pins = {
   8723: "Dean Blanchard",
-  8156: "Rachel Case",
+  8156: "Rachael Case",
   3682: "Ruth Christensen",
   8523: "Andrew Crawford ",
   9231: "Gianmarco D'Angelo ",
