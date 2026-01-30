@@ -11,7 +11,7 @@ var config_data = `
             "type": "number"
         },
         {
-            "name": "What the heck is a kilometer?",
+            "name": "What is your robot's<br>Drag coefficient?",
             "code": "Drag",
             "type": "text"
         },
@@ -74,22 +74,41 @@ var config_data = `
             "type":"checkbox"
         },
         { 
-            "name": "Can climb on -",
-            "code": "fpu",
+            "name": "Drivetrain Type",
+            "code": "wheels",
             "type": "radio",
             "choices": 
             {
-                "Shallow": "Shallow",
-                "Deep": "Deep<br>",  
-                "Both": "Both",
-                "None": "None"
+                "Tank": "Tank",
+                "Swerve": "Swerve",  
+                "Mecanum": "Mecanum",
+                "Other": "Other"
+                // Put new text box if "other" is picked
             },
-            "defaultValue": "None"
-        },
-        {
-            "name": "Can you remove algae from the reef",
-            "code": "rva",
-            "type": "checkbox"
+            "defaultValue": "Tank"
+
+        {   "name": "Dimensions",
+            "code": "dimensions",
+            "type": "radio",
+            "choices": 
+            {
+                "Bump": "Bump",
+                "Trench": "Trench",  
+                "Both": "Both",
+                "Neither": "Neither"
+            },
+            "defaultValue": "Bump"
+
+        {   "name": "Estimated Payload Capacity",
+            "code": "payload",
+            "type": "radio",
+            "choices": 
+            {
+                "≤15 is small": "≤15 is small",
+                "15<x<30": "15<x<30",  
+                "≥30 is large": "≥30 is large",
+            },
+            "defaultValue": "≤15 is small"
         },
         { 
             "name": "Comments",
