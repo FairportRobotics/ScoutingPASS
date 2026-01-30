@@ -10,69 +10,6 @@ var config_data = `
             "code": "t",
             "type": "number"
         },
-        {
-            "name": "What is your robot's<br>Drag coefficient?",
-            "code": "Drag",
-            "type": "text"
-        },
-        {
-            "name": "Does robot function?",
-            "code": "func",
-            "type": "checkbox"
-        },
-        {
-            "name": "If not, when will it?",
-            "code": "feta",
-            "type":"radio",
-            "choices":
-            {
-                "nm":"Next Match",
-                "soon":"1-2 Hours<br>",
-                "No":"Never"
-            },
-            "defaultValue":"Currently"
-        },
-        { 
-            "name": "Width (Inch)",
-            "code": "wid",
-            "type": "number"
-        },
-        {
-            "name": "Can score on - L1",
-            "code":"L1",
-            "type":"checkbox"
-            
-        },
-        {
-            "name": "L2",
-            "code":"L2",
-            "type":"checkbox"
-
-            
-        },
-        {
-            "name": "L3",
-            "code":"L3",
-            "type":"checkbox"
-
-            
-        },
-        {
-            "name": "L4",
-            "code":"L4",
-            "type":"checkbox"
-            
-        },
-        {
-            "name": "Processor",
-            "code":"Pr",
-            "type":"checkbox"
-        },
-        {
-            "name": "Net",
-            "code":"Net",
-            "type":"checkbox"
-        },
         { 
             "name": "Drivetrain Type",
             "code": "wheels",
@@ -86,7 +23,7 @@ var config_data = `
                 // Put new text box if "other" is picked
             },
             "defaultValue": "Tank"
-
+        },
         {   "name": "Dimensions",
             "code": "dimensions",
             "type": "radio",
@@ -98,14 +35,14 @@ var config_data = `
                 "Neither": "Neither"
             },
             "defaultValue": "Bump"
-
+        },
         {   "name": "Estimated Payload Capacity",
             "code": "payload",
             "type": "radio",
             "choices": 
             {
                 "≤15 is small": "≤15 is small",
-                "15<x<30": "15<x<30",  
+                "15<x<30 medium": "15<x<30 medium",  
                 "≥30 is large": "≥30 is large",
             },
             "defaultValue": "≤15 is small"
