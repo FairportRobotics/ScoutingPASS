@@ -57,7 +57,7 @@ var config_data = `
     ],
     "auton": [
         {
-            "name": "Left the Starting Zone",
+            "name": "What the heck is a kilometer",
             "code": "al",
             "type": "bool"
         },
