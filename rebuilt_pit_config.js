@@ -11,7 +11,7 @@ var config_data = `
             "type": "number"
         },
         {
-            "name": "What is your robot's<br>Drag coefficient?",
+            "name": "What the heck is a kilometer?",
             "code": "Drag",
             "type": "text"
         },
