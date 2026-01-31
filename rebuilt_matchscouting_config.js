@@ -48,126 +48,213 @@ var config_data = `
             "type": "team",
             "min": 1,
             "max": 99999
-        },
-        {
-            "name": "Started With Coral",
-            "code": "sc",
-            "type": "checkbox"
         }
+        {  "name": "How much fuel did the robot start with?",
+            "code": "startfuel",
+            "type": "radio",
+            "choices": 
+            {
+                "0": "0",
+                "1": "1",  
+                "2": "2",
+                "3": "3",
+                "4": "4",  
+                "5": "5",  
+                "6": "6",
+                "7": "7",  
+                "8": "8",    
+            },
+            "defaultValue": "0"
+        
     ],
     "auton": [
-        {
-            "name": "What the heck is a kilometer",
-            "code": "al",
-            "type": "bool"
-        },
-        {
-            "name": "Coral L4 Scores",
-            "code": "ac4",
-            "type": "counter",
-            "tooltip": "Maximum of 12"
-        },
-        {
-            "name": "Coral L3 Scores",
-            "code": "ac3",
-            "type": "counter",
-            "tooltip": "Maximum of 12"
-        },
-        {
-            "name": "Coral L2 Scores",
-            "code": "ac2",
-            "type": "counter",
-            "tooltip": "Maximum of 12"
-        },
-        {
-            "name": "Coral L1 Scores",
-            "code": "ac1",
-            "type": "counter",
-            "tooltip": "Maximum of 24"
-        },
-        {
-            "name": "Algae Scores Processor",
-            "code": "aap",
-            "type": "counter"
-        },
-        {
-            "name": "Algae Scores Net",
-            "code": "aan",
-            "type": "counter"
-        },
-        {
-            "name": "Dropped Game Pieces",
-            "code": "adp",
-            "type": "counter"
-        }
+        {  "name": "Robot Moved In Auto",
+            "code": "auto",
+            "type": "radio",
+            "choices": 
+            {
+                "Yes": "Yes",
+                "No (if picked, skip rest of auto period questions)": "No",  
+            },
+            "defaultValue": "Yes"
+        
+        {  "name": "A-Stop activated",
+            "code": "a-stop",
+            "type": "radio",
+            "choices": 
+            {
+                "Yes": "Yes",
+                "No": "No",  
+                "Unsure": "Unsure",  
+            },
+            "defaultValue": "Unsure"
+        
+        {  "name": "Total Fuel Scored",
+            "code": "fuel",
+            "type": "radio",
+            "choices": 
+            {
+                "1 (poor effectiveness)": "1",
+                "2": "2",  
+                "3": "3",
+                "4": "4",  
+                "5 (high effectiveness)": "5",
+            },
+            "defaultValue": "1 (poor effectiveness)"
+
+        {  "name": "Where did the robot attempt to acquire more fuel?",
+            "code": "acqfuel",
+            "type": "checkbox",
+            "choices": 
+            {
+                "Floor": "Floor",
+                "Outpost": "Outpost",  
+                "Depot": "Depot",
+                "None (broken down)": "None",    
+            },
+            "defaultValue": "None"
+
+        {  "name": "Climbing Attempted",
+            "code": "climb",
+            "type": "radio",
+            "choices": 
+            {
+                "Yes": "Yes",
+                "No": "No",     
+            },
+            "defaultValue": "No"
+    
+       {  "name": "Climbing Success (did the robot achieve Level 1?)",
+            "code": "climbsuccess",
+            "type": "radio",
+            "choices": 
+            {
+                "Yes": "Yes",
+                "No": "No",     
+            },
+            "defaultValue": "No"
+       
+        {  "name": "Climbing Dismount (did the robot dismount Level 1 successfully?)",
+            "code": "dismount",
+            "type": "radio",
+            "choices": 
+            {
+                "Yes": "Yes",
+                "No": "No",     
+            },
+            "defaultValue": "No"
+
     ],
     "teleop": [
-        {
-            "name": "Coral L4 Scores",
-            "code": "tc4",
-            "type": "counter",
-            "maxValue": 12
-        },
-        {
-            "name": "Coral L3 Scores",
-            "code": "tc3",
-            "type": "counter",
-            "maxValue": 12
-        },
-        {
-            "name": "Coral L2 Scores",
-            "code": "tc2",
-            "type": "counter",
-            "maxValue": 12
-        },
-        {
-            "name": "Coral L1 Scores",
-            "code": "tc1",
-            "type": "counter",
-            "maxValue": 24
-        },
-        {
-            "name": "Algae Scores Processor",
-            "code": "tap",
-            "type": "counter"
-        },
-        {
-            "name": "Algae Scores Net",
-            "code": "tan",
-            "type": "counter"
-        },
+
+        // find out right order for active/inactive shifts
+        
+        {   "name": "Are you in an active or inactive shift?",
+            "code": "shifttype",
+            "type": "radio",
+            "choices": 
+            {
+                "Active": "Active",
+                "Inactive": "Inactive",     
+            },
+            "defaultValue": "Active"
+
+        {   "name": "Inactive Hub Shift Behavior",
+            "code": "behavior",
+            "type": "checkbox",
+            "choices": 
+            {
+                "Collect": "Collect",
+                "Pass": "Pass",
+                "Defense": "Defense",
+                "None (ineffective or broken down)": "None (ineffective or broken down)",     
+            },
+            "defaultValue": "None (ineffective or broken down)"
+            
+        {   "name": "Inactive Hub Fuel Collection Area",
+            "code": "fuelcollect",
+            "type": "checkbox",
+            "choices": 
+            {
+                "Alliance's": "Alliance's",
+                "Neutral": "Neutral",
+                "Opponent's": "Opponent's",
+                "None (broken down)": "None (broken down)",
+                "None (defense)": "None (defense)",     
+            },
+            "defaultValue": "Alliance's"
+        
+        {   "name": "Intake Versatility",
+            "code": "versatility",
+            "type": "checkbox",
+            "choices": 
+            {
+                "Floor": "Floor",
+                "Outpost Chute": "Outpost Chute",
+                "Both": "Both",
+                "Neither": "Neither",  
+            },
+            "defaultValue": "Neither"
+            
+        {   "name": "Intake Efficiency",
+            "code": "efficiency",
+            "type": "radio",
+            "choices": 
+            {
+                "1 (slow)": "1 (slow)",
+                "2": "2",
+                "3": "3",
+                "4": "4", 
+                "5 (fast)": "5 (fast)", 
+            },
+            "defaultValue": "1 (slow)"
+        
+        
+        {   "name": "Cycle Time (time to collect payload and shoot)",
+            "code": "cyctime",
+            "type": "radio",
+            "choices": 
+            {
+                "1 (slow)": "1 (slow)",
+                "2": "2",
+                "3": "3",
+                "4": "4", 
+                "5 (immediate)": "5 (immediate)", 
+            },
+            "defaultValue": "1 (slow)"
+        
         {
             "name": "Dropped Game Pieces",
             "code": "tdp",
             "type": "counter"
-        },
-        {
-            "name": "Pickup Coral From",
-            "code": "tcu",
-            "type": "radio",
-            "choices": {
-                "s": "Source<br>",
-                "f": "Floor<br>",
-                "b": "Both<br>",
-                "x": "Not-Attempted"
-            },
-            "defaultValue": "x"
         }
+        
     ],
     "endgame": [
-        {
-            "name": "Final Status",
-            "code": "fs",
+        {   "name": "Climbing Attempted During Endgame",
+            "code": "climbingend",
             "type": "radio",
-            "choices": {
-                "p": "Parked<br>",
-                "s": "Shallow<br>",
-                "d": "Deep<br>",
-                "x": "Not-Attempted"
+            "choices": 
+            {
+                "Yes": "Yes",
+                "No": "No",     
             },
-            "defaultValue": "x"
-        }
+            "defaultValue": "No"
+
+        {   "name": "Climbing Success During Endgame",
+            "code": "climbsuccess",
+            "type": "radio",
+            "choices": 
+            {
+                "Not attempted": "Not attempted",
+                "Unsuccessful attempt": "Unsuccessful attempt",
+                "Level 1": "Level 1",
+                "Level 2": "Level 2", 
+                "Level 3": "Level 3", 
+            },
+            "defaultValue": "Not attempted"
     ],
+    
     "postmatch": [
         {
             "name": "Win or Lose",
@@ -183,11 +270,6 @@ var config_data = `
         {
             "name": "Auto Ranking Point",
             "code": "arp",
-            "type": "checkbox"
-        },
-        {
-            "name": "Coral Ranking Point",
-            "code": "crp",
             "type": "checkbox"
         },
         {
