@@ -29,7 +29,7 @@ var config_data = `
         },
         { 
             "name": "Width (Inch)",
-            "code": "wid",
+            "code": "width",
             "type": "number"
         },
         { 
@@ -64,9 +64,9 @@ var config_data = `
             "type": "radio",
             "choices": 
             {
-                "sm": "≤ 15 (small)",
-                "med": "15<x<30 (medium)",  
-                "lar": "≥ 30 (large)",
+                "sm": "less than 15 (small)",
+                "med": "Between 15 and 30 (medium)",  
+                "lar": "More than 30 (large)"
             },
             "defaultValue": "sm"
         },
