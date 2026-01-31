@@ -282,7 +282,7 @@ var config_data = `
                 "a": "Attempted (but failed)<br>",
                 "q": "Level 1<br>",
                 "w": "Level 2<br>",
-                "e": "Level 3"
+                "e": "Level 3"<br>
             },
             "defaultValue": "n"
         }
