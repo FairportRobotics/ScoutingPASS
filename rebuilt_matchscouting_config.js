@@ -62,9 +62,45 @@ var config_data = `
             "type": "radio",
             "choices": {
                 "y": "Yes<br>",
-                "n": "No<br>"
+                "n": "No"
             },
-            "defaultValue": "x"
+            "defaultValue": "n"
+        },
+        {
+            "name": "A-stop activated",
+            "code": "a-stop",
+            "type": "radio",
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No<br>",
+                "u": "Unsure"
+            },
+            "defaultValue": "u"
+        },
+        {
+            "name": "Total fuel scored",
+            "code": "fuel",
+            "type": "radio",
+            "choices": {
+                "1": "1 (poor effectiveness)<br>",
+                "2": "2<br>",
+                "3": "3<br>",
+                "4": "4<br>",
+                "5": "5 (high effectiveness)"
+            },
+            "defaultValue": "1"
+        },
+        {    
+            "name": "Where did the robot attempt to acquire more fuel?",
+            "code": "acqfuel",
+            "type": "checkbox",
+            "choices": {
+                "f": "Floor<br>",
+                "o": "Outpost<br>",
+                "d": "Depot<br>",
+                "n": "None (broken down)"
+            },
+            "defaultValue": "f"
         },
         {
             "name": "Left the Starting Zone",
