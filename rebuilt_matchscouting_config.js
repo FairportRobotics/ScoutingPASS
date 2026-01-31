@@ -57,6 +57,16 @@ var config_data = `
     ],
     "auton": [
         {
+            "name": "Robot moved in auto",
+            "code": "auto",
+            "type": "radio",
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No<br>"
+            },
+            "defaultValue": "x"
+        },
+        {
             "name": "Left the Starting Zone",
             "code": "al",
             "type": "bool"
