@@ -136,56 +136,79 @@ var config_data = `
         
     "teleop": [
         {
-            "name": "Coral L4 Scores",
-            "code": "tc4",
-            "type": "counter",
-            "maxValue": 12
+            "name": "During Inactive Hub shifts, did the robot collect fuel, pass fuel, or play defense?",
+            "code": "behavior",
+            "type": "checkbox",
+            "choices": {
+                "c": "Collect<br>",
+                "p": "Pass<br>",
+                "d": "Defense<br>",
+                "n": "None (ineffective or broken down)"
+            },
+            "defaultValue": "n"
         },
-        {
-            "name": "Coral L3 Scores",
-            "code": "tc3",
-            "type": "counter",
-            "maxValue": 12
+        {    
+            "name": "Which zone(s) did the robot collect fuel from?",
+            "code": "zonefeulcollect",
+            "type": "checkbox",
+            "choices": {
+                "a": "Alliance<br>",
+                "n": "Neutral<br>",
+                "o": "Opponent<br>",
+                "m": "None"
+            },
+            "defaultValue": "m"
         },
-        {
-            "name": "Coral L2 Scores",
-            "code": "tc2",
-            "type": "counter",
-            "maxValue": 12
+        {    
+            "name": "Where did the robot collect fuel from?",
+            "code": "fuelcollect",
+            "type": "checkbox",
+            "choices": {
+                "f": "Floor<br>",
+                "o": "Outpost chute<br>",
+                "b": "Both<br>",
+                "n": "Neither"
+            },
+            "defaultValue": "n"
         },
-        {
-            "name": "Coral L1 Scores",
-            "code": "tc1",
-            "type": "counter",
-            "maxValue": 24
-        },
-        {
-            "name": "Algae Scores Processor",
-            "code": "tap",
-            "type": "counter"
-        },
-        {
-            "name": "Algae Scores Net",
-            "code": "tan",
-            "type": "counter"
-        },
-        {
-            "name": "Dropped Game Pieces",
-            "code": "tdp",
-            "type": "counter"
-        },
-        {
-            "name": "Pickup Coral From",
-            "code": "tcu",
+        {    
+            "name": "How well did the robot's intake operate?",
+            "code": "efficiency",
             "type": "radio",
             "choices": {
-                "s": "Source<br>",
-                "f": "Floor<br>",
-                "b": "Both<br>",
-                "x": "Not-Attempted"
+                "1": "1 (slow)<br>",
+                "2": "2<br>",
+                "3": "3<br>",
+                "4": "4<br>",
+                "5": "5 (fast)"
             },
-            "defaultValue": "x"
-        }
+            "defaultValue": "1"
+        },
+        {    
+            "name": "How long does it take for the robot to shoot after intake?",
+            "code": "cycletime",
+            "type": "radio",
+            "choices": {
+                "1": "1 (slow)<br>",
+                "2": "2<br>",
+                "3": "3<br>",
+                "4": "4<br>",
+                "5": "5 (immediate)"
+            },
+            "defaultValue": "1"
+        },
+        {    
+            "name": "Did the robot use the bump and/or trench?",
+            "code": "bumptrench",
+            "type": "radio",
+            "choices": {
+                "b": "Bump<br>",
+                "t": "Trench<br>",
+                "v": "Both<br>",
+                "n": "Neither (broken down)"
+            },
+            "defaultValue": "n"
+        },
     ],
     "endgame": [
         {
