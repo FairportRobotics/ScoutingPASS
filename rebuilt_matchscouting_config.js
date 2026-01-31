@@ -103,50 +103,37 @@ var config_data = `
             "defaultValue": "f"
         },
         {
-            "name": "Left the Starting Zone",
-            "code": "al",
-            "type": "bool"
+            "name": "Was climbing attempted?",
+            "code": "climb",
+            "type": "radio",
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No"
+            },
+            "defaultValue": "n"
         },
-        {
-            "name": "Coral L4 Scores",
-            "code": "ac4",
-            "type": "counter",
-            "tooltip": "Maximum of 12"
+        {    
+            "name": "Did the robot achieve level 1?",
+            "code": "climbsuccess",
+            "type": "radio",
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No"
+            },
+            "defaultValue": "n"
         },
-        {
-            "name": "Coral L3 Scores",
-            "code": "ac3",
-            "type": "counter",
-            "tooltip": "Maximum of 12"
-        },
-        {
-            "name": "Coral L2 Scores",
-            "code": "ac2",
-            "type": "counter",
-            "tooltip": "Maximum of 12"
-        },
-        {
-            "name": "Coral L1 Scores",
-            "code": "ac1",
-            "type": "counter",
-            "tooltip": "Maximum of 24"
-        },
-        {
-            "name": "Algae Scores Processor",
-            "code": "aap",
-            "type": "counter"
-        },
-        {
-            "name": "Algae Scores Net",
-            "code": "aan",
-            "type": "counter"
-        },
-        {
-            "name": "Dropped Game Pieces",
-            "code": "adp",
-            "type": "counter"
+        {    
+            "name": "Did the robot dismount level 1 successfully?",
+            "code": "dismount",
+            "type": "radio",
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No"
+            },
+            "defaultValue": "n"
         }
-    ],
+    ],  
+        
     "teleop": [
         {
             "name": "Coral L4 Scores",
