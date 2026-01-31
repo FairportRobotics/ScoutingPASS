@@ -280,11 +280,18 @@ var config_data = `
             "choices": {
                 "n": "Not attempted<br>",
                 "a": "Attempted (but failed)<br>",
-                "1": "Level 1<br>",
-                "2": "Level 2<br>",
-                "3": "Level 3"
+                "q": "Level 1<br>",
+                "w": "Level 2<br>",
+                "e": "Level 3"
             },
             "defaultValue": "n"
+        }
+        { 
+            "name": "Comments",
+            "code": "pco",
+            "type": "text",
+            "size": 20,
+            "maxSize": 250
         }
     ]
 }`;
