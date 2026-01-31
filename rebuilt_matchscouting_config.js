@@ -88,29 +88,17 @@ var config_data = `
         {    
             "name": "Did the robot attempt to pick up fuel from the floor?",
             "code": "acqfuel",
-            "type": "checkbox",
-            "choices": {
-                "y": "Yes (do not select if no"
-            },
-            "defaultValue": "y"
+            "type": "checkbox"
         },
         {    
             "name": "Did the robot attempt to pick up fuel from the outpost?",
             "code": "acqfuell",
-            "type": "checkbox",
-            "choices": {
-                "y": "Yes (do not select if no)"
-            },
-            "defaultValue": "y"
+            "type": "checkbox"
         },
         {    
             "name": "Did the robot attempt to pick up fuel from the depot?",
             "code": "acqfuelll",
-            "type": "checkbox",
-            "choices": {
-                "y": "Yes (do not select if no)"
-            },
-            "defaultValue": "y"
+            "type": "checkbox"
         },
         {
             "name": "Was climbing attempted?",
@@ -148,77 +136,44 @@ var config_data = `
         {
             "name": "During Inactive Hub shifts, did the robot collect fuel?",
             "code": "behavior",
-            "type": "checkbox",
-            "choices": {
-                "y": "Yes (do not select if no)"
-            },
-            "defaultValue": "y"
+            "type": "checkbox"
         },
         {
             "name": "During Inactive Hub shifts, did the robot pass fuel?",
             "code": "behaviorr",
-            "type": "checkbox",
-            "choices": {
-                "y": "Yes (do not select if no)"
-            },
-            "defaultValue": "y"
+            "type": "checkbox"
         },
         {
             "name": "During Inactive Hub shifts, did the robot defend?",
             "code": "behaviorrr",
-            "type": "checkbox",
-            "choices": {
-                "y": "Yes (do not select if no)"
-            },
-            "defaultValue": "y"
+            "type": "checkbox"
         },
         {    
             "name": "Did the robot collect fuel from the Alliance zone?",
             "code": "zonefuelcollect",
-            "type": "checkbox",
-            "choices": {
-                "y": "Yes(Do not select if no)"
-            },
-            "defaultValue": "y"
+            "type": "checkbox"
         },
         {    
             "name": "Did the robot collect fuel from the Opponent's zone?",
             "code": "zonefuelcollectt",
-            "type": "checkbox",
-            "choices": {
-                "y": "Yes(Do not select if no)"
-            },
-            "defaultValue": "y"
+            "type": "checkbox"
         },
         {    
             "name": "Did the robot collect fuel from the Neutral zone?",
             "code": "zonefuelcollecttt",
-            "type": "checkbox",
-            "choices": {
-                "y": "Yes(Do not select if no)"
-            },
-            "defaultValue": "y"
+            "type": "checkbox"
         },
         {    
             "name": "Did the robot collect fuel from the floor?",
             "code": "fuelcollect",
-            "type": "checkbox",
-            "choices": {
-                "y": "Yes (do not select if no)",
-                "o": "Outpost chute<br>",
-                "b": "Both<br>",
-                "n": "Neither"
+            "type": "checkbox"
             },
             "defaultValue": "y"
         },
         {    
             "name": "Did the robot collect fuel from the outpost chute?",
             "code": "fuelcollectt",
-            "type": "checkbox",
-            "choices": {
-                "y": "Yes (do not select if no)",
-            },
-            "defaultValue": "y"
+            "type": "checkbox"
         },
         {    
             "name": "How well did the robot's intake operate?",
@@ -331,7 +286,7 @@ var config_data = `
                 "a": "Attempted (but failed)<br>",
                 "q": "Level 1<br>",
                 "w": "Level 2<br>",
-                "e": "Level 3"<br>
+                "e": "Level 3"
             },
             "defaultValue": "n"
         }
