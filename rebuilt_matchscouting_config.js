@@ -62,55 +62,78 @@ var config_data = `
             "type": "radio",
             "choices": {
                 "y": "Yes<br>",
-                "n": "No<br>"
+                "n": "No"
             },
-            "defaultValue": "x"
+            "defaultValue": "n"
         },
         {
-            "name": "Left the Starting Zone",
-            "code": "al",
-            "type": "bool"
+            "name": "A-stop activated",
+            "code": "a-stop",
+            "type": "radio",
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No<br>",
+                "u": "Unsure"
+            },
+            "defaultValue": "u"
         },
         {
-            "name": "Coral L4 Scores",
-            "code": "ac4",
-            "type": "counter",
-            "tooltip": "Maximum of 12"
+            "name": "Total fuel scored",
+            "code": "fuel",
+            "type": "radio",
+            "choices": {
+                "1": "1 (poor effectiveness)<br>",
+                "2": "2<br>",
+                "3": "3<br>",
+                "4": "4<br>",
+                "5": "5 (high effectiveness)"
+            },
+            "defaultValue": "1"
+        },
+        {    
+            "name": "Where did the robot attempt to acquire more fuel?",
+            "code": "acqfuel",
+            "type": "checkbox",
+            "choices": {
+                "f": "Floor<br>",
+                "o": "Outpost<br>",
+                "d": "Depot<br>",
+                "n": "None (broken down)"
+            },
+            "defaultValue": "f"
         },
         {
-            "name": "Coral L3 Scores",
-            "code": "ac3",
-            "type": "counter",
-            "tooltip": "Maximum of 12"
+            "name": "Was climbing attempted?",
+            "code": "climb",
+            "type": "radio",
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No"
+            },
+            "defaultValue": "n"
         },
-        {
-            "name": "Coral L2 Scores",
-            "code": "ac2",
-            "type": "counter",
-            "tooltip": "Maximum of 12"
+        {    
+            "name": "Did the robot achieve level 1?",
+            "code": "climbsuccess",
+            "type": "radio",
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No"
+            },
+            "defaultValue": "n"
         },
-        {
-            "name": "Coral L1 Scores",
-            "code": "ac1",
-            "type": "counter",
-            "tooltip": "Maximum of 24"
-        },
-        {
-            "name": "Algae Scores Processor",
-            "code": "aap",
-            "type": "counter"
-        },
-        {
-            "name": "Algae Scores Net",
-            "code": "aan",
-            "type": "counter"
-        },
-        {
-            "name": "Dropped Game Pieces",
-            "code": "adp",
-            "type": "counter"
+        {    
+            "name": "Did the robot dismount level 1 successfully?",
+            "code": "dismount",
+            "type": "radio",
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No"
+            },
+            "defaultValue": "n"
         }
-    ],
+    ],  
+        
     "teleop": [
         {
             "name": "Coral L4 Scores",
