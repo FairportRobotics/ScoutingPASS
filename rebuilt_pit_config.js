@@ -20,10 +20,16 @@ var config_data = `
                 "Swerve": "Swerve",  
                 "Mecanum": "Mecanum",
                 "Other": "Other"
-                // Put new text box if "other" is picked
             },
             "defaultValue": "Tank"
         },
+        { 
+            "name": "Enter drivetrain type if 'Other' was picked",
+            "code": "other_wheels",
+            "type": "text",
+            "size": 20,
+            "maxSize": 250
+        }
         {   "name": "Dimensions",
             "code": "dimensions",
             "type": "radio",
