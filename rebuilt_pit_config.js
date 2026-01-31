@@ -21,7 +21,7 @@ var config_data = `
             "type":"radio",
             "choices":
             {
-                "nm":"Next Match",
+                "nm":"Next Match<br>",
                 "soon":"1-2 Hours<br>",
                 "No":"Never"
             },

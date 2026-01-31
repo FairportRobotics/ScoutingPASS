@@ -48,11 +48,6 @@ var config_data = `
             "type": "team",
             "min": 1,
             "max": 99999
-        },
-        {
-            "name": "Started With Coral",
-            "code": "sc",
-            "type": "checkbox"
         }
     ],
     "auton": [
@@ -91,16 +86,19 @@ var config_data = `
             "defaultValue": "1"
         },
         {    
-            "name": "Where did the robot attempt to acquire more fuel?",
+            "name": "Did the robot attempt to pick up fuel from the floor?",
             "code": "acqfuel",
-            "type": "checkbox",
-            "choices": {
-                "f": "Floor<br>",
-                "o": "Outpost<br>",
-                "d": "Depot<br>",
-                "n": "None (broken down)"
-            },
-            "defaultValue": "f"
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot attempt to pick up fuel from the outpost?",
+            "code": "acqfuell",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot attempt to pick up fuel from the depot?",
+            "code": "acqfuelll",
+            "type": "checkbox"
         },
         {
             "name": "Was climbing attempted?",
@@ -136,40 +134,46 @@ var config_data = `
         
     "teleop": [
         {
-            "name": "During Inactive Hub shifts, did the robot collect fuel, pass fuel, or play defense?",
+            "name": "During Inactive Hub shifts, did the robot collect fuel?",
             "code": "behavior",
-            "type": "checkbox",
-            "choices": {
-                "c": "Collect<br>",
-                "p": "Pass<br>",
-                "d": "Defense<br>",
-                "n": "None (ineffective or broken down)"
-            },
-            "defaultValue": "n"
+            "type": "checkbox"
+        },
+        {
+            "name": "During Inactive Hub shifts, did the robot pass fuel?",
+            "code": "behaviorr",
+            "type": "checkbox"
+        },
+        {
+            "name": "During Inactive Hub shifts, did the robot defend?",
+            "code": "behaviorrr",
+            "type": "checkbox"
         },
         {    
-            "name": "Which zone(s) did the robot collect fuel from?",
-            "code": "zonefeulcollect",
-            "type": "checkbox",
-            "choices": {
-                "a": "Alliance<br>",
-                "n": "Neutral<br>",
-                "o": "Opponent<br>",
-                "m": "None"
-            },
-            "defaultValue": "m"
+            "name": "Did the robot collect fuel from the Alliance zone?",
+            "code": "zonefuelcollect",
+            "type": "checkbox"
         },
         {    
-            "name": "Where did the robot collect fuel from?",
+            "name": "Did the robot collect fuel from the Opponent's zone?",
+            "code": "zonefuelcollectt",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot collect fuel from the Neutral zone?",
+            "code": "zonefuelcollecttt",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot collect fuel from the floor?",
             "code": "fuelcollect",
-            "type": "checkbox",
-            "choices": {
-                "f": "Floor<br>",
-                "o": "Outpost chute<br>",
-                "b": "Both<br>",
-                "n": "Neither"
+            "type": "checkbox"
             },
-            "defaultValue": "n"
+            "defaultValue": "y"
+        },
+        {    
+            "name": "Did the robot collect fuel from the outpost chute?",
+            "code": "fuelcollectt",
+            "type": "checkbox"
         },
         {    
             "name": "How well did the robot's intake operate?",
