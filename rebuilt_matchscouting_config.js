@@ -209,6 +209,27 @@ var config_data = `
             },
             "defaultValue": "n"
         },
+    
+    
+    
+        {    
+            "name": "How fast can the robot shoot fuel?",
+            "code": "shootspeed",
+            "type": "radio",
+            "choices": {
+                "1": "1(slow)<br>",
+                "2": "2<br>",
+                "3": "3<br>",
+                "4": "4<br>",
+                "5": "5(fast)"
+            },
+            "defaultValue": "1"
+        }
+
+    
+    
+    
+    
     ],
     "endgame": [
         {
