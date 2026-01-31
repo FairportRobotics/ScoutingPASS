@@ -1,8 +1,8 @@
 var config_data = `
 {
     "dataFormat": "tsv",
-    "title": "Scouting PASS 2026",
-    "page_title": "Rebuilt",
+    "title": "Scouting PASS 2025",
+    "page_title": "Reefscape",
     "pitConfig": "true",
     "prematch": [   
         { 
@@ -10,48 +10,86 @@ var config_data = `
             "code": "t",
             "type": "number"
         },
-        { 
-            "name": "Drivetrain Type",
-            "code": "wheels",
-            "type": "radio",
-            "choices": 
+        {
+            "name": "What is your robot's<br>Drag coefficient?",
+            "code": "Drag",
+            "type": "text"
+        },
+        {
+            "name": "Does robot function?",
+            "code": "func",
+            "type": "checkbox"
+        },
+        {
+            "name": "If not, when will it?",
+            "code": "feta",
+            "type":"radio",
+            "choices":
             {
-                "Tank": "Tank",
-                "Swerve": "Swerve",  
-                "Mecanum": "Mecanum",
-                "Other": "Other"
+                "nm":"Next Match",
+                "soon":"1-2 Hours<br>",
+                "No":"Never"
             },
-            "defaultValue": "Tank"
+            "defaultValue":"Currently"
         },
         { 
-            "name": "Enter drivetrain type if 'Other' was picked",
-            "code": "other_wheels",
-            "type": "text",
-            "size": 20,
-            "maxSize": 250
-        }
-        {   "name": "Dimensions",
-            "code": "dimensions",
+            "name": "Width (Inch)",
+            "code": "wid",
+            "type": "number"
+        },
+        {
+            "name": "Can score on - L1",
+            "code":"L1",
+            "type":"checkbox"
+            
+        },
+        {
+            "name": "L2",
+            "code":"L2",
+            "type":"checkbox"
+
+            
+        },
+        {
+            "name": "L3",
+            "code":"L3",
+            "type":"checkbox"
+
+            
+        },
+        {
+            "name": "L4",
+            "code":"L4",
+            "type":"checkbox"
+            
+        },
+        {
+            "name": "Processor",
+            "code":"Pr",
+            "type":"checkbox"
+        },
+        {
+            "name": "Net",
+            "code":"Net",
+            "type":"checkbox"
+        },
+        { 
+            "name": "Can climb on -",
+            "code": "fpu",
             "type": "radio",
             "choices": 
             {
-                "Bump": "Bump",
-                "Trench": "Trench",  
+                "Shallow": "Shallow",
+                "Deep": "Deep<br>",  
                 "Both": "Both",
-                "Neither": "Neither"
+                "None": "None"
             },
-            "defaultValue": "Bump"
+            "defaultValue": "None"
         },
-        {   "name": "Estimated Payload Capacity",
-            "code": "payload",
-            "type": "radio",
-            "choices": 
-            {
-                "≤15 is small": "≤15 is small",
-                "15<x<30 medium": "15<x<30 medium",  
-                "≥30 is large": "≥30 is large",
-            },
-            "defaultValue": "≤15 is small"
+        {
+            "name": "Can you remove algae from the reef",
+            "code": "rva",
+            "type": "checkbox"
         },
         { 
             "name": "Comments",
