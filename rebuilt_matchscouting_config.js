@@ -167,8 +167,6 @@ var config_data = `
             "name": "Did the robot collect fuel from the floor?",
             "code": "fuelcollect",
             "type": "checkbox"
-            },
-            "defaultValue": "y"
         },
         {    
             "name": "Did the robot collect fuel from the outpost chute?",
