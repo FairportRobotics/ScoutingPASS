@@ -209,58 +209,82 @@ var config_data = `
             },
             "defaultValue": "n"
         },
+        {    
+            "name": "How fast can the robot shoot fuel?",
+            "code": "shootspeed",
+            "type": "radio",
+            "choices": {
+                "1": "1(slow)<br>",
+                "2": "2<br>",
+                "3": "3<br>",
+                "4": "4<br>",
+                "5": "5(fast)"
+            },
+            "defaultValue": "1"
+        },
+        {    
+            "name": "How accurate are the robot's shots?",
+            "code": "shootaccuracy",
+            "type": "radio",
+            "choices": {
+                "1": "1 (less than 20%)<br>",
+                "2": "2<br>",
+                "3": "3<br>",
+                "4": "4<br>",
+                "5": "5 (more than 90%)"
+            },
+            "defaultValue": "1"
+        },
+        {    
+            "name": "Does the robot shoot while moving or does it need to be stationary?",
+            "code": "mobileshooting",
+            "type": "radio",
+            "choices": {
+                "m": "Mobile<br>",
+                "s": "Stationary<br>",
+                "n": "Neither (broken down)<br>",
+                "d": "Neither (defense)"
+            },
+            "defaultValue": "m"
+        },
+        {    
+            "name": "How many fuel did the robot score?",
+            "code": "scoringamt",
+            "type": "radio",
+            "choices": {
+                "1": "1 (less than 5)<br>",
+                "2": "2<br>",
+                "3": "3<br>",
+                "4": "4<br>",
+                "5": "5 (more than 50)"
+            },
+            "defaultValue": "1"
+        }
+        
     ],
     "endgame": [
-        {
-            "name": "Final Status",
-            "code": "fs",
+        {    
+            "name": "Did the robot attempt to climb?",
+            "code": "climbattempt",
             "type": "radio",
             "choices": {
-                "p": "Parked<br>",
-                "s": "Shallow<br>",
-                "d": "Deep<br>",
-                "x": "Not-Attempted"
+                "y": "Yes<br>",
+                "n": "No"
             },
-            "defaultValue": "x"
-        }
-    ],
-    "postmatch": [
-        {
-            "name": "Win or Lose",
-            "code": "wl",
+            "defaultValue": "n"
+        },
+        {    
+            "name": "Was the robot successful at climbing, and if so, which level?",
+            "code": "climbsuccess",
             "type": "radio",
             "choices": {
-                "w": "Win<br>",
-                "l": "Lose<br>",
-                "t": "Tie<br>"
+                "n": "Not attempted<br>",
+                "a": "Attempted (but failed)<br>",
+                "q": "Level 1<br>",
+                "w": "Level 2<br>",
+                "e": "Level 3"
             },
-            "defaultValue": "w"
-        },
-        {
-            "name": "Auto Ranking Point",
-            "code": "arp",
-            "type": "checkbox"
-        },
-        {
-            "name": "Coral Ranking Point",
-            "code": "crp",
-            "type": "checkbox"
-        },
-        {
-            "name": "Barge Ranking Point",
-            "code": "brp",
-            "type": "checkbox"
-        },
-        {
-            "name": "Immobilized",
-            "code": "i",
-            "type": "checkbox"
-        },
-        {
-            "name": "Make a good<br>alliance partner?",
-            "tooltip": "Would you want this robot on your alliance in playoffs?",
-            "code": "all",
-            "type": "checkbox"
+            "defaultValue": "n"
         }
         { 
             "name": "Comments",
