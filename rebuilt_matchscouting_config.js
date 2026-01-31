@@ -262,5 +262,12 @@ var config_data = `
             "code": "all",
             "type": "checkbox"
         }
+        { 
+            "name": "Comments",
+            "code": "pco",
+            "type": "text",
+            "size": 20,
+            "maxSize": 250
+        }
     ]
 }`;

@@ -11,11 +11,6 @@ var config_data = `
             "type": "number"
         },
         {
-            "name": "What is your robot's<br>Drag coefficient?",
-            "code": "Drag",
-            "type": "text"
-        },
-        {
             "name": "Does robot function?",
             "code": "func",
             "type": "checkbox"
@@ -37,59 +32,43 @@ var config_data = `
             "code": "wid",
             "type": "number"
         },
-        {
-            "name": "Can score on - L1",
-            "code":"L1",
-            "type":"checkbox"
-            
-        },
-        {
-            "name": "L2",
-            "code":"L2",
-            "type":"checkbox"
-
-            
-        },
-        {
-            "name": "L3",
-            "code":"L3",
-            "type":"checkbox"
-
-            
-        },
-        {
-            "name": "L4",
-            "code":"L4",
-            "type":"checkbox"
-            
-        },
-        {
-            "name": "Processor",
-            "code":"Pr",
-            "type":"checkbox"
-        },
-        {
-            "name": "Net",
-            "code":"Net",
-            "type":"checkbox"
-        },
         { 
-            "name": "Can climb on -",
-            "code": "fpu",
+            "name": "What kind of wheels do they use?",
+            "code": "drivetrain",
             "type": "radio",
             "choices": 
             {
-                "Shallow": "Shallow",
-                "Deep": "Deep<br>",  
-                "Both": "Both",
-                "None": "None"
+                "t": "Tank",
+                "s": "Swerve",  
+                "m": "Mecanum",
+                "o": "Other"
             },
-            "defaultValue": "None"
+            "defaultValue": "t"
         },
-        {
-            "name": "Can you remove algae from the reef",
-            "code": "rva",
-            "type": "checkbox"
+        { 
+            "name": "Does your robot look able to go under the trench or over the bump?",
+            "code": "dimensions",
+            "type": "radio",
+            "choices": 
+            {
+                "b": "Bump",
+                "tr": "Trench",  
+                "both": "Both",
+                "n": "Neither (broken down)"
+            },
+            "defaultValue": "b"
+        },
+        { 
+            "name": "Does your robot have a large, medium or small payload capacity?",
+            "code": "payloadcapacity",
+            "type": "radio",
+            "choices": 
+            {
+                "sm": "≤ 15 (small)",
+                "med": "15<x<30 (medium)",  
+                "lar": "≥ 30 (large)",
+            },
+            "defaultValue": "sm"
         },
         { 
             "name": "Comments",
