@@ -1,14 +1,14 @@
 var config_data = `
 {
     "dataFormat": "tsv",
-    "title": "Fingerlakes Regional",
+    "title": "Ra Cha Cha Ruckus",
     "checkboxAs": "10",
     "prematch": [
         {
             "name": "Event",
             "code": "e",
             "type": "event",
-            "defaultValue": "2026nyro",
+            "defaultValue": "2025nyrr",
             "required": "true"
         },
         {
@@ -49,244 +49,251 @@ var config_data = `
             "min": 1,
             "max": 99999
         }
-        {  "name": "How much fuel did the robot start with?",
-            "code": "startfuel",
-            "type": "radio",
-            "choices": 
-            {
-                "0": "0",
-                "1": "1",  
-                "2": "2",
-                "3": "3",
-                "4": "4",  
-                "5": "5",  
-                "6": "6",
-                "7": "7",  
-                "8": "8",    
-            },
-            "defaultValue": "0"
-        
     ],
     "auton": [
-        {  "name": "Robot Moved In Auto",
+        {
+            "name": "Robot moved in auto",
             "code": "auto",
             "type": "radio",
-            "choices": 
-            {
-                "Yes": "Yes",
-                "No (if picked, skip rest of auto period questions)": "No",  
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No"
             },
-            "defaultValue": "Yes"
-        
-        {  "name": "A-Stop activated",
+            "defaultValue": "n"
+        },
+        {
+            "name": "A-stop activated",
             "code": "a-stop",
             "type": "radio",
-            "choices": 
-            {
-                "Yes": "Yes",
-                "No": "No",  
-                "Unsure": "Unsure",  
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No<br>",
+                "u": "Unsure"
             },
-            "defaultValue": "Unsure"
-        
-        {  "name": "Total Fuel Scored",
+            "defaultValue": "u"
+        },
+        {
+            "name": "Total fuel scored",
             "code": "fuel",
             "type": "radio",
-            "choices": 
-            {
-                "1 (poor effectiveness)": "1",
-                "2": "2",  
-                "3": "3",
-                "4": "4",  
-                "5 (high effectiveness)": "5",
+            "choices": {
+                "1": "1 (poor effectiveness)<br>",
+                "2": "2<br>",
+                "3": "3<br>",
+                "4": "4<br>",
+                "5": "5 (high effectiveness)"
             },
-            "defaultValue": "1 (poor effectiveness)"
-
-        {  "name": "Where did the robot attempt to acquire more fuel?",
+            "defaultValue": "1"
+        },
+        {    
+            "name": "Did the robot attempt to pick up fuel from the floor?",
             "code": "acqfuel",
-            "type": "checkbox",
-            "choices": 
-            {
-                "Floor": "Floor",
-                "Outpost": "Outpost",  
-                "Depot": "Depot",
-                "None (broken down)": "None",    
-            },
-            "defaultValue": "None"
-
-        {  "name": "Climbing Attempted",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot attempt to pick up fuel from the outpost?",
+            "code": "acqfuell",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot attempt to pick up fuel from the depot?",
+            "code": "acqfuelll",
+            "type": "checkbox"
+        },
+        {
+            "name": "Was climbing attempted?",
             "code": "climb",
             "type": "radio",
-            "choices": 
-            {
-                "Yes": "Yes",
-                "No": "No",     
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No"
             },
-            "defaultValue": "No"
-    
-       {  "name": "Climbing Success (did the robot achieve Level 1?)",
+            "defaultValue": "n"
+        },
+        {    
+            "name": "Did the robot achieve level 1?",
             "code": "climbsuccess",
             "type": "radio",
-            "choices": 
-            {
-                "Yes": "Yes",
-                "No": "No",     
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No"
             },
-            "defaultValue": "No"
-       
-        {  "name": "Climbing Dismount (did the robot dismount Level 1 successfully?)",
+            "defaultValue": "n"
+        },
+        {    
+            "name": "Did the robot dismount level 1 successfully?",
             "code": "dismount",
             "type": "radio",
-            "choices": 
-            {
-                "Yes": "Yes",
-                "No": "No",     
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No"
             },
-            "defaultValue": "No"
-
-    ],
+            "defaultValue": "n"
+        }
+    ],  
+        
     "teleop": [
-
-        // find out right order for active/inactive shifts
-        
-        {   "name": "Are you in an active or inactive shift?",
-            "code": "shifttype",
-            "type": "radio",
-            "choices": 
-            {
-                "Active": "Active",
-                "Inactive": "Inactive",     
-            },
-            "defaultValue": "Active"
-
-        {   "name": "Inactive Hub Shift Behavior",
+        {
+            "name": "During Inactive Hub shifts, did the robot collect fuel?",
             "code": "behavior",
-            "type": "checkbox",
-            "choices": 
-            {
-                "Collect": "Collect",
-                "Pass": "Pass",
-                "Defense": "Defense",
-                "None (ineffective or broken down)": "None (ineffective or broken down)",     
-            },
-            "defaultValue": "None (ineffective or broken down)"
-            
-        {   "name": "Inactive Hub Fuel Collection Area",
+            "type": "checkbox"
+        },
+        {
+            "name": "During Inactive Hub shifts, did the robot pass fuel?",
+            "code": "behaviorr",
+            "type": "checkbox"
+        },
+        {
+            "name": "During Inactive Hub shifts, did the robot defend?",
+            "code": "behaviorrr",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot collect fuel from the Alliance zone?",
+            "code": "zonefuelcollect",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot collect fuel from the Opponent's zone?",
+            "code": "zonefuelcollectt",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot collect fuel from the Neutral zone?",
+            "code": "zonefuelcollecttt",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot collect fuel from the floor?",
             "code": "fuelcollect",
-            "type": "checkbox",
-            "choices": 
-            {
-                "Alliance's": "Alliance's",
-                "Neutral": "Neutral",
-                "Opponent's": "Opponent's",
-                "None (broken down)": "None (broken down)",
-                "None (defense)": "None (defense)",     
-            },
-            "defaultValue": "Alliance's"
-        
-        {   "name": "Intake Versatility",
-            "code": "versatility",
-            "type": "checkbox",
-            "choices": 
-            {
-                "Floor": "Floor",
-                "Outpost Chute": "Outpost Chute",
-                "Both": "Both",
-                "Neither": "Neither",  
-            },
-            "defaultValue": "Neither"
-            
-        {   "name": "Intake Efficiency",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot collect fuel from the outpost chute?",
+            "code": "fuelcollectt",
+            "type": "checkbox"
+        },
+        {    
+            "name": "How well did the robot's intake operate?",
             "code": "efficiency",
             "type": "radio",
-            "choices": 
-            {
-                "1 (slow)": "1 (slow)",
-                "2": "2",
-                "3": "3",
-                "4": "4", 
-                "5 (fast)": "5 (fast)", 
+            "choices": {
+                "1": "1 (slow)<br>",
+                "2": "2<br>",
+                "3": "3<br>",
+                "4": "4<br>",
+                "5": "5 (fast)"
             },
-            "defaultValue": "1 (slow)"
-        
-        
-        {   "name": "Cycle Time (time to collect payload and shoot)",
-            "code": "cyctime",
+            "defaultValue": "1"
+        },
+        {    
+            "name": "How long does it take for the robot to shoot after intake?",
+            "code": "cycletime",
             "type": "radio",
-            "choices": 
-            {
-                "1 (slow)": "1 (slow)",
-                "2": "2",
-                "3": "3",
-                "4": "4", 
-                "5 (immediate)": "5 (immediate)", 
+            "choices": {
+                "1": "1 (slow)<br>",
+                "2": "2<br>",
+                "3": "3<br>",
+                "4": "4<br>",
+                "5": "5 (immediate)"
             },
-            "defaultValue": "1 (slow)"
-        
-        {
-            "name": "Dropped Game Pieces",
-            "code": "tdp",
-            "type": "counter"
+            "defaultValue": "1"
+        },
+        {    
+            "name": "Did the robot use the bump and/or trench?",
+            "code": "bumptrench",
+            "type": "radio",
+            "choices": {
+                "b": "Bump<br>",
+                "t": "Trench<br>",
+                "v": "Both<br>",
+                "n": "Neither (broken down)"
+            },
+            "defaultValue": "n"
+        },
+        {    
+            "name": "How fast can the robot shoot fuel?",
+            "code": "shootspeed",
+            "type": "radio",
+            "choices": {
+                "1": "1(slow)<br>",
+                "2": "2<br>",
+                "3": "3<br>",
+                "4": "4<br>",
+                "5": "5(fast)"
+            },
+            "defaultValue": "1"
+        },
+        {    
+            "name": "How accurate are the robot's shots?",
+            "code": "shootaccuracy",
+            "type": "radio",
+            "choices": {
+                "1": "1 (less than 20%)<br>",
+                "2": "2<br>",
+                "3": "3<br>",
+                "4": "4<br>",
+                "5": "5 (more than 90%)"
+            },
+            "defaultValue": "1"
+        },
+        {    
+            "name": "Does the robot shoot while moving or does it need to be stationary?",
+            "code": "mobileshooting",
+            "type": "radio",
+            "choices": {
+                "m": "Mobile<br>",
+                "s": "Stationary<br>",
+                "n": "Neither (broken down)<br>",
+                "d": "Neither (defense)"
+            },
+            "defaultValue": "m"
+        },
+        {    
+            "name": "How many fuel did the robot score?",
+            "code": "scoringamt",
+            "type": "radio",
+            "choices": {
+                "1": "1 (less than 5)<br>",
+                "2": "2<br>",
+                "3": "3<br>",
+                "4": "4<br>",
+                "5": "5 (more than 50)"
+            },
+            "defaultValue": "1"
         }
         
     ],
     "endgame": [
-        {   "name": "Climbing Attempted During Endgame",
-            "code": "climbingend",
-            "type": "radio",
-            "choices": 
-            {
-                "Yes": "Yes",
-                "No": "No",     
-            },
-            "defaultValue": "No"
-
-        {   "name": "Climbing Success During Endgame",
-            "code": "climbsuccess",
-            "type": "radio",
-            "choices": 
-            {
-                "Not attempted": "Not attempted",
-                "Unsuccessful attempt": "Unsuccessful attempt",
-                "Level 1": "Level 1",
-                "Level 2": "Level 2", 
-                "Level 3": "Level 3", 
-            },
-            "defaultValue": "Not attempted"
-    ],
-    
-    "postmatch": [
-        {
-            "name": "Win or Lose",
-            "code": "wl",
+        {    
+            "name": "Did the robot attempt to climb?",
+            "code": "climbattempt",
             "type": "radio",
             "choices": {
-                "w": "Win<br>",
-                "l": "Lose<br>",
-                "t": "Tie<br>"
+                "y": "Yes<br>",
+                "n": "No"
             },
-            "defaultValue": "w"
+            "defaultValue": "n"
         },
-        {
-            "name": "Auto Ranking Point",
-            "code": "arp",
-            "type": "checkbox"
-        },
-        {
-            "name": "Barge Ranking Point",
-            "code": "brp",
-            "type": "checkbox"
-        },
-        {
-            "name": "Immobilized",
-            "code": "i",
-            "type": "checkbox"
-        },
-        {
-            "name": "Make a good<br>alliance partner?",
-            "tooltip": "Would you want this robot on your alliance in playoffs?",
-            "code": "all",
-            "type": "checkbox"
+        {    
+            "name": "Was the robot successful at climbing, and if so, which level?",
+            "code": "climbsuccess",
+            "type": "radio",
+            "choices": {
+                "n": "Not attempted<br>",
+                "a": "Attempted (but failed)<br>",
+                "q": "Level 1<br>",
+                "w": "Level 2<br>",
+                "e": "Level 3"
+            },
+            "defaultValue": "n"
+        }
+        { 
+            "name": "Comments",
+            "code": "pco",
+            "type": "text",
+            "size": 20,
+            "maxSize": 250
         }
     ]
 }`;
