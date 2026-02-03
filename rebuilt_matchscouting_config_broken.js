@@ -287,7 +287,7 @@ var config_data = `
                 "e": "Level 3"
             },
             "defaultValue": "n"
-        }
+        },
         { 
             "name": "Comments",
             "code": "pco",
