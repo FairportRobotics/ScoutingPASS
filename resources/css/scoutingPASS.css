@@ -11,8 +11,8 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    color: white;
-    background-color: #669bbc;
+    color: rgb(75, 45, 6);
+    background-color: #f5ae6c;
     font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
     touch-action: manipulation;
 }
