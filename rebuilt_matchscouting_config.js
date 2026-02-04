@@ -277,16 +277,52 @@ var config_data = `
         },
         {    
             "name": "Was the robot successful at climbing, and if so, which level?",
-            "code": "climbsuccess",
+            "code": "climbsucc",
             "type": "radio",
             "choices": {
-                "n": "Not attempted<br>",
+                "notattempt": "Not attempted<br>",
                 "a": "Attempted (but failed)<br>",
                 "q": "Level 1<br>",
                 "w": "Level 2<br>",
                 "e": "Level 3"
             },
-            "defaultValue": "n"
+            "defaultValue": "notattempt"
+        }
+
+    ],
+    "postmatch": [
+        {    
+            "name": "What was the result of the match?",
+            "code": "result",
+            "type": "radio",
+            "choices": {
+                "w": "Win<br>",
+                "l": "Lose<br>",
+                "tie": "Tie"
+            },
+            "defaultValue": "tie"
+        },
+        {
+            "name": "Energized Ranking Point",
+            "code": "energized",
+            "type": "checkbox"
+        },
+        {
+            "name": "Supercharged Ranking Point",
+            "code": "supercharged",
+            "type": "checkbox"
+        },
+        {
+            "name": "Traversal Ranking Point",
+            "code": "traversal",
+            "type": "checkbox"
+        },
+        { 
+            "name": "Team Points Scored Total",
+            "code": "totalpts",
+            "type": "text",
+            "size": 20,
+            "maxSize": 250
         },
         { 
             "name": "Comments",
