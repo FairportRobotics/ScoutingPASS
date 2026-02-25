@@ -65,7 +65,7 @@ const pins = {
   5868: "Tetra Ukav",
   6238: "Kai  Wilbur",
   9101: "Jonah Woika",
-  9876: "Unknown",
+  9876: "Garrett Lynd",
 };
 
 const eventMatches = [
