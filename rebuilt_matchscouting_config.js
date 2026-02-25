@@ -70,18 +70,18 @@ var config_data = `
                 "n": "No<br>",
                 "u": "Unsure"
             },
-            "defaultValue": "u"
+            "defaultValue": "n"
         },
         {
             "name": "Total fuel scored",
             "code": "fuel",
             "type": "radio",
             "choices": {
-                "1": "1 (poor effectiveness)<br>",
+                "1": "1 (0-1 Fuel)<br>",
                 "2": "2<br>",
                 "3": "3<br>",
                 "4": "4<br>",
-                "5": "5 (high effectiveness)"
+                "5": "5 (15 or more Fuel)"
             },
             "defaultValue": "1"
         },
@@ -119,16 +119,6 @@ var config_data = `
                 "n": "No"
             },
             "defaultValue": "n"
-        },
-        {    
-            "name": "Did the robot dismount level 1 successfully?",
-            "code": "dismount",
-            "type": "radio",
-            "choices": {
-                "y": "Yes<br>",
-                "n": "No"
-            },
-            "defaultValue": "n"
         }
     ],  
         
@@ -143,19 +133,9 @@ var config_data = `
             "code": "behaviorr",
             "type": "checkbox"
         },
-        {
-            "name": "During Inactive Hub shifts, did the robot defend?",
-            "code": "behaviorrr",
-            "type": "checkbox"
-        },
         {    
             "name": "Did the robot collect fuel from the Alliance zone?",
             "code": "zonefuelcollect",
-            "type": "checkbox"
-        },
-        {    
-            "name": "Did the robot collect fuel from the Opponent's zone?",
-            "code": "zonefuelcollectt",
             "type": "checkbox"
         },
         {    
@@ -174,17 +154,14 @@ var config_data = `
             "type": "checkbox"
         },
         {    
-            "name": "How well did the robot's intake operate?",
+            "name": "Was the robot's intake good?",
             "code": "efficiency",
             "type": "radio",
             "choices": {
-                "1": "1 (slow)<br>",
-                "2": "2<br>",
-                "3": "3<br>",
-                "4": "4<br>",
-                "5": "5 (fast)"
+                "y": "Yes<br>",
+                "n": "No"
             },
-            "defaultValue": "1"
+            "defaultValue": "n"
         },
         {    
             "name": "How long does it take for the robot to shoot after intake?",
@@ -218,24 +195,20 @@ var config_data = `
             "choices": {
                 "1": "1(slow)<br>",
                 "2": "2<br>",
-                "3": "3<br>",
-                "4": "4<br>",
-                "5": "5(fast)"
+                "3": "3(fast)"
             },
-            "defaultValue": "1"
+            "defaultValue": "2"
         },
         {    
             "name": "How accurate are the robot's shots?",
             "code": "shootaccuracy",
             "type": "radio",
             "choices": {
-                "1": "1 (less than 20%)<br>",
+                "1": "1 (less than 30%)<br>",
                 "2": "2<br>",
-                "3": "3<br>",
-                "4": "4<br>",
-                "5": "5 (more than 90%)"
+                "3": "3 (more than 80%)"
             },
-            "defaultValue": "1"
+            "defaultValue": "2"
         },
         {    
             "name": "Does the robot shoot while moving or does it need to be stationary?",
@@ -244,49 +217,59 @@ var config_data = `
             "choices": {
                 "m": "Mobile<br>",
                 "s": "Stationary<br>",
-                "n": "Neither (broken down)<br>",
-                "d": "Neither (defense)"
+                "n": "Neither (defense)"
             },
-            "defaultValue": "m"
+            "defaultValue": "s"
         },
         {    
             "name": "How many fuel did the robot score?",
             "code": "scoringamt",
             "type": "radio",
             "choices": {
-                "1": "1 (less than 5)<br>",
+                "1": "1 (Not many)<br>",
                 "2": "2<br>",
                 "3": "3<br>",
                 "4": "4<br>",
-                "5": "5 (more than 50)"
+                "5": "5 (A lot!)"
             },
-            "defaultValue": "1"
+            "defaultValue": "3"
         }
         
     ],
     "endgame": [
         {    
-            "name": "Did the robot attempt to climb?",
+            "name": "Did the robot attempt to climb? Was it sucessful? What Level?",
             "code": "climbattempt",
             "type": "radio",
             "choices": {
-                "y": "Yes<br>",
-                "n": "No"
-            },
-            "defaultValue": "n"
-        },
-        {    
-            "name": "Was the robot successful at climbing, and if so, which level?",
-            "code": "climbsucc",
-            "type": "radio",
-            "choices": {
-                "notattempt": "Not attempted<br>",
+                "nat": "Not attempted<br>",
                 "a": "Attempted (but failed)<br>",
                 "q": "Level 1<br>",
                 "w": "Level 2<br>",
                 "e": "Level 3"
             },
-            "defaultValue": "notattempt"
+            "defaultValue": "nat"
+        },
+        {
+            "name": "Was the Robot defensive the entire game?",
+            "code": "deftance",
+            "type": "checkbox"
+        },
+        {
+            "name": "Did the robot continue to shoot until the end of the match?",
+            "code": "shooteth",
+            "type": "checkbox"
+        },
+        {
+            "name": "Grade the robot's performance",
+            "code": "grayden",
+            "type": "radio",
+            "choices": {
+                "b": "Bad<br>",
+                "m": "Mediocre<br>",
+                "g": "Good"
+            },
+            "defaultValue": "m"
         }
 
     ],
