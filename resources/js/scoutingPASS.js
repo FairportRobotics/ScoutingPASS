@@ -59,7 +59,7 @@ const pins = {
   5500: "Connor Rapp",
   4687: "Arthur Sayre",
   7215: "Autumn Schoenfeld",
-  3671: "Mason Silva",
+  3671: "Asher Chambers",
   9722: "Carter Silva",
   5436: "Ethan Stiffler",
   5868: "Tetra Ukav",
