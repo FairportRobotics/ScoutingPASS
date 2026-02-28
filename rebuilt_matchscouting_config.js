@@ -51,40 +51,6 @@ var config_data = `
         }
     ],
     "auton": [
-        {
-            "name": "Robot moved in auto",
-            "code": "auto",
-            "type": "radio",
-            "choices": {
-                "y": "Yes<br>",
-                "n": "No"
-            },
-            "defaultValue": "n"
-        },
-        {
-            "name": "A-stop activated",
-            "code": "a-stop",
-            "type": "radio",
-            "choices": {
-                "y": "Yes<br>",
-                "n": "No<br>",
-                "u": "Unsure"
-            },
-            "defaultValue": "n"
-        },
-        {
-            "name": "Total fuel scored",
-            "code": "fuel",
-            "type": "radio",
-            "choices": {
-                "1": "1 (0-1 Fuel)<br>",
-                "2": "2<br>",
-                "3": "3<br>",
-                "4": "4<br>",
-                "5": "5 (15 or more Fuel)"
-            },
-            "defaultValue": "1"
-        },
         {    
             "name": "Did the robot attempt to pick up fuel from the floor?",
             "code": "acqfuel",
@@ -119,43 +85,10 @@ var config_data = `
                 "n": "No"
             },
             "defaultValue": "n"
-        }
-    ],  
-        
-    "teleop": [
-        {
-            "name": "During Inactive Hub shifts, did the robot collect fuel?",
-            "code": "behavior",
-            "type": "checkbox"
         },
         {
-            "name": "During Inactive Hub shifts, did the robot pass fuel?",
-            "code": "behaviorr",
-            "type": "checkbox"
-        },
-        {    
-            "name": "Did the robot collect fuel from the Alliance zone?",
-            "code": "zonefuelcollect",
-            "type": "checkbox"
-        },
-        {    
-            "name": "Did the robot collect fuel from the Neutral zone?",
-            "code": "zonefuelcollecttt",
-            "type": "checkbox"
-        },
-        {    
-            "name": "Did the robot collect fuel from the floor?",
-            "code": "fuelcollect",
-            "type": "checkbox"
-        },
-        {    
-            "name": "Did the robot collect fuel from the outpost chute?",
-            "code": "fuelcollectt",
-            "type": "checkbox"
-        },
-        {    
-            "name": "Was the robot's intake good?",
-            "code": "efficiency",
+            "name": "Robot moved in auto",
+            "code": "auto",
             "type": "radio",
             "choices": {
                 "y": "Yes<br>",
@@ -163,6 +96,33 @@ var config_data = `
             },
             "defaultValue": "n"
         },
+        {
+            "name": "A-stop activated",
+            "code": "a-stop",
+            "type": "radio",
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No<br>",
+                "u": "Unsure"
+            },
+            "defaultValue": "n"
+        },
+        {
+            "name": "Total fuel scored",
+            "code": "fuel",
+            "type": "radio",
+            "choices": {
+                "1": "1 (0-1 Fuel)<br>",
+                "2": "2<br>",
+                "3": "3<br>",
+                "4": "4<br>",
+                "5": "5 (15 or more Fuel)"
+            },
+            "defaultValue": "1"
+        }
+    ],  
+        
+    "teleop": [  
         {    
             "name": "How long does it take for the robot to shoot after intake?",
             "code": "cycletime",
@@ -233,8 +193,47 @@ var config_data = `
                 "5": "5 (A lot!)"
             },
             "defaultValue": "3"
+        },
+        {
+            "name": "During Inactive Hub shifts, did the robot collect fuel?",
+            "code": "behavior",
+            "type": "checkbox"
+        },
+        {
+            "name": "During Inactive Hub shifts, did the robot pass fuel?",
+            "code": "behaviorr",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot collect fuel from the Alliance zone?",
+            "code": "zonefuelcollect",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot collect fuel from the Neutral zone?",
+            "code": "zonefuelcollecttt",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot collect fuel from the floor?",
+            "code": "fuelcollect",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot collect fuel from the outpost chute?",
+            "code": "fuelcollectt",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Was the robot's intake good?",
+            "code": "efficiency",
+            "type": "radio",
+            "choices": {
+                "y": "Yes<br>",
+                "n": "No"
+            },
+            "defaultValue": "n"
         }
-        
     ],
     "endgame": [
         {    
