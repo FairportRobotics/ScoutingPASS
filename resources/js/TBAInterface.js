@@ -1,4 +1,4 @@
-// TBAInterface funcitons to pull data from TheBlueAlliance.com
+/* TBAInterface funcitons to pull data from TheBlueAlliance.com
 var teams = null;
 var schedule = null;
 var authKey =
@@ -7,7 +7,7 @@ var authKey =
  * Get list of teams in event
  *
  * @param {eventCode} eventCode the event code (i.e. 2020caln) to pull the team list
- */
+ *
 function getTeams(eventCode) {
   if (authKey) {
     var xmlhttp = new XMLHttpRequest();
@@ -32,7 +32,7 @@ function getTeams(eventCode) {
  * Get schefule for event
  *
  * @param {eventCode} eventCode the event code (i.e. 2020caln) to pull the team list
- */
+ *
 function getSchedule(eventCode) {
   if (authKey) {
     var xmlhttp = new XMLHttpRequest();
@@ -52,3 +52,4 @@ function getSchedule(eventCode) {
     xmlhttp.send();
   }
 }
+*/

@@ -122,20 +122,7 @@ var config_data = `
         }
     ],  
         
-    "teleop": [  
-        {    
-            "name": "How long does it take for the robot to shoot after intake?",
-            "code": "cycletime",
-            "type": "radio",
-            "choices": {
-                "1": "1 (slow)<br>",
-                "2": "2<br>",
-                "3": "3<br>",
-                "4": "4<br>",
-                "5": "5 (immediate)"
-            },
-            "defaultValue": "1"
-        },
+    "teleop": [
         {    
             "name": "Did the robot use the bump and/or trench?",
             "code": "bumptrench",
@@ -212,11 +199,6 @@ var config_data = `
         {    
             "name": "Did the robot collect fuel from the Neutral zone?",
             "code": "zonefuelcollecttt",
-            "type": "checkbox"
-        },
-        {    
-            "name": "Did the robot collect fuel from the floor?",
-            "code": "fuelcollect",
             "type": "checkbox"
         },
         {    
