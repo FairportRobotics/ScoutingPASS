@@ -47,25 +47,11 @@ var config_data = `
             "code": "t",
             "type": "team",
             "min": 1,
-            "max": 99999
+            "max": 99999,
+            "required": "true"
         }
     ],
     "auton": [
-        {    
-            "name": "Did the robot attempt to pick up fuel from the floor?",
-            "code": "acqfuel",
-            "type": "checkbox"
-        },
-        {    
-            "name": "Did the robot attempt to pick up fuel from the outpost?",
-            "code": "acqfuell",
-            "type": "checkbox"
-        },
-        {    
-            "name": "Did the robot attempt to pick up fuel from the depot?",
-            "code": "acqfuelll",
-            "type": "checkbox"
-        },
         {
             "name": "Was climbing attempted?",
             "code": "climb",
@@ -124,18 +110,6 @@ var config_data = `
         
     "teleop": [
         {    
-            "name": "Did the robot use the bump and/or trench?",
-            "code": "bumptrench",
-            "type": "radio",
-            "choices": {
-                "b": "Bump<br>",
-                "t": "Trench<br>",
-                "v": "Both<br>",
-                "n": "Neither (broken down)"
-            },
-            "defaultValue": "n"
-        },
-        {    
             "name": "How fast can the robot shoot fuel?",
             "code": "shootspeed",
             "type": "radio",
@@ -156,17 +130,6 @@ var config_data = `
                 "3": "3 (more than 80%)"
             },
             "defaultValue": "2"
-        },
-        {    
-            "name": "Does the robot shoot while moving or does it need to be stationary?",
-            "code": "mobileshooting",
-            "type": "radio",
-            "choices": {
-                "m": "Mobile<br>",
-                "s": "Stationary<br>",
-                "n": "Neither (defense)"
-            },
-            "defaultValue": "s"
         },
         {    
             "name": "How many fuel did the robot score?",
@@ -199,11 +162,6 @@ var config_data = `
         {    
             "name": "Did the robot collect fuel from the Neutral zone?",
             "code": "zonefuelcollecttt",
-            "type": "checkbox"
-        },
-        {    
-            "name": "Did the robot collect fuel from the outpost chute?",
-            "code": "fuelcollectt",
             "type": "checkbox"
         },
         {    
@@ -247,8 +205,10 @@ var config_data = `
             "type": "radio",
             "choices": {
                 "b": "Bad<br>",
+                "d": "Decent<br>",
                 "m": "Mediocre<br>",
-                "g": "Good"
+                "g": "Good<br>",
+                "a": "Amazing<br>"
             },
             "defaultValue": "m"
         }
