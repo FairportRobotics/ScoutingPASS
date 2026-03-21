@@ -195,6 +195,11 @@ var config_data = `
             "type": "checkbox"
         },
         {
+            "name": "Did robot shoot from approximately the same position?",
+            "code": "shootpos",
+            "type": "checkbox"
+        },
+        {
             "name": "Did the robot continue to shoot until the end of the match?",
             "code": "shooteth",
             "type": "checkbox"
