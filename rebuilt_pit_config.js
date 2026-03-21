@@ -32,6 +32,11 @@ var config_data = `
             "code": "width",
             "type": "number"
         },
+        {
+            "name": "Height (Inch)",
+            "code": "height",
+            "type": "number"
+        },
         { 
             "name": "What kind of wheels do they use?",
             "code": "drivetrain",
@@ -46,7 +51,7 @@ var config_data = `
             "defaultValue": "t"
         },
         { 
-            "name": "Does your robot look able to go under the trench or over the bump?",
+            "name": "Is your robot able to go under the trench or over the bump?",
             "code": "dimensions",
             "type": "radio",
             "choices": 
@@ -57,6 +62,18 @@ var config_data = `
                 "n": "Neither (broken down)"
             },
             "defaultValue": "b"
+        },
+        {    
+            "name": "Does the robot shoot while moving or does it need to be stationary?",
+            "code": "mobileshooting",
+            "type": "radio",
+            "choices": 
+            {
+                "m": "Mobile<br>",
+                "s": "Stationary<br>",
+                "n": "Neither (defense)"
+            },
+            "defaultValue": "s"
         },
         { 
             "name": "Does your robot have a large, medium or small payload capacity?",
@@ -69,6 +86,13 @@ var config_data = `
                 "lar": "More than 30 (large)"
             },
             "defaultValue": "sm"
+        },
+        {
+            "name": "If your robot had a favorite color, what would it be?",
+            "code": "colorquest",
+            "type": "text",
+            "size": 20,
+            "maxSize": 250
         },
         { 
             "name": "Comments",
