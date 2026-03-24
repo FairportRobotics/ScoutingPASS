@@ -8,7 +8,7 @@ var config_data = `
             "name": "Event",
             "code": "e",
             "type": "event",
-            "defaultValue": "2025nyrr",
+            "defaultValue": "2026ohmv",
             "required": "true"
         },
         {
@@ -57,8 +57,8 @@ var config_data = `
             "code": "climb",
             "type": "radio",
             "choices": {
-                "y": "Yes<br>",
-                "n": "No"
+                "1": "Yes<br>",
+                "0": "No"
             },
             "defaultValue": "n"
         },
@@ -67,8 +67,8 @@ var config_data = `
             "code": "climbsuccess",
             "type": "radio",
             "choices": {
-                "y": "Yes<br>",
-                "n": "No"
+                "1": "Yes<br>",
+                "0": "No"
             },
             "defaultValue": "n"
         },
@@ -77,8 +77,8 @@ var config_data = `
             "code": "auto",
             "type": "radio",
             "choices": {
-                "y": "Yes<br>",
-                "n": "No"
+                "1": "Yes<br>",
+                "0": "No"
             },
             "defaultValue": "n"
         },
@@ -87,9 +87,9 @@ var config_data = `
             "code": "a-stop",
             "type": "radio",
             "choices": {
-                "y": "Yes<br>",
-                "n": "No<br>",
-                "u": "Unsure"
+                "1": "Yes<br>",
+                "-1": "No<br>",
+                "0": "Unsure"
             },
             "defaultValue": "n"
         },
@@ -169,8 +169,8 @@ var config_data = `
             "code": "efficiency",
             "type": "radio",
             "choices": {
-                "y": "Yes<br>",
-                "n": "No"
+                "1": "Yes<br>",
+                "0": "No"
             },
             "defaultValue": "n"
         }
@@ -181,11 +181,11 @@ var config_data = `
             "code": "climbattempt",
             "type": "radio",
             "choices": {
-                "nat": "Not attempted<br>",
-                "a": "Attempted (but failed)<br>",
-                "q": "Level 1<br>",
-                "w": "Level 2<br>",
-                "e": "Level 3"
+                "0": "Not attempted<br>",
+                "-1": "Attempted (but failed)<br>",
+                "1": "Level 1<br>",
+                "2": "Level 2<br>",
+                "3": "Level 3"
             },
             "defaultValue": "nat"
         },
@@ -209,11 +209,11 @@ var config_data = `
             "code": "grayden",
             "type": "radio",
             "choices": {
-                "b": "Bad<br>",
-                "d": "Decent<br>",
-                "m": "Mediocre<br>",
-                "g": "Good<br>",
-                "a": "Amazing<br>"
+                "-1": "Bad<br>",
+                "1": "Decent<br>",
+                "2": "Mediocre<br>",
+                "3": "Good<br>",
+                "4": "Amazing<br>"
             },
             "defaultValue": "m"
         }
@@ -225,9 +225,9 @@ var config_data = `
             "code": "result",
             "type": "radio",
             "choices": {
-                "w": "Win<br>",
-                "l": "Lose<br>",
-                "tie": "Tie"
+                "1": "Win<br>",
+                "-1": "Lose<br>",
+                "0": "Tie"
             },
             "defaultValue": "tie"
         },

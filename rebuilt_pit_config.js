@@ -1,8 +1,8 @@
 var config_data = `
 {
     "dataFormat": "tsv",
-    "title": "Scouting PASS 2025",
-    "page_title": "Reefscape",
+    "title": "Scouting PASS 2026",
+    "page_title": "Rebuilt",
     "pitConfig": "true",
     "prematch": [   
         { 
