@@ -87,8 +87,8 @@ var config_data = `
             "code": "a-stop",
             "type": "radio",
             "choices": {
-                "1": "Yes<br>",
-                "-1": "No<br>",
+                "-1": "Yes<br>",
+                "1": "No<br>",
                 "0": "Unsure"
             },
             "defaultValue": "n"
