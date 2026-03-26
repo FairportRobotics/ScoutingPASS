@@ -60,7 +60,7 @@ var config_data = `
                 "1": "Yes<br>",
                 "0": "No"
             },
-            "defaultValue": "n"
+            "defaultValue": "0"
         },
         {    
             "name": "Did the robot achieve level 1?",
@@ -70,7 +70,7 @@ var config_data = `
                 "1": "Yes<br>",
                 "0": "No"
             },
-            "defaultValue": "n"
+            "defaultValue": "0"
         },
         {
             "name": "Robot moved in auto",
@@ -80,7 +80,7 @@ var config_data = `
                 "1": "Yes<br>",
                 "0": "No"
             },
-            "defaultValue": "n"
+            "defaultValue": "0"
         },
         {
             "name": "A-stop activated",
@@ -91,7 +91,7 @@ var config_data = `
                 "1": "No<br>",
                 "0": "Unsure"
             },
-            "defaultValue": "n"
+            "defaultValue": "0"
         },
         {
             "name": "Total fuel scored",
@@ -172,7 +172,7 @@ var config_data = `
                 "1": "Yes<br>",
                 "0": "No"
             },
-            "defaultValue": "n"
+            "defaultValue": "0"
         }
     ],
     "endgame": [
@@ -187,7 +187,7 @@ var config_data = `
                 "2": "Level 2<br>",
                 "3": "Level 3"
             },
-            "defaultValue": "nat"
+            "defaultValue": "0"
         },
         {
             "name": "Was the Robot defensive the entire game?",
@@ -215,7 +215,7 @@ var config_data = `
                 "3": "Good<br>",
                 "4": "Amazing<br>"
             },
-            "defaultValue": "m"
+            "defaultValue": "2"
         }
 
     ],
@@ -229,7 +229,7 @@ var config_data = `
                 "-1": "Lose<br>",
                 "0": "Tie"
             },
-            "defaultValue": "tie"
+            "defaultValue": "0"
         },
         {
             "name": "Energized Ranking Point",
