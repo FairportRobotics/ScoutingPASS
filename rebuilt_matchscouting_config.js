@@ -53,16 +53,6 @@ var config_data = `
     ],
     "auton": [
         {
-            "name": "Was climbing attempted?",
-            "code": "climb",
-            "type": "radio",
-            "choices": {
-                "1": "Yes<br>",
-                "0": "No"
-            },
-            "defaultValue": "0"
-        },
-        {
             "name": "Robot moved in auto",
             "code": "auto",
             "type": "radio",
