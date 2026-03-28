@@ -84,7 +84,7 @@ var config_data = `
             "defaultValue": "0"
         },
         {
-            "name": "Total fuel scored",
+            "name": "Total Fuel scored",
             "code": "fuel",
             "type": "radio",
             "choices": {
@@ -100,7 +100,7 @@ var config_data = `
         
     "teleop": [
         {    
-            "name": "How fast can the robot shoot fuel?",
+            "name": "How fast can the robot shoot Fuel?",
             "code": "shootspeed",
             "type": "radio",
             "choices": {
@@ -122,7 +122,7 @@ var config_data = `
             "defaultValue": "2"
         },
         {    
-            "name": "How many fuel did the robot score?",
+            "name": "How many Fuel did the robot score?",
             "code": "scoringamt",
             "type": "radio",
             "choices": {
@@ -135,17 +135,17 @@ var config_data = `
             "defaultValue": "3"
         },
         {
-            "name": "During Inactive Hub shifts, did the robot collect fuel?",
+            "name": "During Inactive Hub shifts, did the robot collect Fuel?",
             "code": "behavior",
             "type": "checkbox"
         },
         {
-            "name": "During Inactive Hub shifts, did the robot pass fuel?",
+            "name": "During Inactive Hub shifts, did the robot pass Fuel?",
             "code": "behaviorr",
             "type": "checkbox"
         },
         {    
-            "name": "Did the robot collect fuel from the Alliance zone?",
+            "name": "Did the robot collect Fuel from the Alliance zone?",
             "code": "zonefuelcollect",
             "type": "checkbox"
         },
@@ -160,7 +160,7 @@ var config_data = `
             "type": "checkbox"
         },
         {    
-            "name": "Did the robot collect fuel from the Neutral zone?",
+            "name": "Did the robot collect Fuel from the Neutral zone?",
             "code": "zonefuelcollecttt",
             "type": "checkbox"
         },
