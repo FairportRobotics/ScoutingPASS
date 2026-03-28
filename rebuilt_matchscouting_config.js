@@ -150,6 +150,11 @@ var config_data = `
             "type": "checkbox"
         },
         {    
+            "name": "Did the robot collect Fuel from the Neutral zone?",
+            "code": "zonefuelcollecttt",
+            "type": "checkbox"
+        },
+        {    
             "name": "Did the robot travel over the Bump?",
             "code": "travbump",
             "type": "checkbox"
@@ -157,11 +162,6 @@ var config_data = `
         {    
             "name": "Did the robot travel under the Trench?",
             "code": "travtrench",
-            "type": "checkbox"
-        },
-        {    
-            "name": "Did the robot collect Fuel from the Neutral zone?",
-            "code": "zonefuelcollecttt",
             "type": "checkbox"
         },
         {    
