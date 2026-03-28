@@ -62,16 +62,6 @@ var config_data = `
             },
             "defaultValue": "0"
         },
-        {    
-            "name": "Did the robot achieve level 1?",
-            "code": "climbsuccess",
-            "type": "radio",
-            "choices": {
-                "1": "Yes<br>",
-                "0": "No"
-            },
-            "defaultValue": "0"
-        },
         {
             "name": "Robot moved in auto",
             "code": "auto",
@@ -160,6 +150,16 @@ var config_data = `
             "type": "checkbox"
         },
         {    
+            "name": "Did the robot travel over the Bump?",
+            "code": "travbump",
+            "type": "checkbox"
+        },
+        {    
+            "name": "Did the robot travel under the Trench?",
+            "code": "travtrench",
+            "type": "checkbox"
+        },
+        {    
             "name": "Did the robot collect fuel from the Neutral zone?",
             "code": "zonefuelcollecttt",
             "type": "checkbox"
@@ -176,19 +176,6 @@ var config_data = `
         }
     ],
     "endgame": [
-        {    
-            "name": "Did the robot attempt to climb? Was it sucessful? What Level?",
-            "code": "climbattempt",
-            "type": "radio",
-            "choices": {
-                "0": "Not attempted<br>",
-                "-1": "Attempted (but failed)<br>",
-                "1": "Level 1<br>",
-                "2": "Level 2<br>",
-                "3": "Level 3"
-            },
-            "defaultValue": "0"
-        },
         {
             "name": "Was the Robot defensive the entire game?",
             "code": "deftance",
@@ -197,11 +184,6 @@ var config_data = `
         {
             "name": "Did robot shoot from approximately the same position?",
             "code": "shootpos",
-            "type": "checkbox"
-        },
-        {
-            "name": "Did the robot continue to shoot until the end of the match?",
-            "code": "shooteth",
             "type": "checkbox"
         },
         {
