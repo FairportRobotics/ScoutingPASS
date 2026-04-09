@@ -125,33 +125,18 @@ var config_data = `
             "defaultValue": "3"
         },
         {
-            "name": "During Inactive Hub shifts, did the robot collect Fuel?",
-            "code": "behavior",
+            "name": "Did the robot collect Fuel from the Neutral Zone?",
+            "code": "collectneutral",
             "type": "checkbox"
         },
         {
-            "name": "During Inactive Hub shifts, did the robot pass Fuel?",
+            "name": "Did the robot collect Fuel passed to it's Alliance Zone?",
+            "code": "collectpassed",
+            "type": "checkbox"
+        },        
+        {
+            "name": "Did the robot pass Fuel?",
             "code": "behaviorr",
-            "type": "checkbox"
-        },
-        {    
-            "name": "Did the robot collect Fuel from the Alliance zone?",
-            "code": "zonefuelcollect",
-            "type": "checkbox"
-        },
-        {    
-            "name": "Did the robot collect Fuel from the Neutral zone?",
-            "code": "zonefuelcollecttt",
-            "type": "checkbox"
-        },
-        {    
-            "name": "Did the robot travel over the Bump?",
-            "code": "travbump",
-            "type": "checkbox"
-        },
-        {    
-            "name": "Did the robot travel under the Trench?",
-            "code": "travtrench",
             "type": "checkbox"
         },
         {    
@@ -181,13 +166,13 @@ var config_data = `
             "code": "grayden",
             "type": "radio",
             "choices": {
-                "-1": "Bad<br>",
-                "1": "Decent<br>",
-                "2": "Mediocre<br>",
-                "3": "Good<br>",
-                "4": "Amazing<br>"
+                "1": "Bad<br>",
+                "2": "Decent<br>",
+                "3": "Mediocre<br>",
+                "4": "Good<br>",
+                "5": "Amazing"
             },
-            "defaultValue": "2"
+            "defaultValue": "3"
         }
 
     ],
