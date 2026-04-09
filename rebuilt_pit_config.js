@@ -28,16 +28,6 @@ var config_data = `
             "defaultValue":"Currently"
         },
         { 
-            "name": "Width (Inch)",
-            "code": "width",
-            "type": "number"
-        },
-        {
-            "name": "Height (Inch)",
-            "code": "height",
-            "type": "number"
-        },
-        { 
             "name": "What kind of wheels do they use?",
             "code": "drivetrain",
             "type": "radio",
@@ -75,6 +65,11 @@ var config_data = `
             },
             "defaultValue": "s"
         },
+        {
+            "name": "Can your robot clim/does it have a climber?",
+            "code": "climber",
+            "type": "checkbox"
+        },
         { 
             "name": "Does your robot have a large, medium or small payload capacity?",
             "code": "payloadcapacity",
@@ -90,6 +85,13 @@ var config_data = `
         {
             "name": "If your robot had a favorite color, what would it be?",
             "code": "colorquest",
+            "type": "text",
+            "size": 20,
+            "maxSize": 250
+        },
+        {
+            "name": "What's your robot's name/nickname?",
+            "code": "roboname",
             "type": "text",
             "size": 20,
             "maxSize": 250
