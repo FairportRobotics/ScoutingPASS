@@ -3,6 +3,7 @@ var config_data = `
     "dataFormat": "tsv",
     "title": "2026 Rebuilt Competition",
     "checkboxAs": "10",
+
     "prematch": [
         {
             "name": "Event",
@@ -51,6 +52,7 @@ var config_data = `
             "required": "true"
         }
     ],
+
     "auton": [
         {
             "name": "Robot moved in auto",
@@ -155,6 +157,7 @@ var config_data = `
             "defaultValue": "0"
         }
     ],
+
     "endgame": [
         {
             "name": "Was the Robot playing defense the entire game?",
@@ -179,8 +182,8 @@ var config_data = `
             },
             "defaultValue": "3"
         }
-
     ],
+
     "postmatch": [
         {    
             "name": "What was the result of the match?",
