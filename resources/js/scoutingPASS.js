@@ -516,17 +516,23 @@ function addTextArea(table, idx, name, data) {
   cell2.classList.add("field");
   var inp = document.createElement("textarea");
   inp.setAttribute("id", "textarea_" + data.code);
+
   if (enableGoogleSheets && data.hasOwnProperty("gsCol")) {
     inp.setAttribute("name", data.gsCol);
   } else {
     inp.setAttribute("name", data.code);
   }
-  if (data.hasOwnProperty("size")) {
-    inp.setAttribute("size", data.size);
+
+  if (data.hasOwnProperty("rows")) {
+    inp.setAttribute("rows", data.rows);
+  }
+  if (data.hasOwnProperty("cols")) {
+    inp.setAttribute("cols", data.size);
   }
   if (data.hasOwnProperty("maxSize")) {
     inp.setAttribute("maxLength", data.maxSize);
   }
+
   if (data.hasOwnProperty("defaultValue")) {
     if (data.type == "event") {
       data.defaultValue = data.defaultValue.toLowerCase();
@@ -539,9 +545,7 @@ function addTextArea(table, idx, name, data) {
   if (data.hasOwnProperty("disabled")) {
     inp.setAttribute("disabled", "");
   }
-  if (data.hasOwnProperty("rows")) {
-    inp.setAttribute("rows", data.rows);
-  }
+
   cell2.appendChild(inp);
 
   if (data.hasOwnProperty("defaultValue")) {

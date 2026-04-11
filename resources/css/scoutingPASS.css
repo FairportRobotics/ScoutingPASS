@@ -1,94 +1,94 @@
 @font-face {
-    font-family: 'Bebas Neue';
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/BebasNeue.ttf") format('truetype');
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/BebasNeue.ttf") format("truetype");
 }
 
 html,
 body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    color: rgb(75, 45, 6);
-    background-color: #f5ae6c;
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
-    touch-action: manipulation;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: rgb(75, 45, 6);
+  background-color: #f5ae6c;
+  font-family:
+    -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
+  touch-action: manipulation;
 }
 
 table {
-    text-align: center;
-    font-size: 20px;
-    font-style: bold;
-    letter-spacing: 1px;
-    border: 0;
+  text-align: center;
+  font-size: 20px;
+  font-style: bold;
+  letter-spacing: 1px;
+  border: 0;
 }
 textarea,
 button,
 input {
-    border: 0;
-    border-radius: 8px;
-    padding: 14px;
-    margin-right: 2px;
-    margin-left:2px;
+  border: 0;
+  border-radius: 8px;
+  padding: 14px;
+  margin-right: 2px;
+  margin-left: 2px;
 }
 
-textarea{
+textarea {
   background-color: #efefef;
-  width: 100%;
 }
 
 button,
 .button,
 .undoButton,
 .flipButton {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .main-panel {
-    display: none;
-    height: 100%;
-    min-height: 100%;
-    width: 100vw;
-    position: absolute;
-    left: 0;
-    top: 0;
-    text-align: justify;
+  display: none;
+  height: 100%;
+  min-height: 100%;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-align: justify;
 }
 
 #prematch {
-    display: table;
+  display: table;
 }
 
 #qr-code {
-    border-radius: 5px;
-    text-align: center;
+  border-radius: 5px;
+  text-align: center;
 }
 
 h1 {
-    text-align: center;
-    border-width: 0px;
-    font-size: 40px;
-    padding: 10px;
-    font-weight: 350;
+  text-align: center;
+  border-width: 0px;
+  font-size: 40px;
+  padding: 10px;
+  font-weight: 350;
 }
 
 #page2,
 #page4 {
-    color: black;
+  color: black;
 }
 
 h2 {
-    font-family: 'Bebas Neue';
-    text-align: center;
-    font-size: 30px;
-    font-weight: 300;
-    font-style: normal;
+  font-family: "Bebas Neue";
+  text-align: center;
+  font-size: 30px;
+  font-weight: 300;
+  font-style: normal;
 }
 
 h3 {
-  font-family: 'Bebas Neue';
+  font-family: "Bebas Neue";
   text-align: center;
   font-size: 50px;
   font-weight: 300;
@@ -96,76 +96,78 @@ h3 {
 }
 
 h4 {
-  font-family: 'Bebas Neue';
+  font-family: "Bebas Neue";
   font-size: 30px;
   font-weight: 300;
   font-style: normal;
 }
 
 .match-label {
-    text-align: center;
+  text-align: center;
 }
 
 .half-button-l {
-    width: 48%;
-    margin: 1vw;
-    height: 100%;
+  width: 48%;
+  margin: 1vw;
+  height: 100%;
 }
 
 .half-button-r {
-    flex-grow: 1;
-    height: 100%;
-    width: 48%;
-    margin: 1vw;
+  flex-grow: 1;
+  height: 100%;
+  width: 48%;
+  margin: 1vw;
 }
 
 .half-button-container {
-    display: flex;
+  display: flex;
 }
 
 table {
-    border: 0px;
-    width: 100%;
+  border: 0px;
+  width: 100%;
 }
 
 .results {
-    text-align: center;
-    font-size: 20px;
-    font-style: bold;
-    letter-spacing: 1px;
-    border: 0;
-    background-color: #f5ae6c;
+  text-align: center;
+  font-size: 20px;
+  font-style: bold;
+  letter-spacing: 1px;
+  border: 0;
+  background-color: #f5ae6c;
 }
 
 td {
-    padding: 10px 4px;
+  padding: 10px 4px;
 }
 
-button, input, .counter{
-    font-size: 16px;
-    color: #222222;
-    background-color: #efefef;
+button,
+input,
+.counter {
+  font-size: 16px;
+  color: #222222;
+  background-color: #efefef;
 }
 
 .title {
-    width: 50%;
-    text-align: right;
+  width: 50%;
+  text-align: right;
 }
 
 .field {
-    width: 50%;
-    text-align: left;
+  width: 50%;
+  text-align: left;
 }
 
 #qr-table {
-    text-align: center;
-    color: black;
-    background-color: white;
+  text-align: center;
+  color: black;
+  background-color: white;
 }
 
 #data {
-    font-family: 'Lucida Console', 'monospace';
-    text-align: justify;
+  font-family: "Lucida Console", "monospace";
+  text-align: justify;
 }
 
 td.field label {
@@ -176,8 +178,8 @@ td.field label {
 /*Radio Button Styles*/
 
 :root {
-    --form-control-color: rebeccapurple;
-  }
+  --form-control-color: rebeccapurple;
+}
 
 *,
 *:before,
@@ -186,53 +188,53 @@ td.field label {
 }
 
 .form-control {
-    font-family: system-ui, sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-    line-height: .1;
-    display: grid;
-    grid-template-columns: .5em;
-    gap: .5em;
-  }
+  font-family: system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 0.1;
+  display: grid;
+  grid-template-columns: 0.5em;
+  gap: 0.5em;
+}
 
-  input[type="radio2"] {
-    -webkit-appearance: none;
-    appearance: none;
-    background-color: #efefef;
-    margin: 0;
-    color: #000000;
-    width: 1em;
-    height:1em;
-    border: 0.2em solid currentColor;
-    border-radius: 100%;
-  }
+input[type="radio2"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #efefef;
+  margin: 0;
+  color: #000000;
+  width: 1em;
+  height: 1em;
+  border: 0.2em solid currentColor;
+  border-radius: 100%;
+}
 
 .form-control + .form-control {
   margin-top: 1em;
 }
 
-input[type="radio2"] {  
-    display: grid;
-    place-content: center;
-  }
+input[type="radio2"] {
+  display: grid;
+  place-content: center;
+}
 
-  input[type="radio2"]::before {
-    content: "";
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--form-control-color);
-  }
+input[type="radio2"]::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
 
-  input[type="radio2"] {
-    display: grid;
-  }
-  
-  input[type="radio2"]:checked::before {
-    transform: scale(1.25);
-  }
+input[type="radio2"] {
+  display: grid;
+}
+
+input[type="radio2"]:checked::before {
+  transform: scale(1.25);
+}
 
 /* Checkbox Styles */
 .form-control {
@@ -254,7 +256,7 @@ input[type="checkbox"] {
   color: #666;
   width: 1.15em;
   height: 1.15em;
-  border: 0;/*.15em solid currentColor;*/
+  border: 0; /*.15em solid currentColor;*/
   border-radius: 0.15em;
   transform: translateY(-0.075em);
 }
@@ -289,29 +291,29 @@ input[type="radio"] {
 
 /* BUTTTTTTTTTON */
 .Text-Button {
-  background:none;
-  border:none;
-  font-family: 'Bebas Neue';
+  background: none;
+  border: none;
+  font-family: "Bebas Neue";
   text-align: center;
   font-size: 30px;
   font-weight: 300;
   font-style: normal;
-  color:#ffffff;
-  margin:0;
-  padding:0;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
   cursor: pointer;
 }
 
 .Text-Button-Big {
-  background:none;
-  border:none;
-  font-family: 'Bebas Neue';
+  background: none;
+  border: none;
+  font-family: "Bebas Neue";
   text-align: center;
   font-size: 50px;
   font-weight: 300;
   font-style: normal;
-  color:#ffffff;
-  margin:0;
-  padding:0;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
   cursor: pointer;
 }

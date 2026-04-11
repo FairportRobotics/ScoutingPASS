@@ -56,7 +56,7 @@ var config_data = `
     "auton": [
         {
             "name": "Robot moved in auto",
-            "code": "auto",
+            "code": "a-moved",
             "type": "radio",
             "choices": {
                 "1": "Yes<br>",
@@ -77,7 +77,7 @@ var config_data = `
         },
         {
             "name": "Total Fuel scored",
-            "code": "fuel",
+            "code": "a-fuel",
             "type": "radio",
             "choices": {
                 "1": "1 (0-1 Fuel)<br>",
@@ -93,7 +93,7 @@ var config_data = `
     "teleop": [
         {    
             "name": "How fast can the robot shoot Fuel?",
-            "code": "shootspeed",
+            "code": "t=shootspeed",
             "type": "radio",
             "choices": {
                 "1": "1(slow)<br>",
@@ -104,7 +104,7 @@ var config_data = `
         },
         {    
             "name": "How accurate are the robot's shots?",
-            "code": "shootaccuracy",
+            "code": "t-shootaccuracy",
             "type": "radio",
             "choices": {
                 "1": "1 (less than 30%)<br>",
@@ -115,7 +115,7 @@ var config_data = `
         },
         {    
             "name": "How many Fuel did the robot score?",
-            "code": "scoringamt",
+            "code": "t-scoringamt",
             "type": "radio",
             "choices": {
                 "1": "1 (Not many)<br>",
@@ -128,27 +128,27 @@ var config_data = `
         },
         {
             "name": "Did the robot collect Fuel from the Neutral Zone?",
-            "code": "collectneutral",
+            "code": "t-collectneutral",
             "type": "checkbox"
         },
         {
             "name": "Did the robot collect Fuel from the opposing Alliance Zone?",
-            "code": "collectopposingalliance",
+            "code": "t-collectopposingalliance",
             "type": "checkbox"
         },        
         {
             "name": "Did the robot relay Fuel?",
-            "code": "behaviorr",
+            "code": "t-relay",
             "type": "checkbox"
         },
         {
             "name": "Did the robot bulldoze Fuel?",
-            "code": "behaviorr",
+            "code": "t-bulldozw",
             "type": "checkbox"
         },
         {    
             "name": "Was the robot's intake good?",
-            "code": "efficiency",
+            "code": "t-intake",
             "type": "radio",
             "choices": {
                 "1": "Yes<br>",
@@ -161,17 +161,17 @@ var config_data = `
     "endgame": [
         {
             "name": "Was the Robot playing defense the entire game?",
-            "code": "deftance",
+            "code": "e-defense",
             "type": "checkbox"
         },
         {
             "name": "Did robot shoot from approximately the same position during the match?",
-            "code": "shootpos",
+            "code": "e-shootposition",
             "type": "checkbox"
         },
         {
             "name": "Grade the robot's performance",
-            "code": "grayden",
+            "code": "e-performance",
             "type": "radio",
             "choices": {
                 "1": "Bad<br>",
@@ -187,7 +187,7 @@ var config_data = `
     "postmatch": [
         {    
             "name": "What was the result of the match?",
-            "code": "result",
+            "code": "p-result",
             "type": "radio",
             "choices": {
                 "1": "Win<br>",
@@ -198,31 +198,32 @@ var config_data = `
         },
         {
             "name": "Energized Ranking Point",
-            "code": "energized",
+            "code": "p-energized",
             "type": "checkbox"
         },
         {
             "name": "Supercharged Ranking Point",
-            "code": "supercharged",
+            "code": "p-supercharged",
             "type": "checkbox"
         },
         {
             "name": "Traversal Ranking Point",
-            "code": "traversal",
+            "code": "p-traversal",
             "type": "checkbox"
         },
         { 
             "name": "Team Points Scored Total",
-            "code": "totalpts",
+            "code": "p-totalpts",
             "type": "text",
             "size": 20,
             "maxSize": 250
         },
         { 
             "name": "Comments (mandatory key points)",
-            "code": "pco",
-            "type": "text",
-            "size": 50,
+            "code": "p-comments",
+            "type": "textarea",
+            "rows": 10,
+            "cols": 40,
             "maxSize": 1024
         }
     ]
