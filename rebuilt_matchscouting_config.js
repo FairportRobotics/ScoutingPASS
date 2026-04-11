@@ -216,7 +216,7 @@ var config_data = `
             "code": "p-totalpts",
             "type": "text",
             "size": 20,
-            "maxSize": 250
+            "maxSize": 1000
         },
         { 
             "name": "Comments (mandatory key points)",
