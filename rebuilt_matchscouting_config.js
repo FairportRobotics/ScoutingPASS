@@ -130,12 +130,17 @@ var config_data = `
             "type": "checkbox"
         },
         {
-            "name": "Did the robot collect Fuel passed to it's Alliance Zone?",
-            "code": "collectpassed",
+            "name": "Did the robot collect Fuel from the opposing Alliance Zone?",
+            "code": "collectopposingalliance",
             "type": "checkbox"
         },        
         {
-            "name": "Did the robot pass Fuel?",
+            "name": "Did the robot relay Fuel?",
+            "code": "behaviorr",
+            "type": "checkbox"
+        },
+        {
+            "name": "Did the robot bulldoze Fuel?",
             "code": "behaviorr",
             "type": "checkbox"
         },
@@ -152,7 +157,7 @@ var config_data = `
     ],
     "endgame": [
         {
-            "name": "Was the Robot defensive the entire game?",
+            "name": "Was the Robot playing defense the entire game?",
             "code": "deftance",
             "type": "checkbox"
         },
@@ -211,11 +216,11 @@ var config_data = `
             "maxSize": 250
         },
         { 
-            "name": "Comments",
+            "name": "Comments (mandatory key points)",
             "code": "pco",
             "type": "text",
-            "size": 20,
-            "maxSize": 250
+            "size": 50,
+            "maxSize": 1024
         }
     ]
 }`;
