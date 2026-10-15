@@ -41,7 +41,7 @@ var config_data = `
             "defaultValue": "t"
         },
         { 
-            "name": "Is your robot able to go under the trench or over the bump?",
+            "name": "Is your robot able to go under the trench and/or over the bump?",
             "code": "dimensions",
             "type": "radio",
             "choices": 
@@ -66,7 +66,7 @@ var config_data = `
             "defaultValue": "s"
         },
         {
-            "name": "Can your robot clim/does it have a climber?",
+            "name": "Can your robot climb/does it have a climber? (Doesn't matter if they plan to or not)",
             "code": "climber",
             "type": "checkbox"
         },
